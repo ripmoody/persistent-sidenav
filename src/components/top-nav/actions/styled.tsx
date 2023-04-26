@@ -3,13 +3,12 @@ import styled from '@emotion/styled'
 export const ProfileButton = styled.button`
   background: none;
   border: none;
-  outline: none;
   cursor: pointer;
   display: flex;
   align-items: center;
   padding: var(--space-2);
   border-radius: var(--radius-base);
-  gap: var(--space-3);
+  gap: var(--space-2);
   flex-shrink: 0;
 
   @media (max-width: 500px) {
@@ -18,8 +17,8 @@ export const ProfileButton = styled.button`
 `
 
 export const ProfileImage = styled.img`
-  width: var(--space-7);
-  height: var(--space-7);
+  width: var(--space-8);
+  height: var(--space-8);
   border-radius: var(--radius-full);
   object-fit: cover;
 `
@@ -30,7 +29,7 @@ export const ProfileInfo = styled.div`
   align-items: start;
   color: white;
   line-height: 1;
-  font-size: var(--type-size-xs);
+  font-size: var(--type-size-sm);
   gap: var(--space-0_5);
 
   @media (max-width: 500px) {
@@ -45,4 +44,5 @@ export const ProfileName = styled.span`
 export const ProfileTitle = styled.span`
   font-weight: var(--type-weight-normal);
   opacity: 0.8;
+  font-size: var(--type-size-xs);
 `

@@ -1,7 +1,7 @@
-import { Actions } from "./actions";
-import { HomeButton } from "./home-button";
-import { SearchInput } from "./search";
-import * as S from "./styled";
+import { Actions } from './actions'
+import { HomeButton } from './logo'
+import { SearchInput } from './search'
+import * as S from './styled'
 
 export const TopNav = () => {
   return (
@@ -10,5 +10,5 @@ export const TopNav = () => {
       <SearchInput />
       <Actions />
     </S.TopNav>
-  );
-};
+  )
+}

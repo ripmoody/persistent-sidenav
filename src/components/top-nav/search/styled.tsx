@@ -6,5 +6,5 @@ export const SearchInput = styled.input`
   border-radius: var(--radius-base);
   outline: none;
   border: none;
-  height: var(--space-7);
+  height: var(--space-8);
 `

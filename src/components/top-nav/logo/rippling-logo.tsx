@@ -1,8 +1,8 @@
 type Props = {
-  size?: number;
-};
+  size?: number
+}
 
-export const RipplingLogo = ({ size = 32 }: Props) => (
+export const RipplingLogo = ({ size = 36 }: Props) => (
   <svg
     viewBox="0 0 32 32"
     height={size}
@@ -15,4 +15,4 @@ export const RipplingLogo = ({ size = 32 }: Props) => (
       fill="#FFF"
     />
   </svg>
-);
+)
