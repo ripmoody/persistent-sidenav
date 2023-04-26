@@ -1,22 +1,27 @@
 import styled from '@emotion/styled'
 
 export const Main = styled.main`
-  position: absolute;
-  top: var(--top-nav-height);
-  left: 0;
-  right: 0;
-  height: calc(100vh - var(--top-nav-height));
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 `
 
 export const MainHeader = styled.header`
   display: flex;
-  padding: var(--space-6) var(--space-4);
-  border-bottom: 1px solid var(--color-grey-200);
+  padding: var(--space-8);
+  background-color: white;
+`
+
+export const MainLayout = styled.div`
+  display: flex;
+  flex: 1;
+  padding: var(--space-8) var(--space-8);
+  background-color: var(--color-grey-100);
 `
 
 export const MainContent = styled.div`
-  display: flex;
-  background-color: var(--color-grey-100);
-  flex-direction: column;
-  height: 100%;
+  flex: 1;
+  background-color: var(--color-grey-50);
+  padding: var(--space-6);
+  border-radius: var(--radius-base);
 `
