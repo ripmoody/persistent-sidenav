@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled'
 
 export const SearchInput = styled.input`
   width: var(--space-112);
@@ -6,5 +6,5 @@ export const SearchInput = styled.input`
   border-radius: var(--radius-base);
   outline: none;
   border: none;
-  height: var(--space-4);
-`;
+  height: var(--space-7);
+`
