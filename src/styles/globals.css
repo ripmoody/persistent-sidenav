@@ -1,7 +1,15 @@
+body {
+  background-color: #fff;
+}
+
 html,
 body {
+  font-family: var(--type-font-basel);
   padding: 0;
   margin: 0;
-  font-family: var(--type-font-basel);
-  background-color: #fff;
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
 }
