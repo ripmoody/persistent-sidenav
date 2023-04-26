@@ -7,4 +7,11 @@ declare global {
   type Children = {
     children: React.ReactNode
   }
+
+  /**
+   * Generic icon props
+   */
+  type IconProps = {
+    size?: number
+  }
 }
