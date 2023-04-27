@@ -1,5 +1,8 @@
 import styled from '@emotion/styled'
 
+/**
+ * The side nav component container
+ */
 export const SideNav = styled.nav`
   display: flex;
   flex-direction: column;
@@ -10,14 +13,15 @@ export const SideNav = styled.nav`
 `
 
 /**
- * The fixed header portion of the side nav
+ * The fixed header portion of the side nav. Contains offboard, hire, home
  */
 export const SideNavHeader = styled.div`
   border-bottom: solid 1px var(--color-grey-100);
 `
 
 /**
- * The fixed footer portion of the side nav that stays fixed to the bottom
+ * The fixed footer portion of the side nav that stays fixed to the bottom.
+ * Contains support, appshop
  */
 export const SideNavFooter = styled.div`
   border-top: solid 1px var(--color-grey-100);
