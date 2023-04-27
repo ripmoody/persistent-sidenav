@@ -4,7 +4,7 @@ export const Actions = styled.div`
   display: flex;
   align-items: center;
   color: white;
-  gap: var(--space-2);
+  gap: var(--space-1);
 `
 
 export const ProfileButton = styled.button`
@@ -68,7 +68,7 @@ export const NavIconButton = styled.button`
   justify-content: center;
 
   &:hover {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
   }
 
   @media (max-width: 600px) {
@@ -82,6 +82,7 @@ export const VerticalRule = styled.div`
   background: white;
   opacity: 0.5;
   flex-shrink: 0;
+  margin: 0 var(--space-2);
 
   @media (max-width: 600px) {
     display: none;
