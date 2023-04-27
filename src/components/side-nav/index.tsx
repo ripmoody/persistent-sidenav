@@ -1,16 +1,37 @@
+import { headerNavItems } from './constants/footer'
+import { footerNavItems } from './constants/header'
+import { NavItem } from './nav-item'
 import * as S from './styled'
 
 export const SideNav = () => {
   return (
     <S.SideNav>
       <S.SideNavHeader>
-        <S.SideNavList>Header</S.SideNavList>
+        <S.SideNavList>
+          {headerNavItems.map((item) => (
+            <NavItem
+              key={item.path}
+              icon={item.icon}
+              path={item.path}
+              label={item.label}
+            />
+          ))}
+        </S.SideNavList>
       </S.SideNavHeader>
       <S.SideNavMain>
         <S.SideNavList>Main</S.SideNavList>
       </S.SideNavMain>
       <S.SideNavFooter>
-        <S.SideNavList>Footer</S.SideNavList>
+        <S.SideNavList>
+          {footerNavItems.map((item) => (
+            <NavItem
+              key={item.path}
+              icon={item.icon}
+              path={item.path}
+              label={item.label}
+            />
+          ))}
+        </S.SideNavList>
       </S.SideNavFooter>
     </S.SideNav>
   )

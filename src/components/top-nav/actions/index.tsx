@@ -1,15 +1,14 @@
-import { AccessibilityIcon } from './accessibility-icon'
+import { Accessibility, Help } from '@/components/icons'
 import { ChevronIcon } from './chevron-icon'
-import { HelpIcon } from './help-icon'
 import * as S from './styled'
 
 export const Actions = () => (
   <S.Actions>
     <S.NavIconButton>
-      <HelpIcon />
+      <Help />
     </S.NavIconButton>
     <S.NavIconButton>
-      <AccessibilityIcon />
+      <Accessibility />
     </S.NavIconButton>
     <S.VerticalRule />
     <S.ProfileButton>

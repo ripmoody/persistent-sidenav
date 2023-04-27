@@ -19,24 +19,26 @@ declare global {
    * The root config for a nav item that must be supplied
    */
   type NavItem = {
-    name: string
-    icon: JSX.Element
+    /**
+     * The label for the nav item
+     */
+    label: string
+    /**
+     * The icon for the nav item
+     */
+    icon: ForwardRefExoticComponent
+    /**
+     * The relative path for the nav item
+     */
+    path?: string
+    /**
+     * Callback for when the nav item is clicked.
+     */
+    onClick?: (event: MouseEvent<HTMLButtonElement>) => void
   }
-
-  /**
-   * A nav item that has a link instead of child items
-   */
-  type NavItemWithPath = NavItem & {
-    path: string
-  }
-
-  /**
-   * A nav item that has child items and is used to progressively disclose them
-   */
-  type NavItemWithSubNav = NavItem & {}
 
   /**
    * A sub navigation item that has a link instead of child items
    */
-  type SubNavItem = NavItemWithPath & {}
+  type SubNavItem = NavItem & {}
 }

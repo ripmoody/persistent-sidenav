@@ -1,7 +1,7 @@
 import styled from '@emotion/styled'
 import { Fragment } from 'react'
 
-export const Dashboard = styled(Fragment)``
+export const Dashboard = Fragment
 
 export const DashboardPage = styled.div`
   display: flex;

@@ -1,6 +1,7 @@
 :root {
   /* Semantic */
   --top-nav-height: 3.4rem;
+  --color-text: var(--color-grey-900);
 
   /* Color */
   --color-grey-900: #1d1d1d;
@@ -77,8 +78,8 @@
   /* Type scale */
   --type-size-xs: 0.75rem;
   --type-size-sm: 0.875rem;
-  --type-size-md: 1rem;
-  --type-size-lg: 1.2rem;
+  --type-size-md: 1.1rem;
+  --type-size-lg: 1.25rem;
   --type-size-xl: 1.4rem;
   --type-size-2xl: 1.6rem;
   --type-size-3xl: 1.875rem;
