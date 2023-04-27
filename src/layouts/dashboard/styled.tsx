@@ -3,7 +3,7 @@ import { Fragment } from 'react'
 
 export const Dashboard = styled(Fragment)``
 
-export const DashboardContent = styled.div`
+export const DashboardPage = styled.div`
   display: flex;
   position: absolute;
   top: var(--top-nav-height);

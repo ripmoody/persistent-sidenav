@@ -6,9 +6,9 @@ import * as S from './styled'
 export const DashboardLayout = ({ children }: Children) => (
   <S.Dashboard>
     <TopNav />
-    <S.DashboardContent>
+    <S.DashboardPage>
       <SideNav />
       <Main>{children}</Main>
-    </S.DashboardContent>
+    </S.DashboardPage>
   </S.Dashboard>
 )
