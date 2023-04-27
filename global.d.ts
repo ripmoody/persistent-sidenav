@@ -8,11 +8,11 @@ declare global {
     children: React.ReactNode
   }
 
-  /**
-   * Generic icon props for managing size
-   */
-  type IconProps = {
-    size?: number
+  type PageProps = {
+    query: {
+      category: string
+      page: string
+    }
   }
 
   /**

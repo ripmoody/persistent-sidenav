@@ -1,5 +1,5 @@
-import { headerNavItems } from './constants/footer'
-import { footerNavItems } from './constants/header'
+import { footerNavItems } from './constants/footer'
+import { headerNavItems } from './constants/header'
 import { NavItem } from './nav-item'
 import * as S from './styled'
 

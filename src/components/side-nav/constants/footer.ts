@@ -1,19 +1,14 @@
 import { Home } from '@/components/icons'
 
-export const headerNavItems: NavItem[] = [
+export const footerNavItems: NavItem[] = [
   {
-    label: 'Home',
+    label: 'App Shop',
     icon: Home,
-    path: '/',
+    path: '/app-shop',
   },
   {
-    label: 'Hire',
+    label: 'Support & Resources',
     icon: Home,
-    path: '/hire',
-  },
-  {
-    label: 'Offboard',
-    icon: Home,
-    path: '/offboard',
+    path: '/support',
   },
 ]
