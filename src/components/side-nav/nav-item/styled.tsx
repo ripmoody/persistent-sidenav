@@ -5,7 +5,6 @@ export const NavItem = styled.li`
   position: relative;
 
   &[aria-current='page'] button {
-    transition: background-color 0.5s ease;
     background-color: var(--color-grey-50);
 
     &::before {
@@ -29,7 +28,7 @@ export const NavItemLink = styled(Link)`
 export const NavItemButton = styled.button<Partial<NavItem>>`
   display: flex;
   align-items: center;
-  padding: var(--space-2) var(--space-3) var(--space-2) var(--space-5);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-5);
   width: 100%;
   border: none;
   background: none;

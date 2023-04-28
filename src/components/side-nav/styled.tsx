@@ -17,7 +17,7 @@ export const SideNav = styled.nav`
  */
 export const SideNavHeader = styled.div`
   border-bottom: solid 1px var(--color-grey-100);
-  padding: 0 0 var(--space-6) 0;
+  padding: 0 0 var(--space-4) 0;
 `
 
 /**
@@ -26,7 +26,7 @@ export const SideNavHeader = styled.div`
  */
 export const SideNavFooter = styled.div`
   border-top: solid 1px var(--color-grey-100);
-  padding: var(--space-6) 0 0 0;
+  padding: var(--space-4) 0 0 0;
 `
 
 /**
