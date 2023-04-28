@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next'
 
 export default function Page(props: PageProps) {
-  return <>{props.query.page}</>
+  return <>{props.query.id}</>
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {

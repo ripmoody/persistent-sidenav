@@ -11,7 +11,7 @@ declare global {
   type PageProps = {
     query: {
       category: string
-      page: string
+      id: string
     }
   }
 

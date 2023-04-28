@@ -44,5 +44,5 @@ export const SideNavList = styled.ul`
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-1);
+  gap: var(--space-0_5);
 `

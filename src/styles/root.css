@@ -26,6 +26,17 @@
   --color-plum-100: #e8dae0;
   --color-plum-50: #f5f2f3;
 
+  --color-yellow-900: #614300;
+  --color-yellow-800: #7a5400;
+  --color-yellow-700: #9e6d00;
+  --color-yellow-600: #d49408;
+  --color-yellow-500: #f0ad1b;
+  --color-yellow-400: #fdb71c;
+  --color-yellow-300: #fac95f;
+  --color-yellow-200: #fadea2;
+  --color-yellow-100: #f5e8ce;
+  --color-yellow-50: #faf4e8;
+
   /* Borders */
   --borderWidth-1px: 1px;
   --borderWidth-2px: 2px;
@@ -78,7 +89,7 @@
   /* Type scale */
   --type-size-xs: 0.75rem;
   --type-size-sm: 0.875rem;
-  --type-size-md: 1.1rem;
+  --type-size-md: 1.05rem;
   --type-size-lg: 1.25rem;
   --type-size-xl: 1.4rem;
   --type-size-2xl: 1.6rem;

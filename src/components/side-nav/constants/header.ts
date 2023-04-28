@@ -1,4 +1,4 @@
-import { Home } from '@/components/icons'
+import { Hire, Home, Offboard } from '@/components/icons'
 
 export const headerNavItems: NavItem[] = [
   {
@@ -8,12 +8,12 @@ export const headerNavItems: NavItem[] = [
   },
   {
     label: 'Hire',
-    icon: Home,
+    icon: Hire,
     path: '/hire',
   },
   {
     label: 'Offboard',
-    icon: Home,
+    icon: Offboard,
     path: '/offboard/test',
   },
 ]
