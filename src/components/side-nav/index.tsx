@@ -1,16 +1,20 @@
-import { footerNavItems } from './constants/footer'
-import { headerNavItems } from './constants/header'
+import { useNavigation } from '@/providers/navigation'
+import { ExpandCollapseNavItem } from './expand-collapse-nav-item'
 import { NavItem } from './nav-item'
 import * as S from './styled'
 
 export const SideNav = () => {
+  const { state } = useNavigation()
+
+  console.log(state.context)
+
   return (
     <S.SideNav>
       <S.SideNavHeader>
         <S.SideNavList>
-          {headerNavItems.map((item) => (
+          {state.items.header.map((item) => (
             <NavItem
-              key={item.path}
+              key={item.label}
               icon={item.icon}
               path={item.path}
               label={item.label}
@@ -23,14 +27,16 @@ export const SideNav = () => {
       </S.SideNavMain>
       <S.SideNavFooter>
         <S.SideNavList>
-          {footerNavItems.map((item) => (
+          {state.items.footer.map((item) => (
             <NavItem
-              key={item.path}
+              key={item.label}
               icon={item.icon}
               path={item.path}
               label={item.label}
+              onClick={item.onClick}
             />
           ))}
+          <ExpandCollapseNavItem />
         </S.SideNavList>
       </S.SideNavFooter>
     </S.SideNav>

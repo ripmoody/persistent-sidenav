@@ -7,12 +7,12 @@ export const NavItem = (props: NavItem) => {
   const router = useRouter()
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    if (path) {
-      return router.push(path)
-    }
-
     if (onClick) {
       return onClick(event)
+    }
+
+    if (path) {
+      return router.push(path)
     }
   }
 
