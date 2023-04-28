@@ -1,14 +1,18 @@
-import { Home } from '@/components/icons'
+import { AppShop, ArrowLeft, Help } from '@/components/icons'
 
 export const footerNavItems: NavItem[] = [
   {
     label: 'App Shop',
-    icon: Home,
+    icon: AppShop,
     path: '/app-shop',
   },
   {
     label: 'Support & Resources',
-    icon: Home,
+    icon: Help,
     path: '/support',
+  },
+  {
+    label: 'Collapse',
+    icon: ArrowLeft,
   },
 ]

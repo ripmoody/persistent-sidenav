@@ -1,4 +1,6 @@
 export * from './accessibility'
+export * from './app-shop'
+export * from './arrow-left'
 export * from './help'
 export * from './hire'
 export * from './home'
