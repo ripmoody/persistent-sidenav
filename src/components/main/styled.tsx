@@ -1,18 +1,9 @@
 import styled from '@emotion/styled'
-import { breakpoints } from '../side-nav/flat-nav-item/expand-collapse'
 
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
   flex: 1;
-
-  @media (max-width: ${breakpoints.medium}px) {
-    margin-left: var(--space-16);
-  }
-
-  @media (max-width: ${breakpoints.small}px) {
-    margin-left: 0;
-  }
 `
 
 export const MainHeader = styled.header`

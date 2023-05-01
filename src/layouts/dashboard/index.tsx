@@ -8,6 +8,7 @@ export const DashboardLayout = ({ children }: Children) => (
     <TopNav />
     <S.DashboardPage>
       <SideNav />
+      <S.DashboardSideNavPlaceholder />
       <Main>{children}</Main>
     </S.DashboardPage>
   </S.Dashboard>
