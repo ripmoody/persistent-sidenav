@@ -1,3 +1,4 @@
+import { Tooltip } from '@/components/tooltip'
 import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
 import { useRouter } from 'next/router'
@@ -45,10 +46,15 @@ export const FlatNavItem = (props: FlatNavItem) => {
 
   return (
     <S.NavItem aria-current={isAriaCurrent} isCollapsed={context.isCollapsed}>
-      <S.NavItemButton onClick={handleClick} isCollapsed={context.isCollapsed}>
-        <Icon />
-        {!context.isCollapsed && <S.NavItemLabel>{label}</S.NavItemLabel>}
-      </S.NavItemButton>
+      <Tooltip label={label} isDisabled={!context.isCollapsed}>
+        <S.NavItemButton
+          onClick={handleClick}
+          isCollapsed={context.isCollapsed}
+        >
+          <Icon />
+          {!context.isCollapsed && <S.NavItemLabel>{label}</S.NavItemLabel>}
+        </S.NavItemButton>
+      </Tooltip>
     </S.NavItem>
   )
 }

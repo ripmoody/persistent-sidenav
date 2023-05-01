@@ -1,4 +1,5 @@
 import { ArrowLeft, ArrowRight } from '@/components/icons'
+import { Tooltip } from '@/components/tooltip'
 import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
 import { useEffect, useMemo } from 'react'
@@ -12,7 +13,10 @@ export const breakpoints = {
 
 export const ExpandCollapseNavItem = () => {
   const width = useWindowWidth()
-  const { state, dispatch } = useNavigation()
+  const {
+    state: { context },
+    dispatch,
+  } = useNavigation()
 
   /**
    * This effect is responsible for setting the responsive collapsed state of the side nav
@@ -30,7 +34,7 @@ export const ExpandCollapseNavItem = () => {
     /**
      * If isForceCollapsed, the side nav should be collapsed at any size
      */
-    if (state.context.isForceCollapsed) {
+    if (context.isForceCollapsed) {
       dispatch({ type: 'set-collapsed', payload: true })
       return // No responsive logic needed
     }
@@ -43,59 +47,61 @@ export const ExpandCollapseNavItem = () => {
     } else {
       dispatch({ type: 'set-collapsed', payload: true })
     }
-  }, [width, dispatch, state.context.isForceCollapsed])
+  }, [width, dispatch, context.isForceCollapsed])
 
   /**
    * This is responsible for collapsing and expanding the side nav from the side nav.
    * It is only visible when the screen size is larger than 500px
    */
   const handleClick = () => {
-    if (width > breakpoints.medium && state.context.isCollapsed) {
+    if (width > breakpoints.medium && context.isCollapsed) {
       dispatch({ type: 'set-force-collapsed', payload: false })
       dispatch({ type: 'set-collapsed', payload: false })
       return
     }
 
-    if (width > breakpoints.medium && !state.context.isCollapsed) {
+    if (width > breakpoints.medium && !context.isCollapsed) {
       dispatch({ type: 'set-force-collapsed', payload: true })
       dispatch({ type: 'set-collapsed', payload: true })
       return
     }
 
-    if (width < breakpoints.small && !state.context.isCollapsed) {
+    if (width < breakpoints.small && !context.isCollapsed) {
       dispatch({ type: 'set-collapsed', payload: true })
       dispatch({ type: 'set-hidden', payload: true })
       return
     }
 
-    if (width < breakpoints.large && state.context.isCollapsed) {
+    if (width < breakpoints.large && context.isCollapsed) {
       dispatch({ type: 'set-collapsed', payload: false })
       return
     }
 
-    if (width < breakpoints.large && !state.context.isCollapsed) {
+    if (width < breakpoints.large && !context.isCollapsed) {
       dispatch({ type: 'set-collapsed', payload: true })
       return
     }
   }
 
   const Icon = useMemo(() => {
-    return state.context.isCollapsed ? ArrowRight : ArrowLeft
-  }, [state.context.isCollapsed])
+    return context.isCollapsed ? ArrowRight : ArrowLeft
+  }, [context.isCollapsed])
 
   const label = useMemo(() => {
-    return state.context.isCollapsed ? 'Expand' : 'Collapse'
-  }, [state.context.isCollapsed])
+    return context.isCollapsed ? 'Expand' : 'Collapse'
+  }, [context.isCollapsed])
 
   return (
-    <S.NavItem isCollapsed={state.context.isCollapsed}>
-      <S.NavItemButton
-        onClick={handleClick}
-        isCollapsed={state.context.isCollapsed}
-      >
-        <Icon />
-        {!state.context.isCollapsed && <S.NavItemLabel>{label}</S.NavItemLabel>}
-      </S.NavItemButton>
-    </S.NavItem>
+    <Tooltip label={label} isDisabled={!context.isCollapsed}>
+      <S.NavItem isCollapsed={context.isCollapsed}>
+        <S.NavItemButton
+          onClick={handleClick}
+          isCollapsed={context.isCollapsed}
+        >
+          <Icon />
+          {!context.isCollapsed && <S.NavItemLabel>{label}</S.NavItemLabel>}
+        </S.NavItemButton>
+      </S.NavItem>
+    </Tooltip>
   )
 }

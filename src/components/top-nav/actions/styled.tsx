@@ -29,8 +29,8 @@ export const ProfileButton = styled.button`
 `
 
 export const ProfileImage = styled.img`
-  width: var(--space-8);
-  height: var(--space-8);
+  width: var(--space-7);
+  height: var(--space-7);
   border-radius: var(--radius-full);
   object-fit: cover;
 `
