@@ -20,7 +20,7 @@ export const SideNav = styled.nav<SideNavProps>`
 `
 
 /**
- * The fixed header portion of the side nav. Contains offboard, hire, home
+ * The fixed header portion of the side nav. Contains off-board, hire, home
  */
 export const SideNavHeader = styled.div`
   border-bottom: solid 1px var(--color-grey-100);
@@ -29,7 +29,7 @@ export const SideNavHeader = styled.div`
 
 /**
  * The fixed footer portion of the side nav that stays fixed to the bottom.
- * Contains support, appshop
+ * Contains support, App Shop
  */
 export const SideNavFooter = styled.div`
   border-top: solid 1px var(--color-grey-100);

@@ -1,5 +1,4 @@
-import { Accessibility, Help } from '@/components/icons'
-import { ChevronIcon } from './chevron-icon'
+import { Accessibility, ChevronDown, Help } from '@/components/icons'
 import * as S from './styled'
 
 export const Actions = () => (
@@ -17,7 +16,7 @@ export const Actions = () => (
         <S.ProfileName>John Doe</S.ProfileName>
         <S.ProfileTitle>Admin • Neuralink</S.ProfileTitle>
       </S.ProfileInfo>
-      <ChevronIcon />
+      <ChevronDown />
     </S.ProfileButton>
   </S.Actions>
 )
