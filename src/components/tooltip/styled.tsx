@@ -31,11 +31,7 @@ export const TooltipContent = styled(Tooltip.Content)`
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
 
-  /* .TooltipContent[data-state='delayed-open'][data-side='top'] {
-    animation-name: slideDownAndFade;
-  } */
-
-  &[data-state='open'] {
+  &[data-state='delayed-open'][data-side='right'] {
     animation-name: ${slideRightAndFade};
   }
 `
