@@ -4,9 +4,15 @@ import { useNavigation } from '@/providers/navigation'
 import { useEffect, useMemo } from 'react'
 import { NavItem } from '../nav-item'
 
+const breakpoints = {
+  small: 500,
+  medium: 900,
+  large: 1200,
+}
+
 export const ExpandCollapseNavItem = () => {
-  const { state, dispatch } = useNavigation()
   const width = useWindowWidth()
+  const { state, dispatch } = useNavigation()
 
   /**
    * This effect is responsible for setting the responsive collapsed state of the side nav
@@ -15,7 +21,7 @@ export const ExpandCollapseNavItem = () => {
     /**
      * If the screen size is smaller than 500px, the side nav should be accessible from the top nav
      */
-    if (width < 500) {
+    if (width < breakpoints.small) {
       dispatch({ type: 'set-hidden', payload: true })
     } else {
       dispatch({ type: 'set-hidden', payload: false })
@@ -25,21 +31,17 @@ export const ExpandCollapseNavItem = () => {
      * If isForceCollapsed, the side nav should be collapsed at any size
      */
     if (state.context.isForceCollapsed) {
-      return dispatch({ type: 'set-collapsed', payload: true })
+      dispatch({ type: 'set-collapsed', payload: true })
+      return // No responsive logic needed
     }
 
     /**
      * If the screen size is bigger than 1200px, the side nav should be expanded
      */
-    if (width > 1200) {
-      return dispatch({ type: 'set-collapsed', payload: false })
-    }
-
-    /**
-     * If the screen size is smaller than 1200px, the side nav should be collapsed
-     */
-    if (width < 1200) {
-      return dispatch({ type: 'set-collapsed', payload: true })
+    if (width > breakpoints.medium) {
+      dispatch({ type: 'set-collapsed', payload: false })
+    } else {
+      dispatch({ type: 'set-collapsed', payload: true })
     }
   }, [width, dispatch, state.context.isForceCollapsed])
 
@@ -48,21 +50,26 @@ export const ExpandCollapseNavItem = () => {
    * It is only visible when the screen size is larger than 500px
    */
   const handleClick = () => {
-    if (width > 1200 && state.context.isCollapsed) {
+    if (width > breakpoints.large && state.context.isCollapsed) {
       dispatch({ type: 'set-force-collapsed', payload: false })
       dispatch({ type: 'set-collapsed', payload: false })
       return
     }
 
-    if (width > 1200 && !state.context.isCollapsed) {
+    if (width > breakpoints.large && !state.context.isCollapsed) {
       dispatch({ type: 'set-force-collapsed', payload: true })
       dispatch({ type: 'set-collapsed', payload: true })
       return
     }
 
-    if (width < 1200 && state.context.isCollapsed) {
+    if (width < breakpoints.large && state.context.isCollapsed) {
       // TODO: this should overlay the screen as a panel
       dispatch({ type: 'set-collapsed', payload: false })
+      return
+    }
+
+    if (width < breakpoints.large && !state.context.isCollapsed) {
+      dispatch({ type: 'set-collapsed', payload: true })
       return
     }
   }

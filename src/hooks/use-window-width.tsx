@@ -12,11 +12,7 @@ export const useWindowWidth = () => {
       return
     }
 
-    const handleResize = () => {
-      throttle(() => {
-        setWidth(window.innerWidth)
-      }, 200)
-    }
+    const handleResize = throttle(() => setWidth(window.innerWidth), 200)
 
     window.addEventListener('resize', handleResize)
     return () => window.removeEventListener('resize', handleResize)

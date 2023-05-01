@@ -1,7 +1,11 @@
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
-export const NavItem = styled.li`
+type NavItemProps = {
+  isCollapsed: boolean
+}
+
+export const NavItem = styled.li<NavItemProps>`
   position: relative;
 
   &[aria-current='page'] button {
@@ -14,8 +18,10 @@ export const NavItem = styled.li`
       left: 4px;
       bottom: 4px;
       border-radius: var(--radius-base);
-      width: var(--space-1);
-      background-color: var(--color-yellow-400);
+      transition: all 0.2s ease-in-out;
+      width: ${({ isCollapsed }) => (isCollapsed ? '0' : 'var(--space-1)')};
+      background-color: ${({ isCollapsed }) =>
+        isCollapsed ? 'transparent' : 'var(--color-yellow-400)'};
     }
   }
 `
@@ -25,10 +31,12 @@ export const NavItemLink = styled(Link)`
   text-decoration: none;
 `
 
-export const NavItemButton = styled.button<Partial<NavItem>>`
+export const NavItemButton = styled.button<NavItemProps>`
   display: flex;
   align-items: center;
-  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-5);
+  padding: var(--space-2);
+  padding-left: ${({ isCollapsed }) =>
+    isCollapsed ? 'var(--space-2)' : 'var(--space-5)'};
   width: 100%;
   border: none;
   background: none;
@@ -36,8 +44,13 @@ export const NavItemButton = styled.button<Partial<NavItem>>`
   gap: var(--space-3);
   font-size: var(--type-size-md);
   border-radius: var(--radius-base);
+  line-height: 1;
 
   &:hover {
     background-color: var(--color-grey-50);
   }
+`
+
+export const NavItemLabel = styled.span`
+  line-height: 1;
 `
