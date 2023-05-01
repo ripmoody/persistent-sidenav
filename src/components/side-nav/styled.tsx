@@ -10,7 +10,7 @@ type SideNavProps = {
  * The side nav component container
  */
 export const SideNav = styled.nav<SideNavProps>`
-  transition: all 200ms linear;
+  transition: all 200ms ease-in-out;
   display: flex;
   flex-direction: column;
   width: ${({ context }) =>

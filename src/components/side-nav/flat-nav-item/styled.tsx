@@ -56,6 +56,8 @@ export const NavItemButton = styled.button<NavItemProps>`
   }
 `
 
-export const NavItemLabel = styled.span`
+export const NavItemLabel = styled.span<NavItemProps>`
   line-height: 1;
+  display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
+  white-space: nowrap; // This is worrisome
 `

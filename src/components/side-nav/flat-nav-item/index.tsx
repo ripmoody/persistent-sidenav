@@ -52,7 +52,9 @@ export const FlatNavItem = (props: FlatNavItem) => {
           isCollapsed={context.isCollapsed}
         >
           <Icon />
-          {!context.isCollapsed && <S.NavItemLabel>{label}</S.NavItemLabel>}
+          <S.NavItemLabel isCollapsed={context.isCollapsed}>
+            {label}
+          </S.NavItemLabel>
         </S.NavItemButton>
       </Tooltip>
     </S.NavItem>
