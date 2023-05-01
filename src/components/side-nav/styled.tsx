@@ -11,7 +11,7 @@ type SideNavProps = {
  */
 export const SideNav = styled.nav<SideNavProps>`
   transition: all 200ms linear;
-  display: ${({ context }) => (context.isHidden ? 'none' : 'flex')};
+  display: flex;
   flex-direction: column;
   width: ${({ context }) =>
     context.isCollapsed ? 'var(--space-16)' : 'var(--space-72)'};
@@ -19,15 +19,15 @@ export const SideNav = styled.nav<SideNavProps>`
   border-right: solid 1px var(--color-grey-100);
   padding: var(--space-4) var(--space-3);
   box-shadow: none;
+  transform: translateX(
+    ${({ context }) => (context.isHidden ? '-100%' : '0%')}
+  );
 
   @media (max-width: ${breakpoints.medium}px) {
     position: absolute;
     bottom: 0;
     top: 0;
     left: 0;
-  }
-
-  @media (max-width: ${breakpoints.medium}px) {
     box-shadow: ${({ context }) =>
       context.isCollapsed ? 'none' : 'var(--shadows-2xl)'};
   }

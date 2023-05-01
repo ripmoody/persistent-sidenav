@@ -21,10 +21,6 @@ export type NavigationState = {
      * When the screen is below 500px, the navigation is hidden and accessible via the top nav.
      */
     isHidden: boolean
-    /**
-     * If the width is less than 900px, the navigation should overlay the screen on expand
-     */
-    isOverlay: boolean
   }
 }
 
@@ -43,7 +39,6 @@ export const initialState: NavigationState = {
     isCollapsed: false,
     isForceCollapsed: false,
     isHidden: false,
-    isOverlay: false,
   },
 }
 

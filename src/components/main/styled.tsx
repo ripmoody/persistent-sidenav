@@ -5,7 +5,6 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   flex: 1;
-  transition: margin-left 200ms linear;
 
   @media (max-width: ${breakpoints.medium}px) {
     margin-left: var(--space-16);
