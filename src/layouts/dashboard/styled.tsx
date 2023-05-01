@@ -14,14 +14,9 @@ export const DashboardPage = styled.div`
 `
 
 export const DashboardSideNavPlaceholder = styled.div`
-  width: var(--space-16);
-  transition: width 200ms linear;
+  width: 0;
 
-  @media (min-width: ${breakpoints.medium}px) {
-    width: 0;
-  }
-
-  @media (max-width: ${breakpoints.small}px) {
-    width: 0;
+  @media (min-width: ${breakpoints.small}px) and (max-width: ${breakpoints.medium}px) {
+    width: var(--space-16);
   }
 `
