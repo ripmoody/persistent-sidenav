@@ -4,7 +4,7 @@ import { useNavigation } from '@/providers/navigation'
 import { useEffect, useMemo } from 'react'
 import { NavItem } from '../nav-item'
 
-const breakpoints = {
+export const breakpoints = {
   small: 500,
   medium: 900,
   large: 1200,
@@ -63,7 +63,7 @@ export const ExpandCollapseNavItem = () => {
     }
 
     if (width < breakpoints.large && state.context.isCollapsed) {
-      // TODO: this should overlay the screen as a panel
+      // TODO: this should overlay the screen as a panel not inline
       dispatch({ type: 'set-collapsed', payload: false })
       return
     }

@@ -18,7 +18,6 @@ export const NavItem = styled.li<NavItemProps>`
       left: 4px;
       bottom: 4px;
       border-radius: var(--radius-base);
-      transition: all 0.2s ease-in-out;
       width: ${({ isCollapsed }) => (isCollapsed ? '0' : 'var(--space-1)')};
       background-color: ${({ isCollapsed }) =>
         isCollapsed ? 'transparent' : 'var(--color-yellow-400)'};
@@ -35,8 +34,6 @@ export const NavItemButton = styled.button<NavItemProps>`
   display: flex;
   align-items: center;
   padding: var(--space-2);
-  padding-left: ${({ isCollapsed }) =>
-    isCollapsed ? 'var(--space-2)' : 'var(--space-5)'};
   width: 100%;
   border: none;
   background: none;
@@ -45,9 +42,17 @@ export const NavItemButton = styled.button<NavItemProps>`
   font-size: var(--type-size-md);
   border-radius: var(--radius-base);
   line-height: 1;
+  padding-left: ${({ isCollapsed }) =>
+    isCollapsed ? 'var(--space-2)' : 'var(--space-5)'};
 
   &:hover {
     background-color: var(--color-grey-50);
+  }
+
+  & > svg {
+    // Stops a flash of the icon resizing when being expanded
+    min-width: var(--space-5);
+    min-height: var(--space-5);
   }
 `
 
