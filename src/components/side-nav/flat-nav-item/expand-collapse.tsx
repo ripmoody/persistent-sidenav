@@ -2,7 +2,7 @@ import { ArrowLeft, ArrowRight } from '@/components/icons'
 import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
 import { useEffect, useMemo } from 'react'
-import { FlatNavItem } from '../flat-nav-item'
+import * as S from './styled'
 
 export const breakpoints = {
   small: 500,
@@ -62,8 +62,13 @@ export const ExpandCollapseNavItem = () => {
       return
     }
 
+    if (width < breakpoints.small && !state.context.isCollapsed) {
+      dispatch({ type: 'set-hidden', payload: true })
+      dispatch({ type: 'set-collapsed', payload: false })
+      return
+    }
+
     if (width < breakpoints.large && state.context.isCollapsed) {
-      // TODO: this should overlay the screen as a panel not inline
       dispatch({ type: 'set-collapsed', payload: false })
       return
     }
@@ -74,7 +79,7 @@ export const ExpandCollapseNavItem = () => {
     }
   }
 
-  const icon = useMemo(() => {
+  const Icon = useMemo(() => {
     return state.context.isCollapsed ? ArrowRight : ArrowLeft
   }, [state.context.isCollapsed])
 
@@ -82,5 +87,15 @@ export const ExpandCollapseNavItem = () => {
     return state.context.isCollapsed ? 'Expand' : 'Collapse'
   }, [state.context.isCollapsed])
 
-  return <FlatNavItem label={label} icon={icon} onClick={handleClick} />
+  return (
+    <S.NavItem isCollapsed={state.context.isCollapsed}>
+      <S.NavItemButton
+        onClick={handleClick}
+        isCollapsed={state.context.isCollapsed}
+      >
+        <Icon />
+        {!state.context.isCollapsed && <S.NavItemLabel>{label}</S.NavItemLabel>}
+      </S.NavItemButton>
+    </S.NavItem>
+  )
 }

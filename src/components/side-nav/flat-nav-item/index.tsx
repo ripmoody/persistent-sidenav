@@ -1,6 +1,8 @@
+import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
 import { useRouter } from 'next/router'
 import { MouseEvent, useMemo } from 'react'
+import { breakpoints } from './expand-collapse'
 import * as S from './styled'
 
 /**
@@ -8,20 +10,30 @@ import * as S from './styled'
  * Primarily used for the top level nav items in the header and footer
  */
 export const FlatNavItem = (props: FlatNavItem) => {
+  const width = useWindowWidth()
   const { path, label, onClick, icon: Icon } = props
   const router = useRouter()
 
   const {
     state: { context },
+    dispatch,
   } = useNavigation()
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
     if (onClick) {
-      return onClick(event)
+      onClick(event)
     }
 
     if (path) {
-      return router.push(path)
+      router.push(path)
+    }
+
+    if (width < breakpoints.medium) {
+      dispatch({ type: 'set-collapsed', payload: true })
+    }
+
+    if (width < breakpoints.small) {
+      dispatch({ type: 'set-hidden', payload: true })
     }
   }
 

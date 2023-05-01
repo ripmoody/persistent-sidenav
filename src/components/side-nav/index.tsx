@@ -1,6 +1,6 @@
 import { useNavigation } from '@/providers/navigation'
-import { ExpandCollapseNavItem } from './expand-collapse-nav-item'
 import { FlatNavItem } from './flat-nav-item'
+import { ExpandCollapseNavItem } from './flat-nav-item/expand-collapse'
 import * as S from './styled'
 
 export const SideNav = () => {

@@ -1,11 +1,11 @@
 import styled from '@emotion/styled'
-import { breakpoints } from '../side-nav/expand-collapse-nav-item'
+import { breakpoints } from '../side-nav/flat-nav-item/expand-collapse'
 
 export const Main = styled.main`
   display: flex;
   flex-direction: column;
   flex: 1;
-  transition: margin 200ms ease-out;
+  transition: margin-left 200ms linear;
 
   @media (max-width: ${breakpoints.medium}px) {
     margin-left: var(--space-16);

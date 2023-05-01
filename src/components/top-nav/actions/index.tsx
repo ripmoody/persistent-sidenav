@@ -3,12 +3,12 @@ import * as S from './styled'
 
 export const Actions = () => (
   <S.Actions>
-    <S.NavIconButton>
+    <S.NavActionsIconButton>
       <Help />
-    </S.NavIconButton>
-    <S.NavIconButton>
+    </S.NavActionsIconButton>
+    <S.NavActionsIconButton>
       <Accessibility />
-    </S.NavIconButton>
+    </S.NavActionsIconButton>
     <S.VerticalRule />
     <S.ProfileButton>
       <S.ProfileImage src="https://cdn.rippling.com/static/ui-kit/examples/profile.jpeg" />

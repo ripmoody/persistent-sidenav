@@ -1,4 +1,4 @@
-import { breakpoints } from '@/components/side-nav/expand-collapse-nav-item'
+import { breakpoints } from '@/components/side-nav/flat-nav-item/expand-collapse'
 import { throttle } from 'lodash'
 import { useEffect, useState } from 'react'
 

@@ -1,12 +1,12 @@
 import { Actions } from './actions'
-import { HomeButton } from './logo'
+import { RootButton } from './root-button'
 import { SearchInput } from './search'
 import * as S from './styled'
 
 export const TopNav = () => {
   return (
     <S.TopNav>
-      <HomeButton />
+      <RootButton />
       <SearchInput />
       <Actions />
     </S.TopNav>

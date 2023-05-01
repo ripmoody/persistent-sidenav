@@ -1,6 +1,6 @@
 import type { NavigationState } from '@/providers/navigation/navigation-reducer'
 import styled from '@emotion/styled'
-import { breakpoints } from './expand-collapse-nav-item'
+import { breakpoints } from './flat-nav-item/expand-collapse'
 
 type SideNavProps = {
   context: NavigationState['context']
@@ -10,7 +10,7 @@ type SideNavProps = {
  * The side nav component container
  */
 export const SideNav = styled.nav<SideNavProps>`
-  transition: all 200ms ease-in;
+  transition: all 200ms linear;
   display: ${({ context }) => (context.isHidden ? 'none' : 'flex')};
   flex-direction: column;
   width: ${({ context }) =>

@@ -1,3 +1,4 @@
+import { breakpoints } from '@/components/side-nav/flat-nav-item/expand-collapse'
 import styled from '@emotion/styled'
 
 export const Actions = styled.div`
@@ -18,7 +19,7 @@ export const ProfileButton = styled.button`
   gap: var(--space-2);
   flex-shrink: 0;
 
-  @media (max-width: 500px) {
+  @media (max-width: ${breakpoints.small}px) {
     gap: var(--space-1);
   }
 
@@ -42,7 +43,7 @@ export const ProfileInfo = styled.div`
   font-size: var(--type-size-sm);
   gap: var(--space-0_5);
 
-  @media (max-width: 500px) {
+  @media (max-width: ${breakpoints.small}px) {
     display: none;
   }
 `
@@ -70,8 +71,10 @@ export const NavIconButton = styled.button`
   &:hover {
     background: rgba(255, 255, 255, 0.05);
   }
+`
 
-  @media (max-width: 600px) {
+export const NavActionsIconButton = styled(NavIconButton)`
+  @media (max-width: ${breakpoints.medium}px) {
     display: none;
   }
 `

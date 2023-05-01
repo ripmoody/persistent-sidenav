@@ -49,8 +49,8 @@ export const NavItemButton = styled.button<NavItemProps>`
     background-color: var(--color-grey-50);
   }
 
+  // Stops a flash of the icon resizing when being expanded
   & > svg {
-    // Stops a flash of the icon resizing when being expanded
     min-width: var(--space-5);
     min-height: var(--space-5);
   }
