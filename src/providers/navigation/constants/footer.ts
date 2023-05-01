@@ -1,6 +1,6 @@
 import { AppShop, Help } from '@/components/icons'
 
-export const footerNavItems: NavItem[] = [
+export const footerNavItems: FlatNavItem[] = [
   {
     label: 'App Shop',
     icon: AppShop,

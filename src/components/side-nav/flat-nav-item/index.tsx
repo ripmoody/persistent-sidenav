@@ -3,7 +3,11 @@ import { useRouter } from 'next/router'
 import { MouseEvent, useMemo } from 'react'
 import * as S from './styled'
 
-export const NavItem = (props: NavItem) => {
+/**
+ * A root level nav item that will not have any children or expand and collapse
+ * Primarily used for the top level nav items in the header and footer
+ */
+export const FlatNavItem = (props: FlatNavItem) => {
   const { path, label, onClick, icon: Icon } = props
   const router = useRouter()
 

@@ -16,7 +16,7 @@ declare global {
   }
 
   /**
-   * The root config for a nav item that must be supplied
+   * The root level navigation item that must be supplied
    */
   type NavItem = {
     /**
@@ -27,6 +27,12 @@ declare global {
      * The icon for the nav item
      */
     icon: ForwardRefExoticComponent
+  }
+
+  /**
+   * The configuration for a navigation item that doesn't have any children.
+   */
+  type FlatNavItem = NavItem & {
     /**
      * The relative path for the nav item
      */
@@ -40,5 +46,5 @@ declare global {
   /**
    * A sub navigation item that has a link instead of child items
    */
-  type SubNavItem = NavItem & {}
+  type SubNavItem = FlatNavItem & {}
 }

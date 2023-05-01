@@ -2,7 +2,7 @@ import { ArrowLeft, ArrowRight } from '@/components/icons'
 import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
 import { useEffect, useMemo } from 'react'
-import { NavItem } from '../nav-item'
+import { FlatNavItem } from '../flat-nav-item'
 
 export const breakpoints = {
   small: 500,
@@ -82,5 +82,5 @@ export const ExpandCollapseNavItem = () => {
     return state.context.isCollapsed ? 'Expand' : 'Collapse'
   }, [state.context.isCollapsed])
 
-  return <NavItem label={label} icon={icon} onClick={handleClick} />
+  return <FlatNavItem label={label} icon={icon} onClick={handleClick} />
 }

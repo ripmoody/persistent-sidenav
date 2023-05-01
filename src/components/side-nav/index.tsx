@@ -1,6 +1,6 @@
 import { useNavigation } from '@/providers/navigation'
 import { ExpandCollapseNavItem } from './expand-collapse-nav-item'
-import { NavItem } from './nav-item'
+import { FlatNavItem } from './flat-nav-item'
 import * as S from './styled'
 
 export const SideNav = () => {
@@ -13,7 +13,7 @@ export const SideNav = () => {
       <S.SideNavHeader>
         <S.SideNavList>
           {state.items.header.map((item) => (
-            <NavItem
+            <FlatNavItem
               key={item.label}
               icon={item.icon}
               path={item.path}
@@ -28,7 +28,7 @@ export const SideNav = () => {
       <S.SideNavFooter>
         <S.SideNavList>
           {state.items.footer.map((item) => (
-            <NavItem
+            <FlatNavItem
               key={item.label}
               icon={item.icon}
               path={item.path}

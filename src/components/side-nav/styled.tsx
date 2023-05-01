@@ -1,5 +1,6 @@
 import type { NavigationState } from '@/providers/navigation/navigation-reducer'
 import styled from '@emotion/styled'
+import { breakpoints } from './expand-collapse-nav-item'
 
 type SideNavProps = {
   context: NavigationState['context']
@@ -9,7 +10,7 @@ type SideNavProps = {
  * The side nav component container
  */
 export const SideNav = styled.nav<SideNavProps>`
-  transition: width 0.2s ease-in-out;
+  transition: all 200ms ease-in;
   display: ${({ context }) => (context.isHidden ? 'none' : 'flex')};
   flex-direction: column;
   width: ${({ context }) =>
@@ -17,6 +18,19 @@ export const SideNav = styled.nav<SideNavProps>`
   background-color: white;
   border-right: solid 1px var(--color-grey-100);
   padding: var(--space-4) var(--space-3);
+  box-shadow: none;
+
+  @media (max-width: ${breakpoints.medium}px) {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+  }
+
+  @media (max-width: ${breakpoints.medium}px) {
+    box-shadow: ${({ context }) =>
+      context.isCollapsed ? 'none' : 'var(--shadows-2xl)'};
+  }
 `
 
 /**

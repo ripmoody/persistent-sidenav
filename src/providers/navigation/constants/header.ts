@@ -1,6 +1,6 @@
 import { Hire, Home, Offboard } from '@/components/icons'
 
-export const headerNavItems: NavItem[] = [
+export const headerNavItems: FlatNavItem[] = [
   {
     label: 'Home',
     icon: Home,
