@@ -35,6 +35,16 @@ export const mainNavItems: ExpandableNavItem[] = [
         icon: ActivityMonitor,
         path: '/tools/activity-log',
       },
+      {
+        label: 'Activity Log',
+        icon: ActivityMonitor,
+        path: '/tools/activity-log-1',
+      },
+      {
+        label: 'Activity Log',
+        icon: ActivityMonitor,
+        path: '/tools/activity-log-2',
+      },
     ],
     isExpanded: false,
   },
