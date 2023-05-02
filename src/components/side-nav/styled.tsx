@@ -22,6 +22,7 @@ export const SideNav = styled.nav<SideNavProps>`
   transform: translateX(
     ${({ context }) => (context.isHidden ? '-100%' : '0%')}
   );
+  overflow-x: hidden; // Hides icons on collapse and expand. A little hacky cause transitions don't match up.
 
   @media (max-width: ${breakpoints.md}px) {
     position: absolute;
@@ -55,6 +56,8 @@ export const SideNavFooter = styled.div`
  */
 export const SideNavMain = styled.div`
   flex: 1;
+  padding: var(--space-4) 0;
+  overflow-y: auto;
 `
 
 /**

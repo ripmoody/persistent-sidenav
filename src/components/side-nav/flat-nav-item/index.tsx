@@ -45,18 +45,21 @@ export const FlatNavItem = (props: NavItem) => {
   }, [router.asPath, path])
 
   return (
-    <S.NavItem aria-current={isAriaCurrent} isCollapsed={context.isCollapsed}>
+    <S.FlatNavItem
+      aria-current={isAriaCurrent}
+      isCollapsed={context.isCollapsed}
+    >
       <Tooltip label={label} isDisabled={!context.isCollapsed}>
-        <S.NavItemButton
+        <S.FlatNavItemButton
           onClick={handleClick}
           isCollapsed={context.isCollapsed}
         >
           <Icon />
-          <S.NavItemLabel isCollapsed={context.isCollapsed}>
+          <S.FlatNavItemLabel isCollapsed={context.isCollapsed}>
             {label}
-          </S.NavItemLabel>
-        </S.NavItemButton>
+          </S.FlatNavItemLabel>
+        </S.FlatNavItemButton>
       </Tooltip>
-    </S.NavItem>
+    </S.FlatNavItem>
   )
 }

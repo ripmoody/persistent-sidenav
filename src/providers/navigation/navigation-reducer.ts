@@ -1,10 +1,13 @@
 import { footerNavItems } from './constants/footer'
 import { headerNavItems } from './constants/header'
+import type { ExpandableNavItem } from './constants/main'
+import { mainNavItems } from './constants/main'
 
 export type NavigationState = {
   items: {
     header: NavItem[]
     footer: NavItem[]
+    main: ExpandableNavItem[]
   }
   context: {
     /**
@@ -34,6 +37,7 @@ export const initialState: NavigationState = {
   items: {
     header: headerNavItems,
     footer: footerNavItems,
+    main: mainNavItems,
   },
   context: {
     isCollapsed: false,

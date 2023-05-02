@@ -1,48 +1,56 @@
-import { Home } from '@/components/icons'
+import {
+  Apps,
+  Briefcase,
+  Device,
+  Dollar,
+  Heart,
+  Settings,
+  Users,
+} from '@/components/icons'
 
 /**
  * The configuration for a navigation item that has expandable content that
  * contains nav items with paths. Items in this list will be rendered as a
  * accordion.
  */
-type ExpandableNavItem = NavItem & {
+export type ExpandableNavItem = NavItem & {
   items: NavItem[]
 }
 
 export const mainNavItems: ExpandableNavItem[] = [
   {
     label: 'Tools',
-    icon: Home,
+    icon: Briefcase,
     items: [],
   },
   {
     label: 'HR Management',
-    icon: Home,
+    icon: Users,
     items: [],
   },
   {
     label: 'Insurance & Benefits',
-    icon: Home,
+    icon: Heart,
     items: [],
   },
   {
     label: 'IT Management',
-    icon: Home,
+    icon: Device,
     items: [],
   },
   {
     label: 'Finance',
-    icon: Home,
+    icon: Dollar,
     items: [],
   },
   {
     label: 'Third-party apps',
-    icon: Home,
+    icon: Apps,
     items: [],
   },
   {
     label: 'Settings',
-    icon: Home,
+    icon: Settings,
     items: [],
   },
 ]

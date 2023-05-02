@@ -1,36 +1,16 @@
+import { ChevronRight } from '@/components/icons'
 import styled from '@emotion/styled'
-import Link from 'next/link'
 
-type NavItemProps = {
+type ExpandableNavItemProps = {
   isCollapsed: boolean
 }
 
-export const NavItem = styled.li<NavItemProps>`
+export const ExpandableNavItem = styled.li<ExpandableNavItemProps>`
   position: relative;
-
-  &[aria-current='page'] button {
-    background-color: var(--color-grey-50);
-
-    &::before {
-      content: '';
-      position: absolute;
-      top: 4px;
-      left: 4px;
-      bottom: 4px;
-      border-radius: var(--radius-base);
-      width: ${({ isCollapsed }) => (isCollapsed ? '0' : 'var(--space-1)')};
-      background-color: ${({ isCollapsed }) =>
-        isCollapsed ? 'transparent' : 'var(--color-yellow-400)'};
-    }
-  }
+  // TODO: If nav item is collapsed and a child is active, show the nav item as active
 `
 
-export const NavItemLink = styled(Link)`
-  color: inherit;
-  text-decoration: none;
-`
-
-export const NavItemButton = styled.button<NavItemProps>`
+export const ExpandableNavItemButton = styled.button<ExpandableNavItemProps>`
   display: flex;
   align-items: center;
   padding: var(--space-2);
@@ -56,8 +36,22 @@ export const NavItemButton = styled.button<NavItemProps>`
   }
 `
 
-export const NavItemLabel = styled.span<NavItemProps>`
+export const ExpandableNavItemLabel = styled.span<ExpandableNavItemProps>`
   line-height: 1;
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
-  white-space: nowrap; // This is worrisome
+  white-space: nowrap; // This is worrisome. Stops the text from stacking on expand.
+`
+
+type ExpandableNavItemChevronProps = ExpandableNavItemProps & {
+  isNavItemExpanded: boolean
+}
+
+export const ExpandableNavItemChevron = styled(
+  ChevronRight,
+)<ExpandableNavItemChevronProps>`
+  margin-left: auto;
+  display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
+  transition: transform 100ms ease-in-out;
+  transform: ${({ isNavItemExpanded }) =>
+    isNavItemExpanded ? 'rotate(90deg)' : 'rotate(0deg)'};
 `

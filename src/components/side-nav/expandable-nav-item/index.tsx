@@ -1,63 +1,46 @@
-import { Tooltip } from '@/components/tooltip'
 import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
-import { breakpoints } from '@/providers/navigation/constants/breakpoints'
 import { useRouter } from 'next/router'
-import { MouseEvent, useMemo } from 'react'
-
+import { MouseEvent, useState } from 'react'
 import * as S from './styled'
 
 /**
  * A root level nav item that will not have any children or expand and collapse
  * Primarily used for the top level nav items in the header and footer
  */
-export const FlatNavItem = (props: NavItem) => {
-  const width = useWindowWidth()
+export const ExpandableNavItem = (props: NavItem) => {
   const { path, label, onClick, icon: Icon } = props
+
+  const [isNavItemExpanded, setIsNavItemExpanded] = useState(false)
+  const width = useWindowWidth()
   const router = useRouter()
 
   const {
-    state: { context },
+    state: {
+      context: { isCollapsed },
+    },
     dispatch,
   } = useNavigation()
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    if (onClick) {
-      onClick(event)
-    }
-
-    if (path) {
-      router.push(path)
-    }
-
-    if (width < breakpoints.md) {
-      dispatch({ type: 'set-collapsed', payload: true })
-    }
-
-    if (width < breakpoints.sm) {
-      dispatch({ type: 'set-hidden', payload: true })
-    }
+    setIsNavItemExpanded(!isNavItemExpanded)
   }
 
-  const isAriaCurrent = useMemo(() => {
-    if (router.asPath === path) {
-      return 'page'
-    }
-  }, [router.asPath, path])
-
   return (
-    <S.NavItem aria-current={isAriaCurrent} isCollapsed={context.isCollapsed}>
-      <Tooltip label={label} isDisabled={!context.isCollapsed}>
-        <S.NavItemButton
-          onClick={handleClick}
-          isCollapsed={context.isCollapsed}
-        >
-          <Icon />
-          <S.NavItemLabel isCollapsed={context.isCollapsed}>
-            {label}
-          </S.NavItemLabel>
-        </S.NavItemButton>
-      </Tooltip>
-    </S.NavItem>
+    <S.ExpandableNavItem isCollapsed={isCollapsed}>
+      <S.ExpandableNavItemButton
+        onClick={handleClick}
+        isCollapsed={isCollapsed}
+      >
+        <Icon />
+        <S.ExpandableNavItemLabel isCollapsed={isCollapsed}>
+          {label}
+        </S.ExpandableNavItemLabel>
+        <S.ExpandableNavItemChevron
+          isCollapsed={isCollapsed}
+          isNavItemExpanded={isNavItemExpanded}
+        />
+      </S.ExpandableNavItemButton>
+    </S.ExpandableNavItem>
   )
 }

@@ -88,17 +88,17 @@ export const ExpandCollapseNavItem = () => {
 
   return (
     <Tooltip label={label} isDisabled={!context.isCollapsed}>
-      <S.NavItem isCollapsed={context.isCollapsed}>
-        <S.NavItemButton
+      <S.FlatNavItem isCollapsed={context.isCollapsed}>
+        <S.FlatNavItemButton
           onClick={handleClick}
           isCollapsed={context.isCollapsed}
         >
           <Icon />
-          <S.NavItemLabel isCollapsed={context.isCollapsed}>
+          <S.FlatNavItemLabel isCollapsed={context.isCollapsed}>
             {label}
-          </S.NavItemLabel>
-        </S.NavItemButton>
-      </S.NavItem>
+          </S.FlatNavItemLabel>
+        </S.FlatNavItemButton>
+      </S.FlatNavItem>
     </Tooltip>
   )
 }

@@ -5,7 +5,7 @@ type NavItemProps = {
   isCollapsed: boolean
 }
 
-export const NavItem = styled.li<NavItemProps>`
+export const FlatNavItem = styled.li<NavItemProps>`
   position: relative;
 
   &[aria-current='page'] button {
@@ -25,12 +25,12 @@ export const NavItem = styled.li<NavItemProps>`
   }
 `
 
-export const NavItemLink = styled(Link)`
+export const FlatNavItemLink = styled(Link)`
   color: inherit;
   text-decoration: none;
 `
 
-export const NavItemButton = styled.button<NavItemProps>`
+export const FlatNavItemButton = styled.button<NavItemProps>`
   display: flex;
   align-items: center;
   padding: var(--space-2);
@@ -56,7 +56,7 @@ export const NavItemButton = styled.button<NavItemProps>`
   }
 `
 
-export const NavItemLabel = styled.span<NavItemProps>`
+export const FlatNavItemLabel = styled.span<NavItemProps>`
   line-height: 1;
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
   white-space: nowrap; // This is worrisome
