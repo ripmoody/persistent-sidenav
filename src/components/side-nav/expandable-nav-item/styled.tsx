@@ -94,8 +94,12 @@ export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
     if (isCollapsed || !isNavItemExpanded) {
       return '0'
     }
-
     return '700px'
   }};
   transition: max-height 300ms ease-in-out;
+  font-size: 15px; // booooooo, but the type size is too big for the subnav
+
+  & > li:last-of-type {
+    margin-bottom: var(--space-3);
+  }
 `

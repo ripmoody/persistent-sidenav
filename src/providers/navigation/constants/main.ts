@@ -1,12 +1,18 @@
 import {
   ActivityMonitor,
+  Approvals,
   Apps,
   Briefcase,
   Device,
+  Documents,
   Dollar,
   Heart,
+  Recipes,
+  Reports,
   Settings,
+  Tasks,
   Users,
+  WorkflowAutomator,
 } from '@/components/icons'
 
 /**
@@ -36,14 +42,34 @@ export const mainNavItems: ExpandableNavItem[] = [
         path: '/tools/activity-log',
       },
       {
-        label: 'Activity Log',
-        icon: ActivityMonitor,
-        path: '/tools/activity-log-1',
+        label: 'Approvals',
+        icon: Approvals,
+        path: '/tools/approvals',
       },
       {
-        label: 'Activity Log',
-        icon: ActivityMonitor,
-        path: '/tools/activity-log-2',
+        label: 'Custom Workflow Builder',
+        icon: WorkflowAutomator,
+        path: '/tools/workflow-automator',
+      },
+      {
+        label: 'Documents',
+        icon: Documents,
+        path: '/tools/documents',
+      },
+      {
+        label: 'Recipes',
+        icon: Recipes,
+        path: '/tools/recipes',
+      },
+      {
+        label: 'Reports',
+        icon: Reports,
+        path: '/tools/reports',
+      },
+      {
+        label: 'Tasks',
+        icon: Tasks,
+        path: '/tools/tasks',
       },
     ],
     isExpanded: false,
@@ -51,7 +77,58 @@ export const mainNavItems: ExpandableNavItem[] = [
   {
     label: 'HR Management',
     icon: Users,
-    items: [],
+    items: [
+      {
+        label: 'Leave Management',
+        icon: Tasks,
+        path: '/hr/leave-management',
+      },
+      {
+        label: 'Time Off',
+        icon: Tasks,
+        path: '/hr/time-off',
+      },
+      {
+        label: 'People',
+        icon: Tasks,
+        path: '/hr/people',
+      },
+      {
+        label: 'Applicant Tracking',
+        icon: Tasks,
+        path: '/hr/applicant-tracking',
+      },
+      {
+        label: 'Time & Attendance',
+        icon: Tasks,
+        path: '/hr/time-attendance',
+      },
+      {
+        label: 'Anniversaries',
+        icon: Tasks,
+        path: '/hr/anniversaries',
+      },
+      {
+        label: 'Learning Management',
+        icon: Tasks,
+        path: '/hr/learning-management',
+      },
+      {
+        label: 'Recruiting',
+        icon: Tasks,
+        path: '/hr/recruiting',
+      },
+      {
+        label: 'Employment Authorization',
+        icon: Tasks,
+        path: '/hr/emplyment-authorization',
+      },
+      {
+        label: 'Discover more HR apps',
+        icon: Apps,
+        path: '/hr/discover-more-hr-apps',
+      },
+    ],
     isExpanded: false,
   },
   {

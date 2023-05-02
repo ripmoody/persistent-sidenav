@@ -47,9 +47,9 @@ export const FlatNavItemButton = styled.button<NavItemProps>`
   background: none;
   color: var(--color-text);
   gap: var(--space-3);
-  font-size: var(--type-size-md);
   border-radius: var(--radius-base);
   line-height: 1;
+  font-size: inherit;
   padding-left: ${({ isCollapsed, isSubNavItem }) => {
     if (!isCollapsed && isSubNavItem) {
       return 'var(--space-8)'
@@ -70,9 +70,10 @@ export const FlatNavItemIcon = styled.span`
 `
 
 export const FlatNavItemLabel = styled.span<NavItemProps>`
-  line-height: 1;
+  font-size: inherit;
+  line-height: 1.25;
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
-  white-space: nowrap; // This is worrisome
+  text-align: left;
 `
 
 export const ExpandableArrowIcon = styled(ArrowRight)<NavItemProps>`

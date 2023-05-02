@@ -14,7 +14,7 @@ export const SideNav = styled.nav<SideNavProps>`
   display: flex;
   flex-direction: column;
   width: ${({ context }) =>
-    context.isCollapsed ? 'var(--space-16)' : 'var(--space-72)'};
+    context.isCollapsed ? 'var(--space-16)' : 'var(--space-80)'};
   background-color: white;
   border-right: solid 1px var(--color-grey-100);
   padding: var(--space-4) var(--space-3);
@@ -70,4 +70,5 @@ export const SideNavList = styled.ul`
   display: flex;
   flex-direction: column;
   gap: var(--space-0_5);
+  font-size: var(--type-size-md);
 `
