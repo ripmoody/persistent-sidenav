@@ -1,5 +1,5 @@
-import { breakpoints } from '@/components/side-nav/flat-nav-item/expand-collapse'
 import { useWindowWidth } from '@/hooks/use-window-width'
+import { breakpoints } from '@/providers/navigation/constants/breakpoints'
 import { RipplingLogo } from './logo'
 import { SideNavButton } from './sidenav-button'
 import { HomeLink } from './styled'

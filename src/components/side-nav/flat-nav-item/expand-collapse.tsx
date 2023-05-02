@@ -2,14 +2,9 @@ import { ArrowLeft, ArrowRight } from '@/components/icons'
 import { Tooltip } from '@/components/tooltip'
 import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
+import { breakpoints } from '@/providers/navigation/constants/breakpoints'
 import { useEffect, useMemo } from 'react'
 import * as S from './styled'
-
-export const breakpoints = {
-  small: 500,
-  medium: 900,
-  large: 1200,
-}
 
 export const ExpandCollapseNavItem = () => {
   const width = useWindowWidth()

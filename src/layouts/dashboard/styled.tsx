@@ -1,4 +1,4 @@
-import { breakpoints } from '@/components/side-nav/flat-nav-item/expand-collapse'
+import { breakpoints } from '@/providers/navigation/constants/breakpoints'
 import styled from '@emotion/styled'
 import { Fragment } from 'react'
 
