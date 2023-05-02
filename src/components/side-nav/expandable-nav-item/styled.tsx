@@ -1,12 +1,15 @@
 import { ChevronRight } from '@/components/icons'
 import { NavigationState } from '@/providers/navigation/navigation-reducer'
 import styled from '@emotion/styled'
+import { Fragment } from 'react'
 
 type ExpandableNavItemProps = {
   isCollapsed: NavigationState['context']['isCollapsed']
   hasActiveChild?: boolean
   isNavItemExpanded?: boolean
 }
+
+export const ExpandableNavItemGroup = Fragment
 
 export const ExpandableNavItem = styled.li<ExpandableNavItemProps>`
   position: relative;

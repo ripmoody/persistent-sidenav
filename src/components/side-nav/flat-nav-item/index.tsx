@@ -9,12 +9,13 @@ import * as S from './styled'
  * Primarily used for the top level nav items in the header and footer
  */
 export const FlatNavItem = (props: NavItem) => {
-  const { path, label, icon: Icon } = props
+  const { path, label, icon: Icon, isSubNavItem } = props
   const router = useRouter()
 
   const {
-    state: { context },
-    dispatch,
+    state: {
+      context: { isCollapsed },
+    },
   } = useNavigation()
 
   const handleClick = () => {
@@ -30,20 +31,17 @@ export const FlatNavItem = (props: NavItem) => {
   }, [router.asPath, path])
 
   return (
-    <S.FlatNavItem
-      aria-current={isAriaCurrent}
-      isCollapsed={context.isCollapsed}
-    >
-      <Tooltip label={label} isDisabled={!context.isCollapsed}>
+    <S.FlatNavItem aria-current={isAriaCurrent} isCollapsed={isCollapsed}>
+      <Tooltip label={label} isDisabled={!isCollapsed}>
         <S.FlatNavItemButton
           onClick={handleClick}
-          isCollapsed={context.isCollapsed}
-          isSubNavItem={props.isSubNavItem}
+          isCollapsed={isCollapsed}
+          isSubNavItem={isSubNavItem}
         >
           <S.FlatNavItemIcon>
             <Icon />
           </S.FlatNavItemIcon>
-          <S.FlatNavItemLabel isCollapsed={context.isCollapsed}>
+          <S.FlatNavItemLabel isCollapsed={isCollapsed}>
             {label}
           </S.FlatNavItemLabel>
         </S.FlatNavItemButton>

@@ -79,9 +79,10 @@ export const ExpandCollapseNavItem = () => {
     }
   }
 
-  const label = useMemo(() => {
-    return isCollapsed ? 'Expand' : 'Collapse'
-  }, [isCollapsed])
+  const label = useMemo(
+    () => (isCollapsed ? 'Expand' : 'Collapse'),
+    [isCollapsed],
+  )
 
   return (
     <Tooltip label={label} isDisabled={!isCollapsed}>

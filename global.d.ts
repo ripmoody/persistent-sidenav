@@ -29,7 +29,8 @@ declare global {
      */
     path?: string
     /**
-     * Whether or not the items is a subnav item.
+     * Whether or not the items is a subnav item. The only thing this effects is the padding to
+     * the left of the item to indent.
      */
     isSubNavItem?: boolean
   }

@@ -19,12 +19,13 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
     dispatch({ type: 'toggle-item-expanded', payload: props })
   }
 
-  const hasActiveChild = useMemo(() => {
-    return props.items.some((item) => item.path === router.asPath)
-  }, [router.asPath, props.items])
+  const hasActiveChild = useMemo(
+    () => props.items.some((item) => item.path === router.asPath),
+    [router.asPath, props.items],
+  )
 
   return (
-    <>
+    <S.ExpandableNavItemGroup>
       <S.ExpandableNavItem
         isCollapsed={state.context.isCollapsed}
         isNavItemExpanded={props.isExpanded}
@@ -56,6 +57,6 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
           <FlatNavItem key={item.path} {...item} isSubNavItem />
         ))}
       </S.ExpandableSubNavList>
-    </>
+    </S.ExpandableNavItemGroup>
   )
 }
