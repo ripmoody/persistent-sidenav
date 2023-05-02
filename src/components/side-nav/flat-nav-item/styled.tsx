@@ -48,12 +48,11 @@ export const FlatNavItemButton = styled.button<NavItemProps>`
   &:hover {
     background-color: var(--color-grey-50);
   }
+`
 
-  // Stops a flash of the icon resizing when being expanded
-  & > svg {
-    min-width: var(--space-5);
-    min-height: var(--space-5);
-  }
+export const FlatNavItemIcon = styled.span`
+  min-width: var(--space-5);
+  min-height: var(--space-5);
 `
 
 export const FlatNavItemLabel = styled.span<NavItemProps>`

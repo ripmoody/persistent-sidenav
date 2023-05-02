@@ -14,6 +14,6 @@ export const headerNavItems: NavItem[] = [
   {
     label: 'Offboard',
     icon: Offboard,
-    path: '/offboard/test',
+    path: '/offboard',
   },
 ]

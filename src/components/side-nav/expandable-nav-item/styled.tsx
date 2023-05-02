@@ -28,12 +28,11 @@ export const ExpandableNavItemButton = styled.button<ExpandableNavItemProps>`
   &:hover {
     background-color: var(--color-grey-50);
   }
+`
 
-  // Stops a flash of the icon resizing when being expanded
-  & > svg {
-    min-width: var(--space-5);
-    min-height: var(--space-5);
-  }
+export const ExpandableNavItemIcon = styled.span`
+  min-width: var(--space-5);
+  min-height: var(--space-5);
 `
 
 export const ExpandableNavItemLabel = styled.span<ExpandableNavItemProps>`
@@ -54,4 +53,5 @@ export const ExpandableNavItemChevron = styled(
   transition: transform 100ms ease-in-out;
   transform: ${({ isNavItemExpanded }) =>
     isNavItemExpanded ? 'rotate(90deg)' : 'rotate(0deg)'};
+  color: var(--color-grey-600);
 `

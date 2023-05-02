@@ -32,7 +32,9 @@ export const ExpandableNavItem = (props: NavItem) => {
         onClick={handleClick}
         isCollapsed={isCollapsed}
       >
-        <Icon />
+        <S.ExpandableNavItemIcon>
+          <Icon />
+        </S.ExpandableNavItemIcon>
         <S.ExpandableNavItemLabel isCollapsed={isCollapsed}>
           {label}
         </S.ExpandableNavItemLabel>

@@ -54,7 +54,9 @@ export const FlatNavItem = (props: NavItem) => {
           onClick={handleClick}
           isCollapsed={context.isCollapsed}
         >
-          <Icon />
+          <S.FlatNavItemIcon>
+            <Icon />
+          </S.FlatNavItemIcon>
           <S.FlatNavItemLabel isCollapsed={context.isCollapsed}>
             {label}
           </S.FlatNavItemLabel>
