@@ -1,3 +1,4 @@
+import { ArrowRight } from '@/components/icons'
 import styled from '@emotion/styled'
 import Link from 'next/link'
 
@@ -59,4 +60,12 @@ export const FlatNavItemLabel = styled.span<NavItemProps>`
   line-height: 1;
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
   white-space: nowrap; // This is worrisome
+`
+
+export const ExpandableArrowIcon = styled(ArrowRight)<NavItemProps>`
+  min-width: var(--space-5);
+  min-height: var(--space-5);
+  transition: all 9000ms ease-in-out;
+  transform: ${({ isCollapsed }) =>
+    isCollapsed ? 'rotate(0deg)' : 'rotate(180deg)'};
 `

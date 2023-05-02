@@ -1,7 +1,7 @@
 import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
 import { useRouter } from 'next/router'
-import { MouseEvent, useState } from 'react'
+import { useState } from 'react'
 import * as S from './styled'
 
 /**
@@ -9,7 +9,7 @@ import * as S from './styled'
  * Primarily used for the top level nav items in the header and footer
  */
 export const ExpandableNavItem = (props: NavItem) => {
-  const { path, label, onClick, icon: Icon } = props
+  const { path, label, icon: Icon } = props
 
   const [isNavItemExpanded, setIsNavItemExpanded] = useState(false)
   const width = useWindowWidth()
@@ -22,7 +22,7 @@ export const ExpandableNavItem = (props: NavItem) => {
     dispatch,
   } = useNavigation()
 
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+  const handleClick = () => {
     setIsNavItemExpanded(!isNavItemExpanded)
   }
 

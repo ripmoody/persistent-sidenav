@@ -1,4 +1,3 @@
-import { ArrowLeft, ArrowRight } from '@/components/icons'
 import { Tooltip } from '@/components/tooltip'
 import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
@@ -9,7 +8,9 @@ import * as S from './styled'
 export const ExpandCollapseNavItem = () => {
   const width = useWindowWidth()
   const {
-    state: { context },
+    state: {
+      context: { isCollapsed, isForceCollapsed },
+    },
     dispatch,
   } = useNavigation()
 
@@ -29,7 +30,7 @@ export const ExpandCollapseNavItem = () => {
     /**
      * If isForceCollapsed, the side nav should be collapsed at any size
      */
-    if (context.isForceCollapsed) {
+    if (isForceCollapsed) {
       dispatch({ type: 'set-collapsed', payload: true })
       return // No responsive logic needed
     }
@@ -42,59 +43,52 @@ export const ExpandCollapseNavItem = () => {
     } else {
       dispatch({ type: 'set-collapsed', payload: true })
     }
-  }, [width, dispatch, context.isForceCollapsed])
+  }, [width, dispatch, isForceCollapsed])
 
   /**
    * This is responsible for collapsing and expanding the side nav from the side nav.
    * It is only visible when the screen size is larger than 500px
    */
   const handleClick = () => {
-    if (width > breakpoints.md && context.isCollapsed) {
+    if (width > breakpoints.md && isCollapsed) {
       dispatch({ type: 'set-force-collapsed', payload: false })
       dispatch({ type: 'set-collapsed', payload: false })
       return
     }
 
-    if (width > breakpoints.md && !context.isCollapsed) {
+    if (width > breakpoints.md && !isCollapsed) {
       dispatch({ type: 'set-force-collapsed', payload: true })
       dispatch({ type: 'set-collapsed', payload: true })
       return
     }
 
-    if (width < breakpoints.sm && !context.isCollapsed) {
+    if (width < breakpoints.sm && !isCollapsed) {
       dispatch({ type: 'set-collapsed', payload: true })
       dispatch({ type: 'set-hidden', payload: true })
       return
     }
 
-    if (width < breakpoints.lg && context.isCollapsed) {
+    if (width < breakpoints.lg && isCollapsed) {
       dispatch({ type: 'set-collapsed', payload: false })
       return
     }
 
-    if (width < breakpoints.lg && !context.isCollapsed) {
+    if (width < breakpoints.lg && !isCollapsed) {
       dispatch({ type: 'set-collapsed', payload: true })
       return
     }
   }
 
-  const Icon = useMemo(() => {
-    return context.isCollapsed ? ArrowRight : ArrowLeft
-  }, [context.isCollapsed])
-
   const label = useMemo(() => {
-    return context.isCollapsed ? 'Expand' : 'Collapse'
-  }, [context.isCollapsed])
+    return isCollapsed ? 'Expand' : 'Collapse'
+  }, [isCollapsed])
 
   return (
-    <Tooltip label={label} isDisabled={!context.isCollapsed}>
-      <S.FlatNavItem isCollapsed={context.isCollapsed}>
-        <S.FlatNavItemButton
-          onClick={handleClick}
-          isCollapsed={context.isCollapsed}
-        >
-          <Icon />
-          <S.FlatNavItemLabel isCollapsed={context.isCollapsed}>
+    <Tooltip label={label} isDisabled={!isCollapsed}>
+      <S.FlatNavItem isCollapsed={isCollapsed}>
+        <S.FlatNavItemButton onClick={handleClick} isCollapsed={isCollapsed}>
+          <S.ExpandableArrowIcon isCollapsed={isCollapsed} />
+          <S.FlatNavItemLabel isCollapsed={isCollapsed}>
             {label}
           </S.FlatNavItemLabel>
         </S.FlatNavItemButton>
