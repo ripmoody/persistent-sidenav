@@ -3,7 +3,14 @@ import styled from '@emotion/styled'
 import Link from 'next/link'
 
 type NavItemProps = {
+  /**
+   * Whether or not the nav item is collapsed
+   */
   isCollapsed: boolean
+  /**
+   * Whether or not the nav item is a subnav item
+   */
+  isSubNavItem?: boolean
 }
 
 export const FlatNavItem = styled.li<NavItemProps>`
@@ -43,9 +50,15 @@ export const FlatNavItemButton = styled.button<NavItemProps>`
   font-size: var(--type-size-md);
   border-radius: var(--radius-base);
   line-height: 1;
-  padding-left: ${({ isCollapsed }) =>
-    isCollapsed ? 'var(--space-2)' : 'var(--space-5)'};
-
+  padding-left: ${({ isCollapsed, isSubNavItem }) => {
+    if (!isCollapsed && isSubNavItem) {
+      return 'var(--space-8)'
+    }
+    if (!isCollapsed && !isSubNavItem) {
+      return 'var(--space-5)'
+    }
+    return 'var(--space-2)'
+  }};
   &:hover {
     background-color: var(--color-grey-50);
   }

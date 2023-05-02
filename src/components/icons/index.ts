@@ -1,4 +1,5 @@
 export * from './accessibility'
+export * from './app-icons/activity-monitor'
 export * from './app-shop'
 export * from './apps'
 export * from './arrow-left'

@@ -1,9 +1,7 @@
 import { Tooltip } from '@/components/tooltip'
-import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
-import { breakpoints } from '@/providers/navigation/constants/breakpoints'
 import { useRouter } from 'next/router'
-import { MouseEvent, useMemo } from 'react'
+import { useMemo } from 'react'
 import * as S from './styled'
 
 /**
@@ -11,7 +9,6 @@ import * as S from './styled'
  * Primarily used for the top level nav items in the header and footer
  */
 export const FlatNavItem = (props: NavItem) => {
-  const width = useWindowWidth()
   const { path, label, icon: Icon } = props
   const router = useRouter()
 
@@ -20,17 +17,9 @@ export const FlatNavItem = (props: NavItem) => {
     dispatch,
   } = useNavigation()
 
-  const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
+  const handleClick = () => {
     if (path) {
       router.push(path)
-    }
-
-    if (width < breakpoints.md) {
-      dispatch({ type: 'set-collapsed', payload: true })
-    }
-
-    if (width < breakpoints.sm) {
-      dispatch({ type: 'set-hidden', payload: true })
     }
   }
 
@@ -49,6 +38,7 @@ export const FlatNavItem = (props: NavItem) => {
         <S.FlatNavItemButton
           onClick={handleClick}
           isCollapsed={context.isCollapsed}
+          isSubNavItem={props.isSubNavItem}
         >
           <S.FlatNavItemIcon>
             <Icon />

@@ -1,4 +1,5 @@
 import {
+  ActivityMonitor,
   Apps,
   Briefcase,
   Device,
@@ -31,7 +32,7 @@ export const mainNavItems: ExpandableNavItem[] = [
     items: [
       {
         label: 'Activity Log',
-        icon: Briefcase,
+        icon: ActivityMonitor,
         path: '/tools/activity-log',
       },
     ],

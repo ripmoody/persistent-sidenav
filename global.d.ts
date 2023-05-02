@@ -29,8 +29,8 @@ declare global {
      */
     path?: string
     /**
-     * Callback for when the nav item is clicked.
+     * Whether or not the items is a subnav item.
      */
-    // onClick?: (event: MouseEvent<HTMLButtonElement>) => void
+    isSubNavItem?: boolean
   }
 }

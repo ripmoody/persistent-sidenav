@@ -1,5 +1,6 @@
 import { useNavigation } from '@/providers/navigation'
 import type { ExpandableNavItem as ExpandableNavItemType } from '@/providers/navigation/constants/main'
+import { FlatNavItem } from '../flat-nav-item'
 import * as S from './styled'
 
 /**
@@ -36,7 +37,9 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
       </S.ExpandableNavItem>
       {props.isExpanded &&
         !state.context.isCollapsed &&
-        props.items.map((item) => <div key={item.label}>{item.label}</div>)}
+        props.items.map((item) => (
+          <FlatNavItem key={item.label} {...item} isSubNavItem />
+        ))}
     </>
   )
 }
