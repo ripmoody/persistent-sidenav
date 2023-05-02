@@ -14,36 +14,21 @@ export const SideNav = () => {
       <S.SideNavHeader>
         <S.SideNavList>
           {state.items.header.map((item) => (
-            <FlatNavItem
-              key={item.label}
-              icon={item.icon}
-              path={item.path}
-              label={item.label}
-            />
+            <FlatNavItem key={item.label} {...item} />
           ))}
         </S.SideNavList>
       </S.SideNavHeader>
       <S.SideNavMain>
         <S.SideNavList>
           {state.items.main.map((item) => (
-            <ExpandableNavItem
-              key={item.label}
-              icon={item.icon}
-              label={item.label}
-            />
+            <ExpandableNavItem key={item.label} {...item} />
           ))}
         </S.SideNavList>
       </S.SideNavMain>
       <S.SideNavFooter>
         <S.SideNavList>
           {state.items.footer.map((item) => (
-            <FlatNavItem
-              key={item.label}
-              icon={item.icon}
-              path={item.path}
-              label={item.label}
-              onClick={item.onClick}
-            />
+            <FlatNavItem key={item.label} {...item} />
           ))}
           <ExpandCollapseNavItem />
         </S.SideNavList>

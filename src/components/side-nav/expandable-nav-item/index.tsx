@@ -1,46 +1,35 @@
-import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
-import { useRouter } from 'next/router'
-import { useState } from 'react'
+import type { ExpandableNavItem as ExpandableNavItemType } from '@/providers/navigation/constants/main'
 import * as S from './styled'
 
 /**
  * A root level nav item that will not have any children or expand and collapse
  * Primarily used for the top level nav items in the header and footer
  */
-export const ExpandableNavItem = (props: NavItem) => {
-  const { path, label, icon: Icon } = props
+export const ExpandableNavItem = (props: ExpandableNavItemType) => {
+  const { label, icon: Icon } = props
 
-  const [isNavItemExpanded, setIsNavItemExpanded] = useState(false)
-  const width = useWindowWidth()
-  const router = useRouter()
+  const { state, dispatch } = useNavigation()
 
-  const {
-    state: {
-      context: { isCollapsed },
-    },
-    dispatch,
-  } = useNavigation()
-
-  const handleClick = () => {
-    setIsNavItemExpanded(!isNavItemExpanded)
+  const handleExpandCollapse = () => {
+    dispatch({ type: 'toggle-item-expanded', payload: props })
   }
 
   return (
-    <S.ExpandableNavItem isCollapsed={isCollapsed}>
+    <S.ExpandableNavItem isCollapsed={state.context.isCollapsed}>
       <S.ExpandableNavItemButton
-        onClick={handleClick}
-        isCollapsed={isCollapsed}
+        onClick={handleExpandCollapse}
+        isCollapsed={state.context.isCollapsed}
       >
         <S.ExpandableNavItemIcon>
           <Icon />
         </S.ExpandableNavItemIcon>
-        <S.ExpandableNavItemLabel isCollapsed={isCollapsed}>
+        <S.ExpandableNavItemLabel isCollapsed={state.context.isCollapsed}>
           {label}
         </S.ExpandableNavItemLabel>
         <S.ExpandableNavItemChevron
-          isCollapsed={isCollapsed}
-          isNavItemExpanded={isNavItemExpanded}
+          isCollapsed={state.context.isCollapsed}
+          isNavItemExpanded={props.isExpanded}
         />
       </S.ExpandableNavItemButton>
     </S.ExpandableNavItem>

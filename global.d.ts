@@ -35,6 +35,6 @@ declare global {
     /**
      * Callback for when the nav item is clicked.
      */
-    onClick?: (event: MouseEvent<HTMLButtonElement>) => void
+    // onClick?: (event: MouseEvent<HTMLButtonElement>) => void
   }
 }

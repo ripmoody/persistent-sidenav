@@ -12,7 +12,7 @@ import * as S from './styled'
  */
 export const FlatNavItem = (props: NavItem) => {
   const width = useWindowWidth()
-  const { path, label, onClick, icon: Icon } = props
+  const { path, label, icon: Icon } = props
   const router = useRouter()
 
   const {
@@ -21,10 +21,6 @@ export const FlatNavItem = (props: NavItem) => {
   } = useNavigation()
 
   const handleClick = (event: MouseEvent<HTMLButtonElement>) => {
-    if (onClick) {
-      onClick(event)
-    }
-
     if (path) {
       router.push(path)
     }
