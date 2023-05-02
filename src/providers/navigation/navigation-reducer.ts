@@ -3,8 +3,8 @@ import { headerNavItems } from './constants/header'
 
 export type NavigationState = {
   items: {
-    header: FlatNavItem[]
-    footer: FlatNavItem[]
+    header: NavItem[]
+    footer: NavItem[]
   }
   context: {
     /**

@@ -9,7 +9,10 @@ export const SideNavButton = () => {
     switch (state.context.isCollapsed) {
       case true: {
         dispatch({ type: 'set-hidden', payload: false })
-        dispatch({ type: 'set-collapsed', payload: false })
+        setTimeout(() => {
+          // Hacky but results in a much smoother opening animation
+          dispatch({ type: 'set-collapsed', payload: false })
+        }, 100)
         break
       }
 

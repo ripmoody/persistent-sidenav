@@ -10,7 +10,7 @@ import * as S from './styled'
  * A root level nav item that will not have any children or expand and collapse
  * Primarily used for the top level nav items in the header and footer
  */
-export const FlatNavItem = (props: FlatNavItem) => {
+export const FlatNavItem = (props: NavItem) => {
   const width = useWindowWidth()
   const { path, label, onClick, icon: Icon } = props
   const router = useRouter()

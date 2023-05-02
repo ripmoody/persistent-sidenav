@@ -16,7 +16,7 @@ declare global {
   }
 
   /**
-   * The root level navigation item that must be supplied
+   * The configuration for a navigation item that doesn't have any children.
    */
   type NavItem = {
     /**
@@ -27,12 +27,6 @@ declare global {
      * The icon for the nav item
      */
     icon: ForwardRefExoticComponent
-  }
-
-  /**
-   * The configuration for a navigation item that doesn't have any children.
-   */
-  type FlatNavItem = NavItem & {
     /**
      * The relative path for the nav item
      */
@@ -42,9 +36,4 @@ declare global {
      */
     onClick?: (event: MouseEvent<HTMLButtonElement>) => void
   }
-
-  /**
-   * A sub navigation item that has a link instead of child items
-   */
-  type SubNavItem = FlatNavItem & {}
 }
