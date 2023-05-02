@@ -16,7 +16,8 @@ declare global {
   }
 
   /**
-   * The configuration for a navigation item that doesn't have any children.
+   * The configuration for a navigation item.
+   * Either a path or an onClick callback must be provided.
    */
   type NavItem = {
     /**
@@ -26,9 +27,9 @@ declare global {
     /**
      * The icon for the nav item
      */
-    icon: ForwardRefExoticComponent
+    icon: ForwardRefExoticComponent<unknown>
     /**
-     * The relative path for the nav item
+     * The relative path for the nav item.
      */
     path?: string
     /**

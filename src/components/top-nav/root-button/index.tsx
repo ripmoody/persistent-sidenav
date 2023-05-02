@@ -7,7 +7,7 @@ import { HomeLink } from './styled'
 export const RootButton = () => {
   const width = useWindowWidth()
 
-  if (width < breakpoints.small) {
+  if (width < breakpoints.sm) {
     return <SideNavButton />
   }
 

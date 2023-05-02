@@ -16,7 +16,7 @@ export const DashboardPage = styled.div`
 export const DashboardSideNavPlaceholder = styled.div`
   width: 0;
 
-  @media (min-width: ${breakpoints.small}px) and (max-width: ${breakpoints.medium}px) {
+  @media (min-width: ${breakpoints.sm}px) and (max-width: ${breakpoints.md}px) {
     width: var(--space-16);
   }
 `

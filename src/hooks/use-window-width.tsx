@@ -6,7 +6,7 @@ import { useEffect, useState } from 'react'
  * Observe window width for responsive design
  */
 export const useWindowWidth = () => {
-  const [width, setWidth] = useState(breakpoints.large) // Assume it's expanded by default
+  const [width, setWidth] = useState(breakpoints.lg) // Assume it's expanded by default
 
   useEffect(() => {
     if (typeof window === 'undefined') {

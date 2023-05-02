@@ -1,6 +1,6 @@
+import { breakpoints } from '@/providers/navigation/constants/breakpoints'
 import type { NavigationState } from '@/providers/navigation/navigation-reducer'
 import styled from '@emotion/styled'
-import { breakpoints } from './flat-nav-item/expand-collapse'
 
 type SideNavProps = {
   context: NavigationState['context']
@@ -23,7 +23,7 @@ export const SideNav = styled.nav<SideNavProps>`
     ${({ context }) => (context.isHidden ? '-100%' : '0%')}
   );
 
-  @media (max-width: ${breakpoints.medium}px) {
+  @media (max-width: ${breakpoints.md}px) {
     position: absolute;
     bottom: 0;
     top: 0;

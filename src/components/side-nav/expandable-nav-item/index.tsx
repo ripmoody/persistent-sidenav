@@ -4,6 +4,7 @@ import { useNavigation } from '@/providers/navigation'
 import { breakpoints } from '@/providers/navigation/constants/breakpoints'
 import { useRouter } from 'next/router'
 import { MouseEvent, useMemo } from 'react'
+
 import * as S from './styled'
 
 /**

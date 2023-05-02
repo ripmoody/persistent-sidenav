@@ -25,7 +25,7 @@ export const ExpandCollapseNavItem = () => {
     /**
      * If the screen size is smaller than 500px, the side nav should be accessible from the top nav
      */
-    if (width < breakpoints.small) {
+    if (width < breakpoints.sm) {
       dispatch({ type: 'set-hidden', payload: true })
     } else {
       dispatch({ type: 'set-hidden', payload: false })
@@ -42,7 +42,7 @@ export const ExpandCollapseNavItem = () => {
     /**
      * If the screen size is bigger than medium breakpoint, the side nav should be expanded
      */
-    if (width > breakpoints.medium) {
+    if (width > breakpoints.md) {
       dispatch({ type: 'set-collapsed', payload: false })
     } else {
       dispatch({ type: 'set-collapsed', payload: true })
@@ -54,30 +54,30 @@ export const ExpandCollapseNavItem = () => {
    * It is only visible when the screen size is larger than 500px
    */
   const handleClick = () => {
-    if (width > breakpoints.medium && context.isCollapsed) {
+    if (width > breakpoints.md && context.isCollapsed) {
       dispatch({ type: 'set-force-collapsed', payload: false })
       dispatch({ type: 'set-collapsed', payload: false })
       return
     }
 
-    if (width > breakpoints.medium && !context.isCollapsed) {
+    if (width > breakpoints.md && !context.isCollapsed) {
       dispatch({ type: 'set-force-collapsed', payload: true })
       dispatch({ type: 'set-collapsed', payload: true })
       return
     }
 
-    if (width < breakpoints.small && !context.isCollapsed) {
+    if (width < breakpoints.sm && !context.isCollapsed) {
       dispatch({ type: 'set-collapsed', payload: true })
       dispatch({ type: 'set-hidden', payload: true })
       return
     }
 
-    if (width < breakpoints.large && context.isCollapsed) {
+    if (width < breakpoints.lg && context.isCollapsed) {
       dispatch({ type: 'set-collapsed', payload: false })
       return
     }
 
-    if (width < breakpoints.large && !context.isCollapsed) {
+    if (width < breakpoints.lg && !context.isCollapsed) {
       dispatch({ type: 'set-collapsed', payload: true })
       return
     }
