@@ -15,10 +15,6 @@ declare global {
     }
   }
 
-  /**
-   * The configuration for a navigation item.
-   * Either a path or an onClick callback must be provided.
-   */
   type NavItem = {
     /**
      * The label for the nav item

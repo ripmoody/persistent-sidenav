@@ -15,11 +15,11 @@ import {
  */
 export type ExpandableNavItem = NavItem & {
   /**
-   * The items to render in the accordion.
+   * The page-level items to render in the accordion.
    **/
   items: NavItem[]
   /**
-   * Whether or not the accordion is expanded.
+   * Whether or not the accordion is expanded to reveal page-level items.
    */
   isExpanded: boolean
 }
@@ -28,7 +28,13 @@ export const mainNavItems: ExpandableNavItem[] = [
   {
     label: 'Tools',
     icon: Briefcase,
-    items: [],
+    items: [
+      {
+        label: 'Activity Log',
+        icon: Briefcase,
+        path: '/tools/activity-log',
+      },
+    ],
     isExpanded: false,
   },
   {
@@ -56,7 +62,7 @@ export const mainNavItems: ExpandableNavItem[] = [
     isExpanded: false,
   },
   {
-    label: 'Third-party apps',
+    label: 'Third-party Apps',
     icon: Apps,
     items: [],
     isExpanded: false,

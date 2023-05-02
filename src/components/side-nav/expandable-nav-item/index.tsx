@@ -16,22 +16,27 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
   }
 
   return (
-    <S.ExpandableNavItem isCollapsed={state.context.isCollapsed}>
-      <S.ExpandableNavItemButton
-        onClick={handleExpandCollapse}
-        isCollapsed={state.context.isCollapsed}
-      >
-        <S.ExpandableNavItemIcon>
-          <Icon />
-        </S.ExpandableNavItemIcon>
-        <S.ExpandableNavItemLabel isCollapsed={state.context.isCollapsed}>
-          {label}
-        </S.ExpandableNavItemLabel>
-        <S.ExpandableNavItemChevron
+    <>
+      <S.ExpandableNavItem isCollapsed={state.context.isCollapsed}>
+        <S.ExpandableNavItemButton
+          onClick={handleExpandCollapse}
           isCollapsed={state.context.isCollapsed}
-          isNavItemExpanded={props.isExpanded}
-        />
-      </S.ExpandableNavItemButton>
-    </S.ExpandableNavItem>
+        >
+          <S.ExpandableNavItemIcon>
+            <Icon />
+          </S.ExpandableNavItemIcon>
+          <S.ExpandableNavItemLabel isCollapsed={state.context.isCollapsed}>
+            {label}
+          </S.ExpandableNavItemLabel>
+          <S.ExpandableNavItemChevron
+            isCollapsed={state.context.isCollapsed}
+            isNavItemExpanded={props.isExpanded}
+          />
+        </S.ExpandableNavItemButton>
+      </S.ExpandableNavItem>
+      {props.isExpanded &&
+        !state.context.isCollapsed &&
+        props.items.map((item) => <div key={item.label}>{item.label}</div>)}
+    </>
   )
 }
