@@ -5,8 +5,8 @@ type SideNavSearchProps = {
 }
 
 export const SideNavSearch = styled.div<SideNavSearchProps>`
-  position: sticky;
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'flex')};
+  position: sticky;
   right: 0;
   left: 0;
   top: 0;
@@ -14,7 +14,6 @@ export const SideNavSearch = styled.div<SideNavSearchProps>`
   justify-content: center;
   background: white;
   z-index: 1;
-  display: flex;
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
@@ -34,7 +33,7 @@ export const SideNavSearchInput = styled.input`
   }
 `
 
-export const SideNavSearchIconButton = styled.button`
+export const SideNavMenuIconButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;

@@ -33,6 +33,8 @@ export type NavigationAction =
   | { type: 'set-collapsed'; payload: boolean }
   | { type: 'set-hidden'; payload: boolean }
   | { type: 'toggle-item-expanded'; payload: ExpandableNavItem }
+  | { type: 'expand-all' }
+  | { type: 'collapse-all' }
 
 export const initialState: NavigationState = {
   items: {
@@ -52,6 +54,30 @@ export const navigationReducer = (
   action: NavigationAction,
 ) => {
   switch (action.type) {
+    case 'expand-all':
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          main: state.items.main.map((item) => ({
+            ...item,
+            isExpanded: true,
+          })),
+        },
+      }
+
+    case 'collapse-all':
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          main: state.items.main.map((item) => ({
+            ...item,
+            isExpanded: false,
+          })),
+        },
+      }
+
     case 'toggle-item-expanded':
       return {
         ...state,
