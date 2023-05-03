@@ -8,6 +8,7 @@ import {
 } from '@/components/menu'
 import { MenuArrow } from '@/components/menu/styled'
 import { useNavigation } from '@/providers/navigation'
+import { debounce } from 'lodash'
 import * as S from './styled'
 
 export const SideNavSearch = () => {
@@ -21,9 +22,15 @@ export const SideNavSearch = () => {
     dispatch({ type: 'collapse-all' })
   }
 
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) =>
+    debounce(() => {
+      dispatch({ type: 'set-filtered-items', payload: e.target.value })
+      dispatch({ type: 'expand-all' })
+    }, 300)()
+
   return (
     <S.SideNavSearch isCollapsed={state.context.isCollapsed}>
-      <S.SideNavSearchInput placeholder="Search" />
+      <S.SideNavSearchInput placeholder="Search" onChange={handleSearch} />
       <Menu>
         <MenuTrigger asChild>
           <S.SideNavMenuIconButton>
@@ -31,7 +38,7 @@ export const SideNavSearch = () => {
           </S.SideNavMenuIconButton>
         </MenuTrigger>
         <MenuPortal>
-          <MenuContent side="bottom">
+          <MenuContent side="right">
             <MenuItem onClick={handleExpandAll}>Expand all</MenuItem>
             <MenuItem onClick={handleCollapseAll}>Collapse all</MenuItem>
             <MenuArrow />

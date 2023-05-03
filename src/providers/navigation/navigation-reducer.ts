@@ -9,6 +9,9 @@ export type NavigationState = {
     footer: NavItem[]
     main: ExpandableNavItem[]
   }
+  data: {
+    filteredItems: ExpandableNavItem[]
+  }
   context: {
     /**
      * Whether the navigation is collapsed or not.
@@ -35,12 +38,16 @@ export type NavigationAction =
   | { type: 'toggle-item-expanded'; payload: ExpandableNavItem }
   | { type: 'expand-all' }
   | { type: 'collapse-all' }
+  | { type: 'set-filtered-items'; payload: string }
 
 export const initialState: NavigationState = {
   items: {
     header: headerNavItems,
     footer: footerNavItems,
     main: mainNavItems,
+  },
+  data: {
+    filteredItems: mainNavItems,
   },
   context: {
     isCollapsed: false,
@@ -54,12 +61,38 @@ export const navigationReducer = (
   action: NavigationAction,
 ) => {
   switch (action.type) {
+    case 'set-filtered-items': {
+      const filteredItems: ExpandableNavItem[] = []
+      const value = action.payload.trim().toLowerCase()
+
+      for (const rootItem of state.items.main) {
+        const filteredSubItems = rootItem.items.filter((item) =>
+          item.label.toLowerCase().includes(value),
+        )
+
+        if (filteredSubItems.length > 0) {
+          filteredItems.push({
+            ...rootItem,
+            items: filteredSubItems,
+          })
+        }
+      }
+
+      return {
+        ...state,
+        data: {
+          ...state.data,
+          filteredItems,
+        },
+      }
+    }
+
     case 'expand-all':
       return {
         ...state,
-        items: {
-          ...state.items,
-          main: state.items.main.map((item) => ({
+        data: {
+          ...state.data,
+          filteredItems: state.data.filteredItems.map((item) => ({
             ...item,
             isExpanded: true,
           })),
@@ -69,9 +102,9 @@ export const navigationReducer = (
     case 'collapse-all':
       return {
         ...state,
-        items: {
-          ...state.items,
-          main: state.items.main.map((item) => ({
+        data: {
+          ...state.data,
+          filteredItems: state.data.filteredItems.map((item) => ({
             ...item,
             isExpanded: false,
           })),
@@ -81,18 +114,15 @@ export const navigationReducer = (
     case 'toggle-item-expanded':
       return {
         ...state,
-        items: {
-          ...state.items,
-          main: state.items.main.map((item) => {
-            if (item.label === action.payload.label) {
-              return {
-                ...item,
-                isExpanded: !item.isExpanded,
-              }
-            }
-
-            return item
-          }),
+        data: {
+          ...state.data,
+          filteredItems: state.data.filteredItems.map((item) => ({
+            ...item,
+            isExpanded:
+              item.label === action.payload.label
+                ? !action.payload.isExpanded
+                : item.isExpanded,
+          })),
         },
       }
 

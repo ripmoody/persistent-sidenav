@@ -48,8 +48,8 @@ export const MenuContent = styled(DropdownMenu.Content)`
 `
 
 export const MenuItem = styled(DropdownMenu.Item)`
-  line-height: 1;
   cursor: pointer;
+  line-height: 1;
   padding: var(--space-2) var(--space-3);
 
   &:hover {

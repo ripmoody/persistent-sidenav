@@ -17,7 +17,7 @@ export const SideNavSearch = styled.div<SideNavSearchProps>`
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  padding: var(--space-4) var(--space-1) var(--space-2);
+  padding: var(--space-4) var(--space-1) var(--space-3);
 `
 
 export const SideNavSearchInput = styled.input`

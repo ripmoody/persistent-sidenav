@@ -5,6 +5,10 @@ import { breakpoints } from '@/providers/navigation/constants/breakpoints'
 import { useEffect, useMemo } from 'react'
 import * as S from './styled'
 
+/**
+ * This is a special nav item that is responsible for collapsing and expanding the side nav.
+ * It is close to a flat nav item but broken apart for easier styling and logic.
+ */
 export const ExpandCollapseNavItem = () => {
   const width = useWindowWidth()
   const {
