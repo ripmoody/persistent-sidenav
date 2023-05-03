@@ -83,3 +83,13 @@ export const ExpandableArrowIcon = styled(ArrowRight)<NavItemProps>`
   transform: ${({ isCollapsed }) =>
     isCollapsed ? 'rotate(0deg)' : 'rotate(180deg)'};
 `
+
+export const NavItemCategory = styled.span<NavItemProps>`
+  display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--color-grey-400);
+  font-weight: var(--type-weight-bold);
+  padding: var(--space-4) var(--space-2) var(--space-2) var(--space-8);
+  letter-spacing: 0.1rem;
+`

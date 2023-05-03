@@ -9,7 +9,7 @@ import * as S from './styled'
  * Primarily used for the top level nav items in the header and footer
  */
 export const FlatNavItem = (props: NavItem) => {
-  const { path, label, icon: Icon, isSubNavItem } = props
+  const { path, label, icon: Icon, isSubNavItem, category } = props
   const router = useRouter()
 
   const {
@@ -29,6 +29,14 @@ export const FlatNavItem = (props: NavItem) => {
       return 'page'
     }
   }, [router.asPath, path])
+
+  if (category) {
+    return (
+      <S.NavItemCategory isCollapsed={isCollapsed}>
+        {category}
+      </S.NavItemCategory>
+    )
+  }
 
   return (
     <S.FlatNavItem aria-current={isAriaCurrent} isCollapsed={isCollapsed}>

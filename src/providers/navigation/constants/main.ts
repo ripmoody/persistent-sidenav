@@ -140,7 +140,58 @@ export const mainNavItems: ExpandableNavItem[] = [
   {
     label: 'IT Management',
     icon: Device,
-    items: [],
+    items: [
+      {
+        label: '', // ignored
+        icon: Tasks, // ignored
+        category: 'Device management',
+      },
+      {
+        label: 'Devices',
+        icon: Tasks,
+        path: '/it/devices',
+      },
+      {
+        label: 'Discover more Device apps',
+        icon: Apps,
+        path: '/it/discover-more-device-apps',
+      },
+      {
+        label: '', // ignored
+        icon: Tasks, // ignored
+        category: 'Identity management',
+      },
+      {
+        label: 'RPass',
+        icon: Tasks,
+        path: '/it/r-pass',
+      },
+      {
+        label: 'SSH Key Manager',
+        icon: Tasks,
+        path: '/it/ssk-key-manager',
+      },
+      {
+        label: 'Virtual LDAP',
+        icon: Tasks,
+        path: '/it/virtual-ldap',
+      },
+      {
+        label: 'Custom App',
+        icon: Tasks,
+        path: '/it/custom-app',
+      },
+      {
+        label: '', // ignored
+        icon: Tasks, // ignored
+        category: 'Automated Compliance',
+      },
+      {
+        label: 'Automated Compliance',
+        icon: Tasks,
+        path: '/it/auto-compliance',
+      },
+    ],
     isExpanded: false,
   },
   {

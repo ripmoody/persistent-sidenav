@@ -58,6 +58,11 @@ export const SideNavMain = styled.div`
   flex: 1;
   padding: var(--space-4) 0;
   overflow-y: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 `
 
 /**

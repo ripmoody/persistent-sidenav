@@ -55,7 +55,6 @@ details.
 
 # To do
 
-1. Categories for subnav items
 2. Menus for subnav items in collapsed states
 3. Filtered search for apps from the sidebar
 4. Expand and collapse all items from the sidebar

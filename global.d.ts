@@ -33,5 +33,10 @@ declare global {
      * the left of the item to indent.
      */
     isSubNavItem?: boolean
+    /**
+     * A category nav item is a nav item that is not clickable and
+     * is used to group other nav items that fall underneath it.
+     **/
+    category?: string
   }
 }
