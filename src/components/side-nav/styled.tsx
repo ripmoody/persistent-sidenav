@@ -54,9 +54,11 @@ export const SideNavFooter = styled.div`
 /**
  * The main content portion of the side nav that overflow, scrolls, expands, and collapses
  */
-export const SideNavMain = styled.div`
+export const SideNavMain = styled.div<SideNavProps>`
+  position: relative;
   flex: 1;
-  padding: var(--space-4) 0;
+  padding: ${({ context }) =>
+    context.isCollapsed ? 'var(--space-4) 0' : '0 0 var(--space-4) 0'};
   overflow-y: auto;
   scrollbar-width: none;
   -ms-overflow-style: none;

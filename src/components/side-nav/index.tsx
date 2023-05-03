@@ -2,6 +2,7 @@ import { useNavigation } from '@/providers/navigation'
 import { ExpandableNavItem } from './expandable-nav-item'
 import { FlatNavItem } from './flat-nav-item'
 import { ExpandCollapseNavItem } from './flat-nav-item/expand-collapse'
+import { SideNavSearch } from './search'
 import * as S from './styled'
 
 export const SideNav = () => {
@@ -18,7 +19,8 @@ export const SideNav = () => {
           ))}
         </S.SideNavList>
       </S.SideNavHeader>
-      <S.SideNavMain>
+      <S.SideNavMain context={state.context}>
+        <SideNavSearch />
         <S.SideNavList>
           {state.items.main.map((item) => (
             <ExpandableNavItem key={item.label} {...item} />
