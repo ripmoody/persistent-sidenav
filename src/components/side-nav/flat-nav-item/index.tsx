@@ -16,6 +16,7 @@ export const FlatNavItem = (props: NavItem) => {
     state: {
       context: { isCollapsed },
     },
+    dispatch,
   } = useNavigation()
 
   const handleClick = () => {

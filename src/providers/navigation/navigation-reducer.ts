@@ -87,7 +87,7 @@ export const navigationReducer = (
       }
     }
 
-    case 'expand-all':
+    case 'expand-all': {
       return {
         ...state,
         data: {
@@ -98,8 +98,9 @@ export const navigationReducer = (
           })),
         },
       }
+    }
 
-    case 'collapse-all':
+    case 'collapse-all': {
       return {
         ...state,
         data: {
@@ -110,8 +111,9 @@ export const navigationReducer = (
           })),
         },
       }
+    }
 
-    case 'toggle-item-expanded':
+    case 'toggle-item-expanded': {
       return {
         ...state,
         data: {
@@ -125,8 +127,9 @@ export const navigationReducer = (
           })),
         },
       }
+    }
 
-    case 'set-hidden':
+    case 'set-hidden': {
       return {
         ...state,
         context: {
@@ -134,8 +137,9 @@ export const navigationReducer = (
           isHidden: action.payload,
         },
       }
+    }
 
-    case 'set-force-collapsed':
+    case 'set-force-collapsed': {
       return {
         ...state,
         context: {
@@ -143,8 +147,9 @@ export const navigationReducer = (
           isForceCollapsed: action.payload,
         },
       }
+    }
 
-    case 'set-collapsed':
+    case 'set-collapsed': {
       return {
         ...state,
         context: {
@@ -152,11 +157,14 @@ export const navigationReducer = (
           isCollapsed: action.payload,
         },
       }
+    }
 
-    case 'reset':
+    case 'reset': {
       return initialState
+    }
 
-    default:
+    default: {
       return state
+    }
   }
 }

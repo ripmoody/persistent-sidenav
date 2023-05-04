@@ -18,7 +18,14 @@ export const SideNavSearch = () => {
 
   const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) =>
     debounce(() => {
-      dispatch({ type: 'set-filtered-items', payload: e.target.value })
+      const payload = e.target.value
+
+      if (payload === '') {
+        dispatch({ type: 'reset' })
+        return
+      }
+
+      dispatch({ type: 'set-filtered-items', payload })
       dispatch({ type: 'expand-all' })
     }, 300)()
 
