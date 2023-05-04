@@ -1,7 +1,7 @@
 import { GetServerSideProps } from 'next'
 
 export default function CategoryPage(props: PageProps) {
-  return <>{props.query.category}</>
+  return <></>
 }
 
 export const getServerSideProps: GetServerSideProps = async ({ query }) => {

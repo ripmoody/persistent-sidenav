@@ -8,8 +8,15 @@ export const Main = styled.main`
 
 export const MainHeader = styled.header`
   display: flex;
+  align-items: center;
   padding: var(--space-8);
   background-color: white;
+  gap: var(--space-4);
+`
+
+export const MainHeaderTitle = styled.h1`
+  font-size: var(--type-size-2xl);
+  font-weight: var(--type-weight-bold);
 `
 
 export const MainLayout = styled.div`
