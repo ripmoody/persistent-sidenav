@@ -7,6 +7,7 @@ import {
   Apps,
   AutomatedCompliance,
   Briefcase,
+  Commuter,
   CompanyDetails,
   CompanySettings,
   CustomApp,
@@ -16,8 +17,11 @@ import {
   Documents,
   Dollar,
   EmploymentAuthorization,
+  Fsa,
   GlobalPayroll,
+  GlobalPension,
   Heart,
+  Hsa,
   LearningManagement,
   LeaveManagement,
   Payroll,
@@ -36,6 +40,7 @@ import {
   TimeOff,
   Users,
   VirtualLdap,
+  WorkerComp,
   WorkflowAutomator,
 } from '@/components/icons'
 
@@ -158,8 +163,39 @@ export const mainNavItems: ExpandableNavItem[] = [
   {
     label: 'Insurance & Benefits',
     icon: Heart,
-    items: [],
     isExpanded: false,
+    items: [
+      {
+        label: 'FSA',
+        icon: Fsa,
+        path: '/insurance/fsa',
+      },
+      {
+        label: 'HSA',
+        icon: Hsa,
+        path: '/insurance/hsa',
+      },
+      {
+        label: 'Commuter',
+        icon: Commuter,
+        path: '/insurance/commuter',
+      },
+      {
+        label: 'Global Pensions',
+        icon: GlobalPension,
+        path: '/insurance/global-pensions',
+      },
+      {
+        label: "Workers' Comp",
+        icon: WorkerComp,
+        path: '/insurance/worker-comp',
+      },
+      {
+        label: 'Discover more Insurance apps',
+        icon: AddApp,
+        path: '/insurance/discover',
+      },
+    ],
   },
   {
     label: 'IT Management',
