@@ -37,6 +37,7 @@ export const MenuContent = styled(DropdownMenu.Content)`
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
+  list-style: none; // for the menu context
 
   &[data-side='bottom'] {
     animation-name: ${slideUpAndFade};

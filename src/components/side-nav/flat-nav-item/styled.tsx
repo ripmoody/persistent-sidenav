@@ -59,8 +59,14 @@ export const FlatNavItemButton = styled.button<NavItemProps>`
     }
     return 'var(--space-2)'
   }};
+
   &:hover {
     background-color: var(--color-grey-50);
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-plum-300);
   }
 `
 

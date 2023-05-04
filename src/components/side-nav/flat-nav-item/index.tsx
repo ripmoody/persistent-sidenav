@@ -40,7 +40,7 @@ export const FlatNavItem = (props: NavItem) => {
 
   return (
     <S.FlatNavItem aria-current={isAriaCurrent} isCollapsed={isCollapsed}>
-      <Tooltip label={label} isDisabled={!isCollapsed}>
+      <Tooltip label={label} isDisabled={!isCollapsed || isSubNavItem}>
         <S.FlatNavItemButton
           onClick={handleClick}
           isCollapsed={isCollapsed}

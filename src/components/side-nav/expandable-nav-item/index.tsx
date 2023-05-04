@@ -1,3 +1,12 @@
+import {
+  Menu,
+  MenuArrow,
+  MenuContent,
+  MenuItem,
+  MenuPortal,
+  MenuTrigger,
+} from '@/components/menu'
+import { Tooltip } from '@/components/tooltip'
 import { useNavigation } from '@/providers/navigation'
 import type { ExpandableNavItem as ExpandableNavItemType } from '@/providers/navigation/constants/main'
 import { useRouter } from 'next/router'
@@ -26,29 +35,44 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
 
   return (
     <S.ExpandableNavItemGroup>
-      <S.ExpandableNavItem
-        isCollapsed={state.context.isCollapsed}
-        isNavItemExpanded={props.isExpanded}
-        hasActiveChild={hasActiveChild}
-      >
-        <S.ExpandableNavItemButton
-          onClick={handleExpandCollapse}
+      <Tooltip label={label} isDisabled={!state.context.isCollapsed}>
+        <S.ExpandableNavItem
           isCollapsed={state.context.isCollapsed}
-          hasActiveChild={hasActiveChild}
           isNavItemExpanded={props.isExpanded}
+          hasActiveChild={hasActiveChild}
         >
-          <S.ExpandableNavItemIcon>
-            <Icon />
-          </S.ExpandableNavItemIcon>
-          <S.ExpandableNavItemLabel isCollapsed={state.context.isCollapsed}>
-            {label}
-          </S.ExpandableNavItemLabel>
-          <S.ExpandableNavItemChevron
-            isCollapsed={state.context.isCollapsed}
-            isNavItemExpanded={props.isExpanded}
-          />
-        </S.ExpandableNavItemButton>
-      </S.ExpandableNavItem>
+          <Menu>
+            <MenuTrigger asChild>
+              <S.ExpandableNavItemButton
+                onClick={handleExpandCollapse}
+                isCollapsed={state.context.isCollapsed}
+                hasActiveChild={hasActiveChild}
+                isNavItemExpanded={props.isExpanded}
+              >
+                <S.ExpandableNavItemIcon>
+                  <Icon />
+                </S.ExpandableNavItemIcon>
+                <S.ExpandableNavItemLabel
+                  isCollapsed={state.context.isCollapsed}
+                >
+                  {label}
+                </S.ExpandableNavItemLabel>
+                <S.ExpandableNavItemChevron
+                  isCollapsed={state.context.isCollapsed}
+                  isNavItemExpanded={props.isExpanded}
+                />
+              </S.ExpandableNavItemButton>
+            </MenuTrigger>
+            <MenuPortal>
+              <MenuContent side="right">
+                <MenuItem>Expand all</MenuItem>
+                <MenuItem>Collapse all</MenuItem>
+                <MenuArrow />
+              </MenuContent>
+            </MenuPortal>
+          </Menu>
+        </S.ExpandableNavItem>
+      </Tooltip>
       <S.ExpandableSubNavList
         isCollapsed={state.context.isCollapsed}
         isNavItemExpanded={props.isExpanded}
