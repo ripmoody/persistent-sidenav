@@ -200,6 +200,7 @@ export const mainNavItems: ExpandableNavItem[] = [
   {
     label: 'IT Management',
     icon: Device,
+    isExpanded: false,
     items: [
       {
         label: '', // ignored
@@ -252,7 +253,6 @@ export const mainNavItems: ExpandableNavItem[] = [
         path: '/it/auto-compliance',
       },
     ],
-    isExpanded: false,
   },
   {
     label: 'Finance',
@@ -286,7 +286,6 @@ export const mainNavItems: ExpandableNavItem[] = [
     label: 'Settings',
     icon: Settings,
     isExpanded: false,
-
     items: [
       {
         label: 'Permissions',
