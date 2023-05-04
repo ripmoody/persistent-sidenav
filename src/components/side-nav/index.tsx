@@ -14,7 +14,7 @@ export const SideNav = () => {
   return (
     <S.SideNav context={state.context}>
       <S.SideNavHeader>
-        <S.SideNavList>
+        <S.SideNavList context={state.context}>
           {state.items.header.map((item) => (
             <FlatNavItem key={item.label} {...item} />
           ))}
@@ -22,7 +22,7 @@ export const SideNav = () => {
       </S.SideNavHeader>
       <S.SideNavMain context={state.context}>
         <SideNavSearch />
-        <S.SideNavList>
+        <S.SideNavList context={state.context}>
           {state.data.filteredItems.length < 1 && <EmptyState />}
           {state.data.filteredItems.map((item) => (
             <ExpandableNavItem key={item.label} {...item} />
@@ -30,7 +30,7 @@ export const SideNav = () => {
         </S.SideNavList>
       </S.SideNavMain>
       <S.SideNavFooter>
-        <S.SideNavList>
+        <S.SideNavList context={state.context}>
           {state.items.footer.map((item) => (
             <FlatNavItem key={item.label} {...item} />
           ))}

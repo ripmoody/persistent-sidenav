@@ -1,17 +1,9 @@
-import {
-  Menu,
-  MenuArrow,
-  MenuContent,
-  MenuItem,
-  MenuPortal,
-  MenuTrigger,
-} from '@/components/menu'
-import { Tooltip } from '@/components/tooltip'
 import { useNavigation } from '@/providers/navigation'
 import type { ExpandableNavItem as ExpandableNavItemType } from '@/providers/navigation/constants/main'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { FlatNavItem } from '../flat-nav-item'
+import { SubNavMenu } from '../subnav-menu'
 import * as S from './styled'
 
 /**
@@ -35,50 +27,37 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
 
   return (
     <S.ExpandableNavItemGroup>
-      <Tooltip label={label} isDisabled={!state.context.isCollapsed}>
-        <S.ExpandableNavItem
-          isCollapsed={state.context.isCollapsed}
-          isNavItemExpanded={props.isExpanded}
-          hasActiveChild={hasActiveChild}
-        >
-          <Menu>
-            <MenuTrigger asChild>
-              <S.ExpandableNavItemButton
-                onClick={handleExpandCollapse}
-                isCollapsed={state.context.isCollapsed}
-                hasActiveChild={hasActiveChild}
-                isNavItemExpanded={props.isExpanded}
-              >
-                <S.ExpandableNavItemIcon>
-                  <Icon />
-                </S.ExpandableNavItemIcon>
-                <S.ExpandableNavItemLabel
-                  isCollapsed={state.context.isCollapsed}
-                >
-                  {label}
-                </S.ExpandableNavItemLabel>
-                <S.ExpandableNavItemChevron
-                  isCollapsed={state.context.isCollapsed}
-                  isNavItemExpanded={props.isExpanded}
-                />
-              </S.ExpandableNavItemButton>
-            </MenuTrigger>
-            <MenuPortal>
-              <MenuContent side="right">
-                <MenuItem>Expand all</MenuItem>
-                <MenuItem>Collapse all</MenuItem>
-                <MenuArrow />
-              </MenuContent>
-            </MenuPortal>
-          </Menu>
-        </S.ExpandableNavItem>
-      </Tooltip>
+      <S.ExpandableNavItem
+        isCollapsed={state.context.isCollapsed}
+        isNavItemExpanded={props.isExpanded}
+        hasActiveChild={hasActiveChild}
+      >
+        <SubNavMenu>
+          <S.ExpandableNavItemButton
+            onClick={handleExpandCollapse}
+            isCollapsed={state.context.isCollapsed}
+            hasActiveChild={hasActiveChild}
+            isNavItemExpanded={props.isExpanded}
+          >
+            <S.ExpandableNavItemIcon isCollapsed={state.context.isCollapsed}>
+              <Icon />
+            </S.ExpandableNavItemIcon>
+            <S.ExpandableNavItemLabel isCollapsed={state.context.isCollapsed}>
+              {label}
+            </S.ExpandableNavItemLabel>
+            <S.ExpandableNavItemChevron
+              isCollapsed={state.context.isCollapsed}
+              isNavItemExpanded={props.isExpanded}
+            />
+          </S.ExpandableNavItemButton>
+        </SubNavMenu>
+      </S.ExpandableNavItem>
       <S.ExpandableSubNavList
         isCollapsed={state.context.isCollapsed}
         isNavItemExpanded={props.isExpanded}
       >
-        {props.items.map((item) => (
-          <FlatNavItem key={item.path} {...item} isSubNavItem />
+        {props.items.map((item, index) => (
+          <FlatNavItem key={`${item.label}${index}`} {...item} isSubNavItem />
         ))}
       </S.ExpandableSubNavList>
     </S.ExpandableNavItemGroup>

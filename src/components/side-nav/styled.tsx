@@ -59,7 +59,7 @@ export const SideNavMain = styled.div<SideNavProps>`
   flex: 1;
   padding: ${({ context }) =>
     context.isCollapsed ? 'var(--space-4) 0' : '0 0 var(--space-4) 0'};
-  overflow-y: auto;
+  overflow-y: ${({ context }) => (context.isCollapsed ? 'none' : 'auto')};
   scrollbar-width: none;
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
@@ -70,9 +70,9 @@ export const SideNavMain = styled.div<SideNavProps>`
 /**
  * A generic unordered list for the side nav
  */
-export const SideNavList = styled.ul`
+export const SideNavList = styled.ul<SideNavProps>`
   list-style: none;
-  padding: 0;
+  padding: ${({ context }) => (context.isCollapsed ? '0' : '2px')};
   margin: 0;
   display: flex;
   flex-direction: column;

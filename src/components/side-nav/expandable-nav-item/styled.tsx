@@ -68,9 +68,26 @@ export const ExpandableNavItemButton = styled.button<ExpandableNavItemProps>`
   }
 `
 
-export const ExpandableNavItemIcon = styled.span`
+export const ExpandableNavItemIcon = styled.span<ExpandableNavItemProps>`
   min-width: var(--space-5);
   min-height: var(--space-5);
+
+  ${({ isCollapsed }) =>
+    isCollapsed &&
+    `&:hover {
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        right: -8px;
+        width: 0;
+        height: 0;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
+        border-left: 4px solid var(--color-grey-600);
+        transform: translateY(-50%);
+      }
+    }`}
 `
 
 export const ExpandableNavItemLabel = styled.span<ExpandableNavItemProps>`
