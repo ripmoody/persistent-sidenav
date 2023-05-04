@@ -3,12 +3,17 @@ import {
   Approvals,
   Apps,
   Briefcase,
+  CompanyDetails,
+  CompanySettings,
+  DataManager,
   Device,
   Documents,
   Dollar,
   Heart,
+  Permissions,
   Recipes,
   Reports,
+  Security,
   Settings,
   Tasks,
   Users,
@@ -197,19 +202,46 @@ export const mainNavItems: ExpandableNavItem[] = [
   {
     label: 'Finance',
     icon: Dollar,
-    items: [],
     isExpanded: false,
+    items: [],
   },
   {
     label: 'Third-party Apps',
     icon: Apps,
-    items: [],
     isExpanded: false,
+    items: [],
   },
   {
     label: 'Settings',
     icon: Settings,
-    items: [],
     isExpanded: false,
+
+    items: [
+      {
+        label: 'Permissions',
+        icon: Permissions,
+        path: '/settings/permissions',
+      },
+      {
+        label: 'Data Manager',
+        icon: DataManager,
+        path: '/settings/data-manager',
+      },
+      {
+        label: 'Company Details',
+        icon: CompanyDetails,
+        path: '/settings/company-details',
+      },
+      {
+        label: 'Company Settings',
+        icon: CompanySettings,
+        path: '/settings/company-settings',
+      },
+      {
+        label: 'Security',
+        icon: Security,
+        path: '/settings/security',
+      },
+    ],
   },
 ]
