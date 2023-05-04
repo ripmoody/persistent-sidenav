@@ -2,7 +2,13 @@ import * as RTooltip from '@radix-ui/react-tooltip'
 import * as S from './styled'
 
 type Props = Children & {
+  /**
+   * The text to display in the tooltip
+   */
   label: string
+  /**
+   * Conditionally removes the tooltip entirely and only renders children in a fragment
+   */
   isDisabled?: boolean
 }
 
