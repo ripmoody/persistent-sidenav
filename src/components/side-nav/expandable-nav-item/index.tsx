@@ -2,7 +2,7 @@ import { Tooltip } from '@/components/tooltip'
 import { useNavigation } from '@/providers/navigation'
 import type { ExpandableNavItem as ExpandableNavItemType } from '@/providers/navigation/constants/main'
 import { useRouter } from 'next/router'
-import { useMemo, useRef } from 'react'
+import { useMemo } from 'react'
 import { FlatNavItem } from '../flat-nav-item'
 import { SubNavMenu } from '../subnav-menu'
 import * as S from './styled'
@@ -15,7 +15,6 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
   const { label, icon: Icon } = props
 
   const { state, dispatch } = useNavigation()
-  const menuRef = useRef<HTMLUListElement>(null)
   const router = useRouter()
 
   const handleExpandCollapse = () => {
@@ -26,16 +25,6 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
     () => props.items.some((item) => item.path === router.asPath),
     [router.asPath, props.items],
   )
-
-  const disableTooltip = useMemo(() => {
-    if (!state.context.isCollapsed) {
-      return true
-    }
-
-    // if the menu is currently open disable the tooltip
-
-    return false
-  }, [state.context.isCollapsed])
 
   return (
     <S.ExpandableNavItemGroup>
@@ -51,7 +40,7 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
             hasActiveChild={hasActiveChild}
             isNavItemExpanded={props.isExpanded}
           >
-            <Tooltip label={label} isDisabled={disableTooltip}>
+            <Tooltip label={label} isDisabled={!state.context.isCollapsed}>
               <S.ExpandableNavItemIcon>
                 <Icon />
               </S.ExpandableNavItemIcon>
