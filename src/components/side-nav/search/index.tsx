@@ -1,14 +1,8 @@
 import { Menu as MenuIcon } from '@/components/icons/menu'
-import {
-  Menu,
-  MenuContent,
-  MenuItem,
-  MenuPortal,
-  MenuTrigger,
-} from '@/components/menu'
-import { MenuArrow } from '@/components/menu/styled'
 import { useNavigation } from '@/providers/navigation'
+import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 import { debounce } from 'lodash'
+import * as D from './search-menu/styled'
 import * as S from './styled'
 
 export const SideNavSearch = () => {
@@ -31,20 +25,20 @@ export const SideNavSearch = () => {
   return (
     <S.SideNavSearch isCollapsed={state.context.isCollapsed}>
       <S.SideNavSearchInput placeholder="Search" onChange={handleSearch} />
-      <Menu>
-        <MenuTrigger asChild>
+      <DropdownMenu.Root>
+        <DropdownMenu.Trigger asChild>
           <S.SideNavMenuIconButton>
             <MenuIcon size={16} />
           </S.SideNavMenuIconButton>
-        </MenuTrigger>
-        <MenuPortal>
-          <MenuContent side="right">
-            <MenuItem onClick={handleExpandAll}>Expand all</MenuItem>
-            <MenuItem onClick={handleCollapseAll}>Collapse all</MenuItem>
-            <MenuArrow />
-          </MenuContent>
-        </MenuPortal>
-      </Menu>
+        </DropdownMenu.Trigger>
+        <DropdownMenu.Portal>
+          <D.MenuContent side="right">
+            <D.MenuItem onClick={handleExpandAll}>Expand all</D.MenuItem>
+            <D.MenuItem onClick={handleCollapseAll}>Collapse all</D.MenuItem>
+            <D.MenuArrow />
+          </D.MenuContent>
+        </DropdownMenu.Portal>
+      </DropdownMenu.Root>
     </S.SideNavSearch>
   )
 }

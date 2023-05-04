@@ -2,18 +2,6 @@ import { keyframes } from '@emotion/react'
 import styled from '@emotion/styled'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
 
-const slideRightAndFade = keyframes`
-  from {
-    opacity: 0;
-    transform: translateX(-2px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-`
-
 const slideUpAndFade = keyframes`
   from {
     opacity: 0;
@@ -41,10 +29,6 @@ export const MenuContent = styled(DropdownMenu.Content)`
 
   &[data-side='bottom'] {
     animation-name: ${slideUpAndFade};
-  }
-
-  &[data-side='right'] {
-    animation-name: ${slideRightAndFade};
   }
 `
 
