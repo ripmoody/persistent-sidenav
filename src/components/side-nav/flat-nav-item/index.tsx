@@ -1,5 +1,7 @@
 import { Tooltip } from '@/components/tooltip'
+import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
+import { breakpoints } from '@/providers/navigation/constants/breakpoints'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import * as S from './styled'
@@ -11,10 +13,11 @@ import * as S from './styled'
 export const FlatNavItem = (props: NavItem) => {
   const { path, label, icon: Icon, isSubNavItem, category } = props
   const router = useRouter()
+  const width = useWindowWidth()
 
   const {
     state: {
-      context: { isCollapsed },
+      context: { isCollapsed, isForceCollapsed },
     },
     dispatch,
   } = useNavigation()
@@ -22,6 +25,14 @@ export const FlatNavItem = (props: NavItem) => {
   const handleClick = () => {
     if (path) {
       router.push(path)
+    }
+
+    if (isForceCollapsed) {
+      dispatch({ type: 'set-collapsed', payload: true })
+    }
+
+    if (width < breakpoints.md) {
+      dispatch({ type: 'set-hidden', payload: true })
     }
   }
 

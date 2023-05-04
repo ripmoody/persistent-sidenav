@@ -91,9 +91,12 @@ export const ExpandableNavItemChevron = styled(
 `
 
 export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-0_5);
   overflow-y: hidden;
   list-style: none;
-  padding: 0 2px;
+  padding: 2px;
   margin: 0;
   max-height: ${({ isNavItemExpanded, isCollapsed }) => {
     if (isCollapsed || !isNavItemExpanded) {
