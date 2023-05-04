@@ -1,25 +1,32 @@
 import {
   ActivityMonitor,
+  AddApp,
   Approvals,
   Apps,
+  AutomatedCompliance,
   Briefcase,
   CompanyDetails,
   CompanySettings,
+  CustomApp,
   DataManager,
   Device,
+  Devices,
   Documents,
   Dollar,
   GlobalPayroll,
   Heart,
   Payroll,
   Permissions,
+  RPass,
   Recipes,
   Reports,
+  SSHKeypass,
   Security,
   Settings,
   SpendManagement,
   Tasks,
   Users,
+  VirtualLdap,
   WorkflowAutomator,
 } from '@/components/icons'
 
@@ -133,7 +140,7 @@ export const mainNavItems: ExpandableNavItem[] = [
       },
       {
         label: 'Discover more HR apps',
-        icon: Apps,
+        icon: AddApp,
         path: '/hr/discover-more-hr-apps',
       },
     ],
@@ -156,12 +163,12 @@ export const mainNavItems: ExpandableNavItem[] = [
       },
       {
         label: 'Devices',
-        icon: Tasks,
+        icon: Devices,
         path: '/it/devices',
       },
       {
         label: 'Discover more Device apps',
-        icon: Apps,
+        icon: AddApp,
         path: '/it/discover-more-device-apps',
       },
       {
@@ -171,22 +178,22 @@ export const mainNavItems: ExpandableNavItem[] = [
       },
       {
         label: 'RPass',
-        icon: Tasks,
+        icon: RPass,
         path: '/it/r-pass',
       },
       {
         label: 'SSH Key Manager',
-        icon: Tasks,
+        icon: SSHKeypass,
         path: '/it/ssk-key-manager',
       },
       {
         label: 'Virtual LDAP',
-        icon: Tasks,
+        icon: VirtualLdap,
         path: '/it/virtual-ldap',
       },
       {
         label: 'Custom App',
-        icon: Tasks,
+        icon: CustomApp,
         path: '/it/custom-app',
       },
       {
@@ -196,7 +203,7 @@ export const mainNavItems: ExpandableNavItem[] = [
       },
       {
         label: 'Automated Compliance',
-        icon: Tasks,
+        icon: AutomatedCompliance,
         path: '/it/auto-compliance',
       },
     ],
