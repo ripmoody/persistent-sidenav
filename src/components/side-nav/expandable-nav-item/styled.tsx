@@ -44,7 +44,6 @@ export const ExpandableNavItemButton = styled.button<ExpandableNavItemProps>`
   font-size: var(--type-size-md);
   border-radius: var(--radius-base);
   line-height: 1;
-  pointer-events: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'auto')};
   padding-left: ${({ isCollapsed }) =>
     isCollapsed ? 'var(--space-2)' : 'var(--space-5)'};
   background-color: ${({ hasActiveChild, isCollapsed, isNavItemExpanded }) => {
@@ -103,6 +102,8 @@ export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
   padding: 0 2px;
   padding-top: ${({ isCollapsed }) => (isCollapsed ? '0' : '2px')};
   margin: 0;
+  opacity: ${({ isNavItemExpanded }) => (isNavItemExpanded ? '1' : '0')};
+  pointer-events: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'auto')};
   max-height: ${({ isNavItemExpanded, isCollapsed }) => {
     if (isCollapsed || !isNavItemExpanded) {
       return '0'

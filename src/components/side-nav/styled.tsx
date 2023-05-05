@@ -58,7 +58,9 @@ export const SideNavMain = styled.div<SideNavProps>`
   position: relative;
   flex: 1;
   padding: ${({ context }) =>
-    context.isCollapsed ? 'var(--space-4) 0' : '0 0 var(--space-4) 0'};
+    context.isCollapsed
+      ? 'var(--space-4) 0'
+      : '0 var(--space-1) var(--space-4) 0'};
   overflow-y: auto;
 
   &::-webkit-scrollbar {
