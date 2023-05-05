@@ -59,8 +59,7 @@ export const SideNavMain = styled.div<SideNavProps>`
   flex: 1;
   padding: ${({ context }) =>
     context.isCollapsed ? 'var(--space-4) 0' : '0 0 var(--space-4) 0'};
-  // This is to accommodate for the focus ring in uncollapsed mode. Overflow y still hides the focus ring
-  overflow-y: ${({ context }) => (context.isCollapsed ? 'none' : 'auto')};
+  overflow-y: scroll;
   scrollbar-width: none;
   -ms-overflow-style: none;
   &::-webkit-scrollbar {
@@ -73,11 +72,9 @@ export const SideNavMain = styled.div<SideNavProps>`
  */
 export const SideNavList = styled.ul<SideNavProps>`
   list-style: none;
-  // This is to accommodate for the focus ring in uncollapsed mode
-  padding: ${({ context }) => (context.isCollapsed ? '0' : '2px')};
+  padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-0_5);
   font-size: var(--type-size-md);
 `

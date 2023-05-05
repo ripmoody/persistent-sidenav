@@ -295,7 +295,7 @@ export const mainNavItems: ExpandableNavItem[] = [
       {
         label: '',
         icon: AddApp,
-        path: '/',
+        path: '/foo',
         category: 'Most used',
       },
       {
@@ -341,7 +341,7 @@ export const mainNavItems: ExpandableNavItem[] = [
       {
         label: '',
         icon: AddApp,
-        path: '/',
+        path: '/apps/fooo',
         category: 'Installation in progress',
       },
       {

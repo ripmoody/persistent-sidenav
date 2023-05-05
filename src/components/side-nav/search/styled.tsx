@@ -38,6 +38,10 @@ export const SideNavSearchInput = styled.input`
   &:focus {
     box-shadow: 0 0 0 2px var(--color-plum-300);
   }
+
+  &::placeholder {
+    color: var(--color-grey-400);
+  }
 `
 
 export const SideNavSearchIcon = styled(Search)`

@@ -13,6 +13,7 @@ export const ExpandableNavItemGroup = Fragment
 
 export const ExpandableNavItem = styled.li<ExpandableNavItemProps>`
   position: relative;
+  margin: var(--space-0_5) 0;
 
   ${({ isCollapsed, isNavItemExpanded, hasActiveChild }) =>
     !isCollapsed &&
@@ -33,6 +34,7 @@ export const ExpandableNavItem = styled.li<ExpandableNavItemProps>`
 export const ExpandableNavItemButton = styled.button<ExpandableNavItemProps>`
   display: flex;
   align-items: center;
+  justify-content: center;
   padding: var(--space-2);
   width: 100%;
   border: none;
@@ -95,10 +97,9 @@ export const ExpandableNavItemChevron = styled(
 export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
   display: flex;
   flex-direction: column;
-  gap: var(--space-0_5);
   overflow-y: hidden;
   list-style: none;
-  padding: 2px;
+  padding: 0;
   margin: 0;
   max-height: ${({ isNavItemExpanded, isCollapsed }) => {
     if (isCollapsed || !isNavItemExpanded) {
