@@ -60,6 +60,15 @@ export const SideNavMain = styled.div<SideNavProps>`
   padding: ${({ context }) =>
     context.isCollapsed ? 'var(--space-4) 0' : '0 0 var(--space-4) 0'};
   overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-grey-200);
+    border-radius: 4px;
+  }
 `
 
 /**
