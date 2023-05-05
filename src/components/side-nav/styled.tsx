@@ -59,12 +59,7 @@ export const SideNavMain = styled.div<SideNavProps>`
   flex: 1;
   padding: ${({ context }) =>
     context.isCollapsed ? 'var(--space-4) 0' : '0 0 var(--space-4) 0'};
-  overflow-y: scroll;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  &::-webkit-scrollbar {
-    display: none;
-  }
+  overflow-y: auto;
 `
 
 /**
@@ -72,7 +67,7 @@ export const SideNavMain = styled.div<SideNavProps>`
  */
 export const SideNavList = styled.ul<SideNavProps>`
   list-style: none;
-  padding: 0;
+  padding: 0 2px;
   margin: 0;
   display: flex;
   flex-direction: column;

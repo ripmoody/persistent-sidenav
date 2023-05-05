@@ -99,7 +99,7 @@ export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
   flex-direction: column;
   overflow-y: hidden;
   list-style: none;
-  padding: 0;
+  padding: 2px;
   margin: 0;
   max-height: ${({ isNavItemExpanded, isCollapsed }) => {
     if (isCollapsed || !isNavItemExpanded) {
