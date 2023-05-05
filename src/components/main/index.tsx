@@ -20,7 +20,7 @@ export const Main = ({ children }: Children) => {
   return (
     <S.Main>
       <S.MainHeader>
-        <Icon size={40} />
+        <Icon size={32} />
         <S.MainHeaderTitle>{label}</S.MainHeaderTitle>
       </S.MainHeader>
       <S.MainLayout>

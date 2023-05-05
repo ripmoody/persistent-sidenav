@@ -54,11 +54,6 @@ export const ExpandCollapseNavItem = () => {
    * It is only visible when the screen size is larger than 500px
    */
   const handleClick = () => {
-    /**
-     * Clear the search input state
-     */
-    dispatch({ type: 'reset' })
-
     if (width > breakpoints.md && isCollapsed) {
       dispatch({ type: 'set-force-collapsed', payload: false })
       dispatch({ type: 'set-collapsed', payload: false })

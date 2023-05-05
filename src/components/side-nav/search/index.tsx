@@ -31,7 +31,10 @@ export const SideNavSearch = () => {
 
   return (
     <S.SideNavSearch isCollapsed={state.context.isCollapsed}>
-      <S.SideNavSearchInput placeholder="Search" onChange={handleSearch} />
+      <S.SideNavSearchInputContainer>
+        <S.SideNavSearchIcon size={16} />
+        <S.SideNavSearchInput placeholder="Search" onChange={handleSearch} />
+      </S.SideNavSearchInputContainer>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger asChild>
           <S.SideNavMenuIconButton>

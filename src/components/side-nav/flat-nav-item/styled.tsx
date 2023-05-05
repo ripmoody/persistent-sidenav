@@ -73,6 +73,8 @@ export const FlatNavItemButton = styled.button<NavItemProps>`
 export const FlatNavItemIcon = styled.span`
   min-width: var(--space-5);
   min-height: var(--space-5);
+  width: var(--space-5);
+  height: var(--space-5);
 `
 
 export const FlatNavItemLabel = styled.span<NavItemProps>`

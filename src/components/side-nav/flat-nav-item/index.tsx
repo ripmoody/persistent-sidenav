@@ -31,8 +31,14 @@ export const FlatNavItem = (props: NavItem) => {
       dispatch({ type: 'set-collapsed', payload: true })
     }
 
-    if (width < breakpoints.md) {
+    if (width < breakpoints.sm) {
       dispatch({ type: 'set-hidden', payload: true })
+      return
+    }
+
+    if (width < breakpoints.md) {
+      dispatch({ type: 'set-collapsed', payload: true })
+      return
     }
   }
 

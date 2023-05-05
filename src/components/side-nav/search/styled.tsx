@@ -1,3 +1,4 @@
+import { Search } from '@/components/icons'
 import styled from '@emotion/styled'
 
 type SideNavSearchProps = {
@@ -20,17 +21,31 @@ export const SideNavSearch = styled.div<SideNavSearchProps>`
   padding: var(--space-4) var(--space-1) var(--space-3);
 `
 
+export const SideNavSearchInputContainer = styled.div`
+  position: relative;
+  display: flex;
+  flex: 1;
+`
+
 export const SideNavSearchInput = styled.input`
   flex: 1;
   border-radius: var(--radius-base);
   border: none;
   outline: none;
   background: var(--color-grey-50);
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-2) var(--space-3) var(--space-2) var(--space-8);
 
   &:focus {
     box-shadow: 0 0 0 2px var(--color-plum-300);
   }
+`
+
+export const SideNavSearchIcon = styled(Search)`
+  position: absolute;
+  top: 50%;
+  left: var(--space-2);
+  transform: translateY(-50%);
+  color: var(--color-grey-400);
 `
 
 export const SideNavMenuIconButton = styled.button`
