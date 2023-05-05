@@ -64,7 +64,7 @@ export const ExpandableNavItemButton = styled.button<ExpandableNavItemProps>`
     background-color: var(--color-grey-50);
   }
 
-  &:focus {
+  &:focus-visible {
     outline: none;
     box-shadow: 0 0 0 2px var(--color-plum-300);
   }
