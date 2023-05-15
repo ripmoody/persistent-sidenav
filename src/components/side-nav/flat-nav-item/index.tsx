@@ -6,10 +6,6 @@ import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import * as S from './styled'
 
-/**
- * A root level nav item that will not have any children or expand and collapse
- * Primarily used for the top level nav items in the header and footer
- */
 export const FlatNavItem = (props: NavItem) => {
   const { path, label, icon: Icon, isSubNavItem, category } = props
   const router = useRouter()
