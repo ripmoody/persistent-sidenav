@@ -19,10 +19,9 @@ export const SubNavMenuContent = styled(DropdownMenu.Content)`
   flex-direction: column;
   background: white;
   max-height: 600px;
-  padding: var(--space-2) 0;
+  padding: var(--space-1) 0;
   border-radius: var(--radius-base);
   box-shadow: var(--shadows-lg);
-  gap: var(--space-0_5);
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;

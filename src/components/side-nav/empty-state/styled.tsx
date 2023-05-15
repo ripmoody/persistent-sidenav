@@ -9,6 +9,7 @@ export const EmptyState = styled.div`
   padding: var(--space-10) var(--space-8);
   gap: var(--space-8);
 `
+
 export const EmptyStateContent = styled.div`
   display: flex;
   align-items: center;
@@ -25,5 +26,6 @@ export const EmptyStateHeader = styled.h2`
 `
 
 export const EmptyStateDescription = styled.span`
-  color: var(--color-grey-600);
+  color: var(--color-grey-500);
+  font-size: var(--type-size-sm);
 `
