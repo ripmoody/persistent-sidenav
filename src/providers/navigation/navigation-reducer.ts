@@ -27,6 +27,10 @@ export type NavigationState = {
      * When the screen is below 500px, the navigation is hidden and accessible via the top nav.
      */
     isHidden: boolean
+    /**
+     * The controlled value of the search input.
+     */
+    searchValue: string
   }
 }
 
@@ -38,7 +42,9 @@ export type NavigationAction =
   | { type: 'toggle-item-expanded'; payload: ExpandableNavItem }
   | { type: 'expand-all' }
   | { type: 'collapse-all' }
-  | { type: 'set-filtered-items'; payload: string }
+  | { type: 'set-filtered-items' }
+  | { type: 'set-search-value'; payload: string }
+  | { type: 'expand-active-section'; payload: string }
 
 export const initialState: NavigationState = {
   items: {
@@ -53,6 +59,7 @@ export const initialState: NavigationState = {
     isCollapsed: false,
     isForceCollapsed: false,
     isHidden: false,
+    searchValue: '',
   },
 }
 
@@ -61,13 +68,45 @@ export const navigationReducer = (
   action: NavigationAction,
 ) => {
   switch (action.type) {
+    case 'expand-active-section': {
+      const hasActiveChild = state.items.main.some((item) =>
+        item.items.some((subItem) => subItem.label === action.payload),
+      )
+
+      if (hasActiveChild) {
+        return {
+          ...state,
+          data: {
+            ...state.data,
+            filteredItems: state.data.filteredItems.map((item) => ({
+              ...item,
+              isExpanded: item.items.some(
+                (subItem) => subItem.label === action.payload,
+              ),
+            })),
+          },
+        }
+      }
+
+      return state
+    }
+
+    case 'set-search-value': {
+      return {
+        ...state,
+        context: {
+          ...state.context,
+          searchValue: action.payload,
+        },
+      }
+    }
+
     case 'set-filtered-items': {
       const filteredItems: ExpandableNavItem[] = []
-      const value = action.payload.trim().toLowerCase()
 
       for (const rootItem of state.items.main) {
         const filteredSubItems = rootItem.items.filter((item) =>
-          item.label.toLowerCase().includes(value),
+          item.label.toLowerCase().includes(state.context.searchValue),
         )
 
         if (filteredSubItems.length > 0) {

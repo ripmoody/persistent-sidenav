@@ -1,7 +1,6 @@
 import { Menu as MenuIcon } from '@/components/icons/menu'
 import { useNavigation } from '@/providers/navigation'
 import * as DropdownMenu from '@radix-ui/react-dropdown-menu'
-import { debounce } from 'lodash'
 import * as D from './search-menu/styled'
 import * as S from './styled'
 
@@ -16,24 +15,22 @@ export const SideNavSearch = () => {
     dispatch({ type: 'collapse-all' })
   }
 
-  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) =>
-    debounce(() => {
-      const payload = e.target.value
-
-      if (payload === '') {
-        dispatch({ type: 'reset' })
-        return
-      }
-
-      dispatch({ type: 'set-filtered-items', payload })
-      dispatch({ type: 'expand-all' })
-    }, 300)()
+  const handleSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const payload = e.target.value
+    dispatch({ type: 'set-search-value', payload })
+    dispatch({ type: 'set-filtered-items' })
+    dispatch({ type: 'expand-all' })
+  }
 
   return (
     <S.SideNavSearch isCollapsed={state.context.isCollapsed}>
       <S.SideNavSearchInputContainer>
         <S.SideNavSearchIcon size={16} />
-        <S.SideNavSearchInput placeholder="Search" onChange={handleSearch} />
+        <S.SideNavSearchInput
+          placeholder="Search"
+          onChange={handleSearch}
+          value={state.context.searchValue}
+        />
       </S.SideNavSearchInputContainer>
       <DropdownMenu.Root>
         <DropdownMenu.Trigger asChild>

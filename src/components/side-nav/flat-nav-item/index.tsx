@@ -24,6 +24,9 @@ export const FlatNavItem = (props: NavItem) => {
 
   const handleClick = () => {
     if (path) {
+      dispatch({ type: 'set-search-value', payload: '' })
+      dispatch({ type: 'set-filtered-items' })
+      dispatch({ type: 'expand-active-section', payload: label })
       router.push(path)
     }
 
