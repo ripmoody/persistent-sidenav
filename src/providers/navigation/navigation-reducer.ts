@@ -42,8 +42,6 @@ export type NavigationAction =
   | { type: 'toggle-item-expanded'; payload: ExpandableNavItem }
   | { type: 'expand-all' }
   | { type: 'collapse-all' }
-  | { type: 'set-filtered-items' }
-  | { type: 'set-search-value'; payload: string }
   | { type: 'expand-active-section'; payload: string }
 
 export const initialState: NavigationState = {
@@ -89,41 +87,6 @@ export const navigationReducer = (
       }
 
       return state
-    }
-
-    case 'set-search-value': {
-      return {
-        ...state,
-        context: {
-          ...state.context,
-          searchValue: action.payload,
-        },
-      }
-    }
-
-    case 'set-filtered-items': {
-      const filteredItems: ExpandableNavItem[] = []
-
-      for (const rootItem of state.items.main) {
-        const filteredSubItems = rootItem.items.filter((item) =>
-          item.label.toLowerCase().includes(state.context.searchValue),
-        )
-
-        if (filteredSubItems.length > 0) {
-          filteredItems.push({
-            ...rootItem,
-            items: filteredSubItems,
-          })
-        }
-      }
-
-      return {
-        ...state,
-        data: {
-          ...state.data,
-          filteredItems,
-        },
-      }
     }
 
     case 'expand-all': {
