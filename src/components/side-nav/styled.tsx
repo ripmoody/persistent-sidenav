@@ -16,7 +16,6 @@ export const SideNavRelative = styled.div<SideNavProps>`
   transition: width 200ms ease-in-out;
   width: ${({ context }) => (context.isCollapsed ? '4rem' : '22rem')};
 
-  // Expand button is hidden by default
   :hover #expand-collapse {
     opacity: 1;
     scale: 1;

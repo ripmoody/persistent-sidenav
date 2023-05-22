@@ -1,10 +1,9 @@
-import { Tooltip } from '@/components/tooltip'
 import { useNavigation } from '@/providers/navigation'
 import type { ExpandableNavItem as ExpandableNavItemType } from '@/providers/navigation/constants/main'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { FlatNavItem } from '../flat-nav-item'
-import { SubNavMenu } from '../subnav-menu'
+import { HoverMenu } from '../hover-menu'
 import * as S from './styled'
 
 /**
@@ -33,18 +32,16 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
         isNavItemExpanded={props.isExpanded}
         hasActiveChild={hasActiveChild}
       >
-        <SubNavMenu items={props.items} category={props.label}>
+        <HoverMenu items={props.items} category={props.label}>
           <S.ExpandableNavItemButton
             onClick={handleExpandCollapse}
             isCollapsed={state.context.isCollapsed}
             hasActiveChild={hasActiveChild}
             isNavItemExpanded={props.isExpanded}
           >
-            <Tooltip label={label} isDisabled={!state.context.isCollapsed}>
-              <S.ExpandableNavItemIcon>
-                <Icon />
-              </S.ExpandableNavItemIcon>
-            </Tooltip>
+            <S.ExpandableNavItemIcon>
+              <Icon />
+            </S.ExpandableNavItemIcon>
             <S.ExpandableNavItemLabel isCollapsed={state.context.isCollapsed}>
               {label}
             </S.ExpandableNavItemLabel>
@@ -53,7 +50,7 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
               isNavItemExpanded={props.isExpanded}
             />
           </S.ExpandableNavItemButton>
-        </SubNavMenu>
+        </HoverMenu>
       </S.ExpandableNavItem>
       <S.ExpandableSubNavList
         isCollapsed={state.context.isCollapsed}
