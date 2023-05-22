@@ -7,14 +7,30 @@ type SideNavProps = {
 }
 
 /**
+ * The relative positioned container to allow the expand an collapse button to be visible and
+ * on top of th sidenav content. It also conditionally shows/hides the icon button on hover
+ * based on the button id. The width must be explicitly set because collapsed state is positioned absolutely.
+ */
+export const SideNavRelative = styled.div<SideNavProps>`
+  position: relative;
+  transition: width 200ms ease-in-out;
+  width: ${({ context }) => (context.isCollapsed ? '4rem' : '22rem')};
+
+  // Expand button is hidden by default
+  :hover #expand-collapse {
+    opacity: 1;
+  }
+`
+
+/**
  * The side nav component container
  */
 export const SideNav = styled.nav<SideNavProps>`
   transition: all 200ms ease-in-out;
   display: flex;
   flex-direction: column;
-  width: ${({ context }) =>
-    context.isCollapsed ? 'var(--space-16)' : '22rem'};
+  height: 100%;
+  width: 100%;
   background-color: white;
   border-right: solid 1px var(--color-grey-100);
   padding: var(--space-4) var(--space-3);

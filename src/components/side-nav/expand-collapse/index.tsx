@@ -90,9 +90,13 @@ export const ExpandCollapseButton = () => {
   )
 
   return (
-    <Tooltip label={label} isDisabled={!isCollapsed}>
-      <S.ExpandCollapseButton isCollapsed={isCollapsed} onClick={handleClick}>
-        <S.ExpandCollapseArrow isCollapsed={isCollapsed} />
+    <Tooltip label={label}>
+      <S.ExpandCollapseButton
+        isCollapsed={isCollapsed}
+        onClick={handleClick}
+        id="expand-collapse"
+      >
+        <S.ExpandCollapseArrow isCollapsed={isCollapsed} size={16} />
       </S.ExpandCollapseButton>
     </Tooltip>
   )
