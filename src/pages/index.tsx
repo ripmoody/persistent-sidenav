@@ -1,3 +1,7 @@
 export default function Home() {
-  return <>Version 2</>
+  return (
+    <div>
+      <p>Version 3</p>
+    </div>
+  )
 }
