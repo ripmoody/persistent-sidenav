@@ -9,9 +9,6 @@ export type NavigationState = {
     footer: NavItem[]
     main: ExpandableNavItem[]
   }
-  data: {
-    filteredItems: ExpandableNavItem[]
-  }
   context: {
     /**
      * Whether the navigation is collapsed or not.
@@ -50,9 +47,6 @@ export const initialState: NavigationState = {
     footer: footerNavItems,
     main: mainNavItems,
   },
-  data: {
-    filteredItems: mainNavItems,
-  },
   context: {
     isCollapsed: false,
     isForceCollapsed: false,
@@ -74,9 +68,9 @@ export const navigationReducer = (
       if (hasActiveChild) {
         return {
           ...state,
-          data: {
-            ...state.data,
-            filteredItems: state.data.filteredItems.map((item) => ({
+          items: {
+            ...state.items,
+            main: state.items.main.map((item) => ({
               ...item,
               isExpanded: item.items.some(
                 (subItem) => subItem.label === action.payload,
@@ -92,9 +86,9 @@ export const navigationReducer = (
     case 'expand-all': {
       return {
         ...state,
-        data: {
-          ...state.data,
-          filteredItems: state.data.filteredItems.map((item) => ({
+        items: {
+          ...state.items,
+          main: state.items.main.map((item) => ({
             ...item,
             isExpanded: true,
           })),
@@ -105,9 +99,9 @@ export const navigationReducer = (
     case 'collapse-all': {
       return {
         ...state,
-        data: {
-          ...state.data,
-          filteredItems: state.data.filteredItems.map((item) => ({
+        items: {
+          ...state.items,
+          main: state.items.main.map((item) => ({
             ...item,
             isExpanded: false,
           })),
@@ -118,9 +112,9 @@ export const navigationReducer = (
     case 'toggle-item-expanded': {
       return {
         ...state,
-        data: {
-          ...state.data,
-          filteredItems: state.data.filteredItems.map((item) => ({
+        items: {
+          ...state.items,
+          main: state.items.main.map((item) => ({
             ...item,
             isExpanded:
               item.label === action.payload.label

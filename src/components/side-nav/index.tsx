@@ -19,8 +19,8 @@ export const SideNav = () => {
       </S.SideNavHeader>
       <S.SideNavMain context={state.context}>
         <S.SideNavList context={state.context}>
-          {state.data.filteredItems.length < 1 && <EmptyState />}
-          {state.data.filteredItems.map((item) => (
+          {state.items.main.length < 1 && <EmptyState />}
+          {state.items.main.map((item) => (
             <ExpandableNavItem key={item.label} {...item} />
           ))}
         </S.SideNavList>
