@@ -14,12 +14,12 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
   justify-content: center;
   padding: var(--space-1);
   position: absolute;
-  top: 128px;
+  bottom: 94px;
   right: 0;
   border: none;
   background: white;
   color: var(--color-text);
-  box-shadow: var(--shadows-md);
+  box-shadow: var(--shadows-lg);
   border-radius: var(--radius-full);
   transform: translateX(50%);
   opacity: 0;

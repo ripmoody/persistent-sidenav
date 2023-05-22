@@ -55,7 +55,7 @@ export const HoverMenu = (props: HoverMenuProps) => {
     <HoverCard.Root openDelay={200}>
       <HoverCard.Trigger asChild>{props.children}</HoverCard.Trigger>
       <HoverCard.Portal>
-        <S.HoverMenuContent side="right" sideOffset={24}>
+        <S.HoverMenuContent side="right" sideOffset={16}>
           <S.HoverMenuTitle>{props.category}</S.HoverMenuTitle>
           {props.items.map((item, index) => {
             if (item.category) {
