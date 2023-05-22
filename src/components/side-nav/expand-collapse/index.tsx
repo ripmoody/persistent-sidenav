@@ -9,8 +9,9 @@ import * as S from './styled'
  * This is a special nav item that is responsible for collapsing and expanding the side nav.
  * It is close to a flat nav item but broken apart for easier styling and logic.
  */
-export const ExpandCollapseNavItem = () => {
+export const ExpandCollapseButton = () => {
   const width = useWindowWidth()
+
   const {
     state: {
       context: { isCollapsed, isForceCollapsed },
@@ -90,14 +91,9 @@ export const ExpandCollapseNavItem = () => {
 
   return (
     <Tooltip label={label} isDisabled={!isCollapsed}>
-      <S.FlatNavItem isCollapsed={isCollapsed}>
-        <S.FlatNavItemButton onClick={handleClick} isCollapsed={isCollapsed}>
-          <S.ExpandableArrowIcon isCollapsed={isCollapsed} />
-          <S.FlatNavItemLabel isCollapsed={isCollapsed}>
-            {label}
-          </S.FlatNavItemLabel>
-        </S.FlatNavItemButton>
-      </S.FlatNavItem>
+      <S.ExpandCollapseButton isCollapsed={isCollapsed} onClick={handleClick}>
+        <S.ExpandCollapseArrow isCollapsed={isCollapsed} />
+      </S.ExpandCollapseButton>
     </Tooltip>
   )
 }
