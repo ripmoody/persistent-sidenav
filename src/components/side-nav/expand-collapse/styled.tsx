@@ -23,6 +23,7 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
   border-radius: var(--radius-full);
   transform: translateX(50%);
   opacity: 0;
+  scale: 0.4;
   transition: all 200ms ease-in-out;
 `
 

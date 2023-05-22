@@ -19,6 +19,16 @@ export const SideNavRelative = styled.div<SideNavProps>`
   // Expand button is hidden by default
   :hover #expand-collapse {
     opacity: 1;
+    scale: 1;
+  }
+
+  @media (max-width: ${breakpoints.md}px) {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    box-shadow: ${({ context }) =>
+      context.isCollapsed ? 'none' : 'var(--shadows-2xl)'};
   }
 `
 
@@ -39,15 +49,6 @@ export const SideNav = styled.nav<SideNavProps>`
     ${({ context }) => (context.isHidden ? '-100%' : '0%')}
   );
   overflow-x: hidden; // Hides icons on collapse and expand. A little hacky cause transitions don't match up.
-
-  @media (max-width: ${breakpoints.md}px) {
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    box-shadow: ${({ context }) =>
-      context.isCollapsed ? 'none' : 'var(--shadows-2xl)'};
-  }
 `
 
 /**
