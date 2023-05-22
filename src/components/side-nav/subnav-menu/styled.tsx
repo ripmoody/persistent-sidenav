@@ -26,6 +26,7 @@ export const SubNavMenuContent = styled(DropdownMenu.Content)`
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
   overflow-y: auto;
+  color: var(--color-text);
 
   &[data-side='right'] {
     animation-name: ${slideRightAndFade};
@@ -72,4 +73,13 @@ export const SubNavMenuCategory = styled.span`
 
 export const MenuArrow = styled(DropdownMenu.Arrow)`
   fill: white;
+`
+
+export const SubeNavMenuTitle = styled.span`
+  display: block;
+  font-size: var(--type-size-sm);
+  padding: var(--space-2) var(--space-4) var(--space-2);
+  border-bottom: 1px solid var(--color-grey-100);
+  font-weight: var(--type-weight-medium);
+  color: inherit;
 `

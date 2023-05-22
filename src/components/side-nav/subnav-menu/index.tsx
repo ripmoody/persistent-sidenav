@@ -14,6 +14,10 @@ type SubNavMenuProps = {
    * The items that will be rendered in the menu
    */
   items: NavItem[]
+  /**
+   * The category label to render in the menu
+   */
+  category: string
 }
 
 export const SubNavMenu = (props: SubNavMenuProps) => {
@@ -42,6 +46,7 @@ export const SubNavMenu = (props: SubNavMenuProps) => {
       <DropdownMenu.Trigger asChild>{props.children}</DropdownMenu.Trigger>
       <DropdownMenu.Portal>
         <S.SubNavMenuContent side="right" sideOffset={16}>
+          <S.SubeNavMenuTitle>{props.category}</S.SubeNavMenuTitle>
           {props.items.map((item, index) => {
             if (item.category) {
               return (

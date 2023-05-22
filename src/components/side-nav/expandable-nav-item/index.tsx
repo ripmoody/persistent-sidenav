@@ -33,7 +33,7 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
         isNavItemExpanded={props.isExpanded}
         hasActiveChild={hasActiveChild}
       >
-        <SubNavMenu items={props.items}>
+        <SubNavMenu items={props.items} category={props.label}>
           <S.ExpandableNavItemButton
             onClick={handleExpandCollapse}
             isCollapsed={state.context.isCollapsed}
