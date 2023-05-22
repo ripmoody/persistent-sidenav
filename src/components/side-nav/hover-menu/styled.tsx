@@ -77,10 +77,12 @@ export const MenuArrow = styled(HoverCard.Arrow)`
 
 export const HoverMenuTitle = styled.span`
   display: block;
-  font-size: var(--type-size-sm);
+  font-size: var(--type-size-xs);
+  text-transform: uppercase;
   padding: var(--space-2) var(--space-4) var(--space-2);
   border-bottom: 1px solid var(--color-grey-100);
-  font-weight: var(--type-weight-medium);
-  color: inherit;
+  font-weight: var(--type-weight-bold);
+  letter-spacing: var(--type-space-wider);
+  color: var(--color-grey-800);
   margin-bottom: var(--space-1);
 `

@@ -96,7 +96,7 @@ export const ExpandCollapseButton = () => {
         onClick={handleClick}
         id="expand-collapse"
       >
-        <S.ExpandCollapseArrow isCollapsed={isCollapsed} size={14} />
+        <S.ExpandCollapseArrow isCollapsed={isCollapsed} size={16} />
       </S.ExpandCollapseButton>
     </Tooltip>
   )
