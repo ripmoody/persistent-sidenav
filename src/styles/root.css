@@ -37,6 +37,17 @@
   --color-yellow-100: #f5e8ce;
   --color-yellow-50: #faf4e8;
 
+  --color-blue-900: #030b1a;
+  --color-blue-800: #142239;
+  --color-blue-700: #25395a;
+  --color-blue-600: #36507c;
+  --color-blue-500: #47669f;
+  --color-blue-400: #6080b8;
+  --color-blue-300: #839cc9;
+  --color-blue-200: #a5b8db;
+  --color-blue-100: #c7d5ec;
+  --color-blue-50: #e6f2ff;
+
   /* Borders */
   --borderWidth-1px: 1px;
   --borderWidth-2px: 2px;

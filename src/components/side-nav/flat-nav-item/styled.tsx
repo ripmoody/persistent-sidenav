@@ -81,6 +81,7 @@ export const FlatNavItemLabel = styled.span<NavItemProps>`
   line-height: 1.25;
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
   text-align: left;
+  flex: 1;
 `
 
 export const NavItemCategory = styled.span<NavItemProps>`
