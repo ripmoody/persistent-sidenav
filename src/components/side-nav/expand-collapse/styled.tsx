@@ -24,7 +24,7 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
   transform: translateX(50%);
   opacity: 0;
   scale: 0.4;
-  transition: all 200ms ease-in-out;
+  transition: all 140ms ease-in-out;
 `
 
 export const ExpandCollapseArrow = styled(ArrowRight)<NavItemProps>`

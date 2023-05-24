@@ -1,3 +1,4 @@
+import { useHackyHideButton } from '@/hooks/use-hacky-hide-button'
 import { DashboardLayout } from '@/layouts/dashboard'
 import { NavigationProvider } from '@/providers/navigation'
 import '@/styles/index.css'
@@ -5,6 +6,8 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
 export default function App({ Component, pageProps }: AppProps) {
+  useHackyHideButton()
+
   return (
     <>
       <Head>

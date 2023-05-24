@@ -40,6 +40,7 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
         isCollapsed={state.context.isCollapsed}
         isNavItemExpanded={props.isExpanded}
         hasActiveChild={hasActiveChild}
+        className="nav-item"
       >
         <HoverMenu items={props.items} category={props.label}>
           <S.ExpandableNavItemButton
