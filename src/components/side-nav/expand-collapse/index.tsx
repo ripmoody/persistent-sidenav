@@ -89,6 +89,8 @@ export const ExpandCollapseButton = () => {
     [isCollapsed],
   )
 
+  if (width < breakpoints.sm) return null
+
   return (
     <Tooltip label={label}>
       <S.ExpandCollapseButton
@@ -96,7 +98,7 @@ export const ExpandCollapseButton = () => {
         onClick={handleClick}
         id="expand-collapse"
       >
-        <S.ExpandCollapseArrow isCollapsed={isCollapsed} size={16} />
+        <S.ExpandCollapseArrow isCollapsed={isCollapsed} size={20} />
       </S.ExpandCollapseButton>
     </Tooltip>
   )
