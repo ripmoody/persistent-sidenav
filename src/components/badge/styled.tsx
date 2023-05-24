@@ -40,7 +40,7 @@ const sizeStyle = ({ size }: BadgeProps) => {
       return css`
         height: var(--space-4);
         font-size: var(--type-size-xs);
-        padding: var(--space-2);
+        padding: 10px var(--space-2);
       `
     }
 
