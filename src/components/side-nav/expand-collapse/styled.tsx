@@ -12,9 +12,9 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-1_5);
+  padding: var(--space-1);
   position: absolute;
-  top: 124px;
+  top: 128px;
   right: 0;
   border: none;
   background: white;
@@ -25,6 +25,7 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
   opacity: 0;
   scale: 0.4;
   transition: all 140ms ease-in-out;
+  outline: 0.5px solid var(--color-grey-100);
 `
 
 export const ExpandCollapseArrow = styled(ChevronRight)<NavItemProps>`
