@@ -17,6 +17,15 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
   const router = useRouter()
 
   const handleExpandCollapse = () => {
+    if (!props.isExpanded) {
+      dispatch({ type: 'set-collapsed', payload: false })
+      dispatch({
+        type: 'set-item-expanded',
+        payload: { item: props, isExpanded: true },
+      })
+      return
+    }
+
     dispatch({ type: 'toggle-item-expanded', payload: props })
   }
 

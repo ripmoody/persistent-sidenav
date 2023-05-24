@@ -37,6 +37,10 @@ export type NavigationAction =
   | { type: 'set-collapsed'; payload: boolean }
   | { type: 'set-hidden'; payload: boolean }
   | { type: 'toggle-item-expanded'; payload: ExpandableNavItem }
+  | {
+      type: 'set-item-expanded'
+      payload: { item: ExpandableNavItem; isExpanded: boolean }
+    }
   | { type: 'expand-all' }
   | { type: 'collapse-all' }
   | { type: 'expand-active-section'; payload: string }
@@ -119,6 +123,22 @@ export const navigationReducer = (
             isExpanded:
               item.label === action.payload.label
                 ? !action.payload.isExpanded
+                : item.isExpanded,
+          })),
+        },
+      }
+    }
+
+    case 'set-item-expanded': {
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          main: state.items.main.map((item) => ({
+            ...item,
+            isExpanded:
+              item.label === action.payload.item.label
+                ? action.payload.isExpanded
                 : item.isExpanded,
           })),
         },
