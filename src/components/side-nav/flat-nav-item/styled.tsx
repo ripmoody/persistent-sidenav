@@ -51,7 +51,7 @@ export const FlatNavItemButton = styled.button<NavItemProps>`
   font-size: inherit;
   padding-left: ${({ isCollapsed, isSubNavItem }) => {
     if (!isCollapsed && isSubNavItem) {
-      return 'var(--space-6)'
+      return 'var(--space-8)'
     }
     if (!isCollapsed && !isSubNavItem) {
       return 'var(--space-5)'
@@ -90,6 +90,6 @@ export const NavItemCategory = styled.span<NavItemProps>`
   text-transform: uppercase;
   color: var(--color-grey-400);
   font-weight: var(--type-weight-bold);
-  padding: var(--space-4) var(--space-2) var(--space-2) var(--space-6);
+  padding: var(--space-4) var(--space-2) var(--space-2) var(--space-8);
   letter-spacing: 0.1rem;
 `
