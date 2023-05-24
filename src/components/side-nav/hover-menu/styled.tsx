@@ -71,10 +71,6 @@ export const HoverMenuCategory = styled.span`
   letter-spacing: 0.1rem;
 `
 
-export const MenuArrow = styled(HoverCard.Arrow)`
-  fill: white;
-`
-
 export const HoverMenuTitle = styled.span`
   display: block;
   font-size: 13px;
