@@ -1,6 +1,6 @@
 import { createIcon } from '@/components/icons/create-icon'
 
-export const ChevronRight = createIcon({
+export const Dollar = createIcon({
   path: (
     <path
       fillRule="evenodd"
