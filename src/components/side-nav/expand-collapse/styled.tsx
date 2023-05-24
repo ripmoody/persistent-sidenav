@@ -1,4 +1,4 @@
-import { ArrowRight } from '@/components/icons'
+import { ChevronRight } from '@/components/icons'
 import styled from '@emotion/styled'
 
 type NavItemProps = {
@@ -27,7 +27,7 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
   transition: all 140ms ease-in-out;
 `
 
-export const ExpandCollapseArrow = styled(ArrowRight)<NavItemProps>`
+export const ExpandCollapseArrow = styled(ChevronRight)<NavItemProps>`
   transition: all 500ms ease-in-out;
   transform: ${({ isCollapsed }) =>
     isCollapsed ? 'rotate(0deg)' : 'rotate(180deg)'};
