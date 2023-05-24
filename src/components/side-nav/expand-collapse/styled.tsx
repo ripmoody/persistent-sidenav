@@ -24,12 +24,21 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
   transform: translateX(50%);
   opacity: 0;
   scale: 0.4;
-  transition: all 140ms ease-in-out;
+  transition: all 200ms ease-in-out;
   outline: 0.5px solid var(--color-grey-100);
+
+  :hover {
+    color: white;
+    background: var(--color-plum-400);
+  }
+
+  :active {
+    background: var(--color-plum-500);
+  }
 `
 
 export const ExpandCollapseArrow = styled(ChevronRight)<NavItemProps>`
-  transition: all 500ms ease-in-out;
   transform: ${({ isCollapsed }) =>
     isCollapsed ? 'rotate(0deg)' : 'rotate(180deg)'};
+  margin-left: ${({ isCollapsed }) => (isCollapsed ? '0' : '-2px')};
 `
