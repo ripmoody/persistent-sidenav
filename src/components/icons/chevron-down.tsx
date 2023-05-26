@@ -2,6 +2,10 @@ import { createIcon } from '@/components/icons/create-icon'
 
 export const ChevronDown = createIcon({
   path: (
-    <path d="M17.5928 10.0928L16.5321 9.03215L12.1874 13.3768L7.84277 9.03215L6.78211 10.0928L12.1874 15.4981L17.5928 10.0928Z" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M4.34921 9.75926L5.6508 8.24075L12 13.6829L18.3492 8.24075L19.6508 9.75926L12 16.3171L4.34921 9.75926Z"
+    />
   ),
 })
