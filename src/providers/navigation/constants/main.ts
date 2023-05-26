@@ -85,7 +85,6 @@ export const mainNavItems: ExpandableNavItem[] = [
         label: 'Approvals',
         icon: Approvals,
         path: '/tools/approvals',
-        badge: 'New',
       },
       {
         label: 'Custom Workflow Builder',
@@ -128,7 +127,6 @@ export const mainNavItems: ExpandableNavItem[] = [
         label: 'Time Off',
         icon: TimeOff,
         path: '/hr/time-off',
-        badge: 'New',
       },
       {
         label: 'People',

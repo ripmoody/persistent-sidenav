@@ -1,4 +1,3 @@
-import { Badge } from '@/components/badge'
 import { Tooltip } from '@/components/tooltip'
 import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
@@ -67,7 +66,6 @@ export const FlatNavItem = (props: NavItem) => {
           <S.FlatNavItemLabel isCollapsed={isCollapsed}>
             {label}
           </S.FlatNavItemLabel>
-          {props.badge && <Badge>{props.badge}</Badge>}
         </S.FlatNavItemButton>
       </Tooltip>
     </S.FlatNavItem>

@@ -38,9 +38,5 @@ declare global {
      * is used to group other nav items that fall underneath it.
      **/
     category?: string
-    /**
-     * Badge text to display on the nav item.
-     */
-    badge?: string
   }
 }
