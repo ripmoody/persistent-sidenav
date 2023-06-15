@@ -20,7 +20,12 @@ export const ExpandCollapseButton = () => {
   } = useNavigation()
 
   /**
-   * This effect is responsible for setting the responsive collapsed state of the side nav
+   * Hiding the expand/collapse button when inside a subnavigation menu or a button that prompts one
+   */
+  useEffect(() => {}, [])
+
+  /**
+   * Responsible for setting the responsive collapsed state of the side nav
    */
   useEffect(() => {
     /**
@@ -89,8 +94,6 @@ export const ExpandCollapseButton = () => {
     [isCollapsed],
   )
 
-  if (width < breakpoints.sm) return null
-
   return (
     <Tooltip label={label}>
       <S.ExpandCollapseButton
@@ -98,7 +101,7 @@ export const ExpandCollapseButton = () => {
         onClick={handleClick}
         id="expand-collapse"
       >
-        <S.ExpandCollapseArrow isCollapsed={isCollapsed} size={20} />
+        <S.ExpandCollapseArrow isCollapsed={isCollapsed} size={16} />
       </S.ExpandCollapseButton>
     </Tooltip>
   )

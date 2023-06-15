@@ -1,4 +1,5 @@
 import { ChevronRight } from '@/components/icons'
+import { breakpoints } from '@/providers/navigation/constants/breakpoints'
 import styled from '@emotion/styled'
 
 type NavItemProps = {
@@ -34,6 +35,10 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
 
   :active {
     background: var(--color-plum-500);
+  }
+
+  @media (max-width: ${breakpoints.sm}px) {
+    display: none;
   }
 `
 
