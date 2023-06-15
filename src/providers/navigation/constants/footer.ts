@@ -1,14 +1,24 @@
-import { AppShop, Help } from '@/components/icons'
+import { AppShop, Globe, Handshake, Help } from '@/components/icons'
 
 export const footerNavItems: NavItem[] = [
   {
-    label: 'App Shop',
+    label: 'Global workforce',
+    icon: Globe,
+    path: '/global-workforce',
+  },
+  {
+    label: 'App shop',
     icon: AppShop,
     path: '/app-shop',
   },
   {
-    label: 'Support & Resources',
+    label: 'Support & resources',
     icon: Help,
     path: '/support',
+  },
+  {
+    label: 'Refer a friend',
+    icon: Handshake,
+    path: '/refer-a-friend',
   },
 ]
