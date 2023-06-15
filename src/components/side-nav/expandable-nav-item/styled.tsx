@@ -1,10 +1,9 @@
 import { ChevronRight } from '@/components/icons'
-import { NavigationState } from '@/providers/navigation/navigation-reducer'
 import styled from '@emotion/styled'
 import { Fragment } from 'react'
 
 type ExpandableNavItemProps = {
-  isCollapsed: NavigationState['context']['isCollapsed']
+  isCollapsed: boolean
   hasActiveChild?: boolean
   isNavItemExpanded?: boolean
 }
@@ -111,7 +110,7 @@ export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
     return '700px'
   }};
   transition: max-height 300ms ease-in-out;
-  font-size: 15px; // booooooo, but the type size is too big for the subnav
+  font-size: var(--type-size-sm);
 
   & > li:last-of-type {
     margin-bottom: var(--space-3);
