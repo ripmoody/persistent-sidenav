@@ -9,7 +9,7 @@ export const SideNav = () => {
 
   return (
     <S.SideNavRelative context={state.context}>
-      <S.SideNav context={state.context}>
+      <S.SideNav context={state.context} id="side-nav">
         <S.SideNavHeader>
           <S.SideNavList context={state.context}>
             {state.items.header.map((item) => (

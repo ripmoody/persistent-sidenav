@@ -14,6 +14,7 @@ type NavItemProps = {
 
 export const FlatNavItem = styled.li<NavItemProps>`
   position: relative;
+  margin: ${({ isSubNavItem }) => (isSubNavItem ? '0' : 'var(--space-0_5) 0')};
 
   &[aria-current='page'] button {
     background-color: var(--color-grey-50);
@@ -82,6 +83,7 @@ export const FlatNavItemLabel = styled.span<NavItemProps>`
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
   text-align: left;
   flex: 1;
+  letter-spacing: 0.25px;
 `
 
 export const NavItemCategory = styled.span<NavItemProps>`

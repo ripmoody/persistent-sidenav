@@ -2,7 +2,7 @@ import { Tooltip } from '@/components/tooltip'
 import { useWindowWidth } from '@/hooks/use-window-width'
 import { useNavigation } from '@/providers/navigation'
 import { breakpoints } from '@/providers/navigation/constants/breakpoints'
-import { useEffect, useMemo } from 'react'
+import { useCallback, useEffect, useMemo } from 'react'
 import * as S from './styled'
 
 /**
@@ -19,10 +19,42 @@ export const ExpandCollapseButton = () => {
     dispatch,
   } = useNavigation()
 
+  const handleMobileHide = useCallback(() => {
+    if (width < breakpoints.sm && !isCollapsed) {
+      dispatch({ type: 'set-collapsed', payload: true })
+      dispatch({ type: 'set-hidden', payload: true })
+    }
+  }, [dispatch, isCollapsed, width])
+
   /**
-   * Hiding the expand/collapse button when inside a subnavigation menu or a button that prompts one
+   * Semi hacky way to close the side nav when clicking outside or pressing escape when the side nav is open
+   * at small screen sizes
    */
-  useEffect(() => {}, [])
+  useEffect(() => {
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        handleMobileHide()
+      }
+    }
+
+    const handleClick = (e: MouseEvent) => {
+      if (
+        !e
+          .composedPath()
+          .includes(document.getElementById('side-nav') as HTMLElement)
+      ) {
+        handleMobileHide()
+      }
+    }
+
+    document.addEventListener('click', handleClick)
+    document.addEventListener('keyup', handleEscape)
+
+    return () => {
+      document.removeEventListener('click', handleClick)
+      document.removeEventListener('keyup', handleEscape)
+    }
+  }, [dispatch, handleMobileHide])
 
   /**
    * Responsible for setting the responsive collapsed state of the side nav
@@ -73,8 +105,7 @@ export const ExpandCollapseButton = () => {
     }
 
     if (width < breakpoints.sm && !isCollapsed) {
-      dispatch({ type: 'set-collapsed', payload: true })
-      dispatch({ type: 'set-hidden', payload: true })
+      handleMobileHide()
       return
     }
 

@@ -80,6 +80,7 @@ export const ExpandableNavItemLabel = styled.span<ExpandableNavItemProps>`
   line-height: 1;
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
   white-space: nowrap; // This is worrisome. Stops the text from stacking on expand.
+  letter-spacing: 0.25px;
 `
 
 export const ExpandableNavItemChevron = styled(

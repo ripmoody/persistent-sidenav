@@ -59,8 +59,7 @@ export const SideNavHeader = styled.div`
 `
 
 /**
- * The fixed footer portion of the side nav that stays fixed to the bottom.
- * Contains support, App Shop
+ * The footer portion of the side nav that stays fixed to the bottom.
  */
 export const SideNavFooter = styled.div`
   border-top: solid 1px var(--color-grey-100);
