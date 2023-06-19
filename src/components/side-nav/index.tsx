@@ -10,14 +10,14 @@ export const SideNav = () => {
   return (
     <S.SideNavRelative context={state.context}>
       <S.SideNav context={state.context} id="side-nav">
-        <S.SideNavHeader>
-          <S.SideNavList context={state.context}>
-            {state.items.header.map((item) => (
-              <FlatNavItem key={item.label} {...item} />
-            ))}
-          </S.SideNavList>
-        </S.SideNavHeader>
         <S.SideNavMain context={state.context}>
+          <S.SideNavHeader>
+            <S.SideNavList context={state.context}>
+              {state.items.header.map((item) => (
+                <FlatNavItem key={item.label} {...item} />
+              ))}
+            </S.SideNavList>
+          </S.SideNavHeader>
           <S.SideNavList context={state.context}>
             {state.items.main.map((item) => (
               <ExpandableNavItem key={item.label} {...item} />

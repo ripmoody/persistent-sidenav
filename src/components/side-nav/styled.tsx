@@ -48,6 +48,16 @@ export const SideNav = styled.nav<SideNavProps>`
     ${({ context }) => (context.isHidden ? '-100%' : '0%')}
   );
   overflow-x: hidden; // Hides icons on collapse and expand. A little hacky cause transitions don't match up.
+  overflow-y: auto;
+
+  &::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--color-grey-200);
+    border-radius: 4px;
+  }
 `
 
 /**
@@ -56,6 +66,7 @@ export const SideNav = styled.nav<SideNavProps>`
 export const SideNavHeader = styled.div`
   border-bottom: solid 1px var(--color-grey-100);
   padding: 0 0 var(--space-4) 0;
+  margin-bottom: var(--space-4);
 `
 
 /**
@@ -77,16 +88,6 @@ export const SideNavMain = styled.div<SideNavProps>`
     context.isCollapsed
       ? 'var(--space-4) 0'
       : 'var(--space-4) var(--space-1) var(--space-4) 0'};
-  overflow-y: auto;
-
-  &::-webkit-scrollbar {
-    width: 6px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: var(--color-grey-200);
-    border-radius: 4px;
-  }
 `
 
 /**
