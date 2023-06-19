@@ -23,14 +23,14 @@ export const SideNav = () => {
               <ExpandableNavItem key={item.label} {...item} />
             ))}
           </S.SideNavList>
+          <S.SideNavFooter>
+            <S.SideNavList context={state.context}>
+              {state.items.footer.map((item) => (
+                <FlatNavItem key={item.label} {...item} />
+              ))}
+            </S.SideNavList>
+          </S.SideNavFooter>
         </S.SideNavMain>
-        <S.SideNavFooter>
-          <S.SideNavList context={state.context}>
-            {state.items.footer.map((item) => (
-              <FlatNavItem key={item.label} {...item} />
-            ))}
-          </S.SideNavList>
-        </S.SideNavFooter>
       </S.SideNav>
       <ExpandCollapseButton />
     </S.SideNavRelative>

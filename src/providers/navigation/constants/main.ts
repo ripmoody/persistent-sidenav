@@ -1,10 +1,10 @@
 import {
   ActivityMonitor,
   AddApp,
+  AllApps,
   Anniversaries,
   ApplicantTracking,
   Approvals,
-  Apps,
   AutomatedCompliance,
   Briefcase,
   Buildkite,
@@ -54,6 +54,7 @@ import {
   WorkerComp,
   WorkflowAutomator,
 } from '@/components/icons'
+import { Apps } from '@/components/icons/apps'
 
 /**
  * The configuration for a navigation item that has expandable content that
@@ -292,6 +293,11 @@ export const mainNavItems: ExpandableNavItem[] = [
     icon: Apps,
     isExpanded: false,
     items: [
+      {
+        label: 'All company apps',
+        icon: AllApps,
+        path: '/apps/company-apps',
+      },
       {
         label: '',
         icon: AddApp,
