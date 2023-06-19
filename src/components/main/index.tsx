@@ -24,7 +24,22 @@ export const Main = ({ children }: Children) => {
         <S.MainHeaderTitle>{label}</S.MainHeaderTitle>
       </S.MainHeader>
       <S.MainLayout>
-        <S.MainContent>{children}</S.MainContent>
+        <S.MainContent>
+          <S.MainContentLayout>
+            <S.MainContentRow>
+              <S.MainContentWidget />
+              <S.MainContentWidget />
+            </S.MainContentRow>
+            <S.MainContentRow>
+              <S.MainContentWidget />
+              <S.MainContentWidget />
+            </S.MainContentRow>
+            <S.MainContentRow>
+              <S.MainContentWidget />
+              <S.MainContentWidget />
+            </S.MainContentRow>
+          </S.MainContentLayout>
+        </S.MainContent>
       </S.MainLayout>
     </S.Main>
   )
