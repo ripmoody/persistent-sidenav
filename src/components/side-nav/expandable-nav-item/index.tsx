@@ -1,5 +1,5 @@
-import { useNavigation } from '@/providers/navigation'
-import type { ExpandableNavItem as ExpandableNavItemType } from '@/providers/navigation/constants/main'
+import type { ExpandableNavItem as ExpandableNavItemType } from '@/providers'
+import { useNavigation } from '@/providers'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { FlatNavItem } from '../flat-nav-item'

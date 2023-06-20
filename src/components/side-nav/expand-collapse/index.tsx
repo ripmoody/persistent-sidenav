@@ -1,7 +1,6 @@
-import { Tooltip } from '@/components/tooltip'
-import { useWindowWidth } from '@/hooks/use-window-width'
-import { useNavigation } from '@/providers/navigation'
-import { breakpoints } from '@/providers/navigation/constants/breakpoints'
+import { Tooltip } from '@/components'
+import { useWindowWidth } from '@/hooks'
+import { breakpoints, useNavigation } from '@/providers'
 import { useCallback, useEffect, useMemo } from 'react'
 import * as S from './styled'
 

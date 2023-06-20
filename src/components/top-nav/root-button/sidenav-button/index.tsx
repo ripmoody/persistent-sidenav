@@ -1,5 +1,5 @@
-import { Close, Menu } from '@/components/icons'
-import { useNavigation } from '@/providers/navigation'
+import { Close, Menu } from '@/components'
+import { useNavigation } from '@/providers'
 import { NavIconButton } from '../../actions/styled'
 
 export const SideNavButton = () => {

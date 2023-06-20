@@ -1,4 +1,4 @@
-import { breakpoints } from '@/providers/navigation/constants/breakpoints'
+import { breakpoints } from '@/providers'
 import type { NavigationState } from '@/providers/navigation/navigation-reducer'
 import styled from '@emotion/styled'
 

@@ -1,6 +1,4 @@
-import { footerNavItems } from '@/providers/navigation/constants/footer'
-import { headerNavItems } from '@/providers/navigation/constants/header'
-import { mainNavItems } from '@/providers/navigation/constants/main'
+import { footerNavItems, headerNavItems, mainNavItems } from '@/providers'
 import { useRouter } from 'next/router'
 import * as S from './styled'
 

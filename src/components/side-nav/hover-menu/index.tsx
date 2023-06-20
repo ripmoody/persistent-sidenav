@@ -1,4 +1,4 @@
-import { useNavigation } from '@/providers/navigation'
+import { useNavigation } from '@/providers'
 import * as HoverCard from '@radix-ui/react-hover-card'
 import { useRouter } from 'next/router'
 import * as S from './styled'

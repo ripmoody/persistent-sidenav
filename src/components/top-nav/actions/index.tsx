@@ -1,4 +1,4 @@
-import { Accessibility, ChevronDown, Help } from '@/components/icons'
+import { Accessibility, ChevronDown, Help } from '@/components'
 import * as S from './styled'
 
 export const Actions = () => (

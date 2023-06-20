@@ -1,4 +1,4 @@
-import { useNavigation } from '@/providers/navigation'
+import { useNavigation } from '@/providers'
 import { ExpandCollapseButton } from './expand-collapse'
 import { ExpandableNavItem } from './expandable-nav-item'
 import { FlatNavItem } from './flat-nav-item'
