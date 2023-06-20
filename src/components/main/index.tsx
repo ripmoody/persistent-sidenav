@@ -5,7 +5,7 @@ import * as S from './styled'
 const mainSubNavItems = mainNavItems.map((item) => item.items).flat()
 const items = [...headerNavItems, ...mainSubNavItems, ...footerNavItems]
 
-export const Main = () => {
+export const Main = ({ children }: Children) => {
   const { asPath } = useRouter()
 
   const currentItem = items.find((item) => {

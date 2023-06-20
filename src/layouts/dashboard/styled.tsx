@@ -1,4 +1,4 @@
-import { breakpoints } from '@/providers/navigation/constants/breakpoints'
+import { breakpoints } from '@/providers'
 import styled from '@emotion/styled'
 import { Fragment } from 'react'
 

@@ -1,6 +1,4 @@
-import { Main } from '@/components/main'
-import { SideNav } from '@/components/side-nav'
-import { TopNav } from '@/components/top-nav'
+import { Main, SideNav, TopNav } from '@/components'
 import * as S from './styled'
 
 export const DashboardLayout = ({ children }: Children) => (
