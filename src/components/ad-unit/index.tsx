@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Close } from '../icons'
+import { AdIcon } from './ad-icon'
 import * as S from './styled'
 
 export const AdUnit = () => {
@@ -15,9 +16,15 @@ export const AdUnit = () => {
     <S.AdUnit>
       <S.AdUnitInner>
         <S.AdUnitClose onClick={handleClose}>
-          <Close />
+          <Close size="16" />
         </S.AdUnitClose>
-        Test
+        <S.AdUnitIcon>
+          <AdIcon />
+        </S.AdUnitIcon>
+        <S.AdUnitTitle>Discover new apps</S.AdUnitTitle>
+        <S.AdUnitDescription>
+          Enable earned wage access and direct deposit with employee cards.
+        </S.AdUnitDescription>
       </S.AdUnitInner>
     </S.AdUnit>
   )

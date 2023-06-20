@@ -98,8 +98,9 @@
     'Courier New', monospace;
 
   /* Type scale */
-  --type-size-xs: 0.75rem;
-  --type-size-sm: 0.92rem;
+  --type-size-2xs: 0.75rem;
+  --type-size-xs: 0.825rem;
+  --type-size-sm: 0.925rem;
   --type-size-md: 1rem;
   --type-size-lg: 1.25rem;
   --type-size-xl: 1.4rem;

@@ -17,8 +17,7 @@ export const MainHeader = styled.header`
 
 export const MainHeaderTitle = styled.h1`
   font-size: var(--type-size-2xl);
-  font-weight: var(--type-weight-medium);
-  font-family: var(--type-font-styrene);
+  font-weight: var(--type-weight-bold);
   line-height: 1;
 `
 
