@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Close } from '../icons'
 import * as S from './styled'
 
 export const AdUnit = () => {
@@ -13,7 +14,9 @@ export const AdUnit = () => {
   return (
     <S.AdUnit>
       <S.AdUnitInner>
-        <S.AdUnitClose onClick={handleClose}>X</S.AdUnitClose>
+        <S.AdUnitClose onClick={handleClose}>
+          <Close />
+        </S.AdUnitClose>
         Test
       </S.AdUnitInner>
     </S.AdUnit>

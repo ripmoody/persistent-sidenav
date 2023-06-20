@@ -1,13 +1,11 @@
-import { Tooltip } from '@/components/tooltip'
-import { useWindowWidth } from '@/hooks/use-window-width'
-import { useNavigation } from '@/providers/navigation'
-import { breakpoints } from '@/providers/navigation/constants/breakpoints'
+import { AdUnit, Tooltip } from '@/components'
+import { useWindowWidth } from '@/hooks'
+import { breakpoints, useNavigation } from '@/providers'
 import { useRouter } from 'next/router'
-import { useMemo } from 'react'
 import * as S from './styled'
 
 export const FlatNavItem = (props: NavItem) => {
-  const { path, label, icon: Icon, isSubNavItem, category } = props
+  const { path, label, icon: Icon, isSubNavItem, category, adUnit } = props
   const router = useRouter()
   const width = useWindowWidth()
 
@@ -39,11 +37,11 @@ export const FlatNavItem = (props: NavItem) => {
     }
   }
 
-  const isAriaCurrent = useMemo(() => {
-    if (router.asPath === path) {
-      return 'page'
-    }
-  }, [router.asPath, path])
+  const isAriaCurrent = router.asPath === path ? 'page' : undefined
+
+  if (adUnit) {
+    return <AdUnit />
+  }
 
   if (category) {
     return (

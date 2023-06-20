@@ -1,9 +1,7 @@
 import styled from '@emotion/styled'
 
 export const AdUnit = styled.div`
-  border-top: solid 1px var(--color-grey-100);
-  padding: var(--space-4) var(--space-3) 0 var(--space-3);
-  margin-top: var(--space-4);
+  margin: 0 0 var(--space-4) 0;
 `
 
 export const AdUnitInner = styled.div`

@@ -38,5 +38,9 @@ declare global {
      * is used to group other nav items that fall underneath it.
      **/
     category?: string
+    /**
+     * Shameful hack to render an AdUnit as a list item. Shame, shame, shame
+     */
+    adUnit?: boolean
   }
 }

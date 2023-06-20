@@ -58,6 +58,10 @@ export const HoverMenu = (props: HoverMenuProps) => {
         <S.HoverMenuContent side="right" sideOffset={20}>
           <S.HoverMenuTitle>{props.category}</S.HoverMenuTitle>
           {props.items.map((item, index) => {
+            if (item.adUnit) {
+              return null
+            }
+
             if (item.category) {
               return (
                 <S.HoverMenuCategory key={`${item.label}${index}`}>

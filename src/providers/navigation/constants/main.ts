@@ -5,6 +5,7 @@ import {
   Anniversaries,
   ApplicantTracking,
   Approvals,
+  Apps,
   AutomatedCompliance,
   Briefcase,
   Buildkite,
@@ -54,7 +55,6 @@ import {
   WorkerComp,
   WorkflowAutomator,
 } from '@/components/icons'
-import { Apps } from '@/components/icons/apps'
 
 /**
  * The configuration for a navigation item that has expandable content that
@@ -285,6 +285,12 @@ export const mainNavItems: ExpandableNavItem[] = [
         label: 'Spend Management',
         icon: SpendManagement,
         path: '/finance/spend-management',
+      },
+      {
+        label: 'noop',
+        icon: AddApp,
+        path: 'noop',
+        adUnit: true,
       },
     ],
   },
