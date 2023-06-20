@@ -25,6 +25,10 @@ export const AdUnit = () => {
         <S.AdUnitDescription>
           Enable earned wage access and direct deposit with employee cards.
         </S.AdUnitDescription>
+        <S.AdUnitButtonGroup>
+          <S.AdUnitPrimaryButton>Sign up</S.AdUnitPrimaryButton>
+          <S.AdUnitButton>Learn more</S.AdUnitButton>
+        </S.AdUnitButtonGroup>
       </S.AdUnitInner>
     </S.AdUnit>
   )

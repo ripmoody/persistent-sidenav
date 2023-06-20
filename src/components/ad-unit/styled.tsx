@@ -1,3 +1,4 @@
+import { css } from '@emotion/react'
 import styled from '@emotion/styled'
 
 export const AdUnit = styled.div`
@@ -14,18 +15,27 @@ export const AdUnitInner = styled.div`
   padding: var(--space-4) var(--space-3);
 `
 
-export const AdUnitClose = styled.button`
+const AdUnitButtonBase = css`
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: var(--radius-base);
+  border: none;
+  padding: var(--space-2) var(--space-3);
+  font-weight: 500;
+  font-size: var(--type-size-xs);
+  line-height: 1;
+  letter-spacing: 0.25px;
+  background-color: transparent;
+`
+
+export const AdUnitClose = styled.button`
+  ${AdUnitButtonBase}
   position: absolute;
   top: var(--space-1_5);
   right: var(--space-1_5);
   padding: var(--space-1);
-  border: none;
-  background-color: transparent;
   color: var(--color-grey-500);
-  border-radius: var(--radius-base);
 
   &:hover {
     background-color: var(--color-grey-50);
@@ -33,8 +43,8 @@ export const AdUnitClose = styled.button`
 `
 
 export const AdUnitIcon = styled.div`
-  height: var(--space-8);
-  width: var(--space-8);
+  height: var(--space-9);
+  width: var(--space-9);
   margin: 0 0 var(--space-2) 0;
 `
 
@@ -53,4 +63,29 @@ export const AdUnitDescription = styled.span`
   font-size: var(--type-size-xs);
   line-height: 1.5;
   letter-spacing: 0.25px;
+`
+
+export const AdUnitButtonGroup = styled.div`
+  display: flex;
+  flex-direction: row;
+  margin: var(--space-4) 0 0 0;
+  gap: var(--space-2);
+`
+
+export const AdUnitButton = styled.button`
+  ${AdUnitButtonBase}
+  background-color: var(--color-grey-100);
+  flex: 1;
+
+  &:hover {
+    background-color: var(--color-grey-200);
+  }
+`
+
+export const AdUnitPrimaryButton = styled(AdUnitButton)`
+  background-color: var(--color-yellow-400);
+
+  &:hover {
+    background-color: var(--color-yellow-500);
+  }
 `
