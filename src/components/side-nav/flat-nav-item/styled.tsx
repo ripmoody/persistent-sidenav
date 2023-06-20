@@ -46,7 +46,7 @@ export const FlatNavItemButton = styled.button<NavItemProps>`
   border: none;
   background: none;
   color: var(--color-text);
-  gap: var(--space-3);
+  gap: var(--space-2_5);
   border-radius: var(--radius-base);
   line-height: 1;
   font-size: inherit;
@@ -83,7 +83,6 @@ export const FlatNavItemLabel = styled.span<NavItemProps>`
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
   text-align: left;
   flex: 1;
-  letter-spacing: 0.25px;
 `
 
 export const NavItemCategory = styled.span<NavItemProps>`
@@ -93,5 +92,5 @@ export const NavItemCategory = styled.span<NavItemProps>`
   color: var(--color-grey-400);
   font-weight: var(--type-weight-bold);
   padding: var(--space-4) var(--space-2) var(--space-2) var(--space-8);
-  letter-spacing: 0.1rem;
+  letter-spacing: 0.2em;
 `

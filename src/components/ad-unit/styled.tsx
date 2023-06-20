@@ -25,7 +25,6 @@ const AdUnitButtonBase = css`
   font-weight: 500;
   font-size: var(--type-size-xs);
   line-height: 1;
-  letter-spacing: 0.25px;
   background-color: transparent;
 `
 
@@ -62,7 +61,6 @@ export const AdUnitDescription = styled.span`
   color: var(--color-grey-600);
   font-size: var(--type-size-xs);
   line-height: 1.5;
-  letter-spacing: 0.25px;
 `
 
 export const AdUnitButtonGroup = styled.div`

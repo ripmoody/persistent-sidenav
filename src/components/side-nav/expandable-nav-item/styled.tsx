@@ -39,7 +39,7 @@ export const ExpandableNavItemButton = styled.button<ExpandableNavItemProps>`
   border: none;
   background: none;
   color: var(--color-text);
-  gap: var(--space-3);
+  gap: var(--space-2_5);
   font-size: var(--type-size-md);
   border-radius: var(--radius-base);
   line-height: 1;
@@ -80,7 +80,6 @@ export const ExpandableNavItemLabel = styled.span<ExpandableNavItemProps>`
   line-height: 1;
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
   white-space: nowrap; // This is worrisome. Stops the text from stacking on expand.
-  letter-spacing: 0.25px;
 `
 
 export const ExpandableNavItemChevron = styled(
@@ -99,8 +98,8 @@ export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
   flex-direction: column;
   overflow-y: hidden;
   list-style: none;
-  padding: 0 2px;
-  padding-top: ${({ isCollapsed }) => (isCollapsed ? '0' : '2px')};
+  padding: 0 var(--space-0_5);
+  padding-top: ${({ isCollapsed }) => (isCollapsed ? '0' : 'var(--space-0_5)')};
   margin: 0;
   opacity: ${({ isNavItemExpanded }) => (isNavItemExpanded ? '1' : '0')};
   pointer-events: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'auto')};
