@@ -52,7 +52,7 @@ export const AdUnitTitle = styled.h3`
   line-height: 1;
   padding: 0;
   margin: var(--space-2) 0 var(--space-1_5) 0;
-  color: var(--color-grey-900);
+  color: var(--color-text);
 `
 
 export const AdUnitDescription = styled.span`

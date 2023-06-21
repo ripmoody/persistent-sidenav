@@ -23,6 +23,7 @@ export const SideNav = () => {
               <ExpandableNavItem key={item.label} {...item} />
             ))}
           </S.SideNavList>
+          <S.SideNavSpacer />
           <S.SideNavFooter>
             <S.SideNavList context={state.context}>
               {state.items.footer.map((item) => (

@@ -13,6 +13,7 @@ export const MainHeader = styled.header`
   padding: var(--space-4) var(--space-8);
   background-color: white;
   gap: var(--space-4);
+  border-bottom: 1px solid var(--color-grey-100);
 `
 
 export const MainHeaderTitle = styled.h1`

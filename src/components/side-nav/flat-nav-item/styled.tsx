@@ -14,7 +14,6 @@ type NavItemProps = {
 
 export const FlatNavItem = styled.li<NavItemProps>`
   position: relative;
-  margin: ${({ isSubNavItem }) => (isSubNavItem ? '0' : 'var(--space-0_5) 0')};
 
   &[aria-current='page'] button {
     background-color: var(--color-grey-50);
@@ -46,8 +45,9 @@ export const FlatNavItemButton = styled.button<NavItemProps>`
   border: none;
   background: none;
   color: var(--color-text);
-  gap: var(--space-2_5);
+  gap: var(--space-3);
   border-radius: var(--radius-base);
+
   line-height: 1;
   font-size: inherit;
   padding-left: ${({ isCollapsed, isSubNavItem }) => {
@@ -78,7 +78,6 @@ export const FlatNavItemIcon = styled.span`
 `
 
 export const FlatNavItemLabel = styled.span<NavItemProps>`
-  font-size: inherit;
   line-height: 1.25;
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
   text-align: left;
@@ -87,10 +86,10 @@ export const FlatNavItemLabel = styled.span<NavItemProps>`
 
 export const NavItemCategory = styled.span<NavItemProps>`
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
-  font-size: 10px;
+  font-size: 0.7em;
   text-transform: uppercase;
-  color: var(--color-grey-400);
-  font-weight: var(--type-weight-bold);
+  color: var(--color-grey-500);
+  font-weight: 600;
   padding: var(--space-4) var(--space-2) var(--space-2) var(--space-8);
-  letter-spacing: 0.2em;
+  letter-spacing: 0.15em;
 `

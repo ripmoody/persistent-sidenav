@@ -12,7 +12,6 @@ export const ExpandableNavItemGroup = Fragment
 
 export const ExpandableNavItem = styled.li<ExpandableNavItemProps>`
   position: relative;
-  margin: var(--space-0_5) 0;
 
   ${({ isCollapsed, isNavItemExpanded, hasActiveChild }) =>
     !isCollapsed &&
@@ -33,14 +32,13 @@ export const ExpandableNavItem = styled.li<ExpandableNavItemProps>`
 export const ExpandableNavItemButton = styled.button<ExpandableNavItemProps>`
   display: flex;
   align-items: center;
-  justify-content: center;
   padding: var(--space-2);
   width: 100%;
   border: none;
   background: none;
   color: var(--color-text);
-  gap: var(--space-2_5);
-  font-size: var(--type-size-md);
+  gap: var(--space-3);
+  font-size: inherit;
   border-radius: var(--radius-base);
   line-height: 1;
   padding-left: ${({ isCollapsed }) =>
@@ -96,10 +94,10 @@ export const ExpandableNavItemChevron = styled(
 export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
   display: flex;
   flex-direction: column;
+  gap: var(--space-0_5);
   overflow-y: hidden;
   list-style: none;
   padding: 0 var(--space-0_5);
-  padding-top: ${({ isCollapsed }) => (isCollapsed ? '0' : 'var(--space-0_5)')};
   margin: 0;
   opacity: ${({ isNavItemExpanded }) => (isNavItemExpanded ? '1' : '0')};
   pointer-events: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'auto')};
@@ -110,9 +108,9 @@ export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
     return '700px'
   }};
   transition: max-height 300ms ease-in-out;
-  font-size: var(--type-size-sm);
+  font-size: 0.95em;
 
   & > li:last-of-type {
-    margin-bottom: var(--space-3);
+    margin-bottom: var(--space-4);
   }
 `

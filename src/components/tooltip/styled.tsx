@@ -23,7 +23,7 @@ export const TooltipContent = styled(Tooltip.Content)`
   padding: var(--space-2) var(--space-3);
   font-size: var(--type-size-sm);
   line-height: 1;
-  color: var(--color-grey-900);
+  color: var(--color-text);
   background-color: white;
   box-shadow: var(--shadows-lg);
   user-select: none;

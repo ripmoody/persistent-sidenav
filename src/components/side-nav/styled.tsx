@@ -76,6 +76,7 @@ export const SideNavFooter = styled.div`
   border-top: solid 1px var(--color-grey-100);
   padding: var(--space-4) 0 0 0;
   margin-top: var(--space-4);
+  white-space: nowrap;
 `
 
 /**
@@ -84,10 +85,9 @@ export const SideNavFooter = styled.div`
 export const SideNavMain = styled.div<SideNavProps>`
   position: relative;
   flex: 1;
-  padding: ${({ context }) =>
-    context.isCollapsed
-      ? 'var(--space-4) 0'
-      : 'var(--space-4) var(--space-1) var(--space-4) 0'};
+  padding: 0 0 var(--space-4) 0;
+  display: flex;
+  flex-direction: column;
 `
 
 /**
@@ -99,5 +99,10 @@ export const SideNavList = styled.ul<SideNavProps>`
   margin: 0;
   display: flex;
   flex-direction: column;
-  font-size: var(--type-size-md);
+  gap: var(--space-0_5);
+  font-size: var(--type-size-md); // primary type size for all side nav items
+`
+
+export const SideNavSpacer = styled.div`
+  flex: 1;
 `
