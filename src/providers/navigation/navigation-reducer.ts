@@ -52,8 +52,8 @@ export const initialState: NavigationState = {
     main: mainNavItems,
   },
   context: {
-    isCollapsed: false,
-    isForceCollapsed: false,
+    isCollapsed: true,
+    isForceCollapsed: true,
     isHidden: false,
     searchValue: '',
   },
