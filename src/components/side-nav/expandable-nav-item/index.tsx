@@ -28,10 +28,17 @@ export const ExpandableNavItem = (props: ExpandableNavItemType) => {
     dispatch({ type: 'toggle-item-expanded', payload: props })
   }
 
-  const hasActiveChild = useMemo(
-    () => props.items.some((item) => item.path === router.asPath),
-    [router.asPath, props.items],
-  )
+  const hasActiveChild = useMemo(() => {
+    if (props.label === state.items.main[0].label) {
+      return false // Don't duplicate active state of Favorites nav items
+    }
+
+    return props.items.some((item) => item.path === router.asPath)
+  }, [router.asPath, props.items, props.label, state.items.main])
+
+  if (!props.items.length) {
+    return null // Don't render empty nav sections
+  }
 
   return (
     <S.ExpandableNavItemGroup>

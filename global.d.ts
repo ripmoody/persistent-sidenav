@@ -42,5 +42,14 @@ declare global {
      * Shameful hack to render an AdUnit as a list item. Shame, shame, shame
      */
     adUnit?: boolean
+    /**
+     * If the nav item is a favorite, it will be rendered in the favorites section
+     * and given a solid star icon star icon.
+     */
+    isFavorite?: boolean
+    /**
+     * If the nav item is temporary or an overflow action it shouldn't be favorited
+     */
+    isDisabledFavorite?: boolean
   }
 }

@@ -1,3 +1,4 @@
+import { cloneDeep } from 'lodash'
 import { footerNavItems } from './constants/footer'
 import { headerNavItems } from './constants/header'
 import type { ExpandableNavItem } from './constants/main'
@@ -24,10 +25,6 @@ export type NavigationState = {
      * When the screen is below 500px, the navigation is hidden and accessible via the top nav.
      */
     isHidden: boolean
-    /**
-     * The controlled value of the search input.
-     */
-    searchValue: string
   }
 }
 
@@ -44,6 +41,8 @@ export type NavigationAction =
   | { type: 'expand-all' }
   | { type: 'collapse-all' }
   | { type: 'expand-active-section'; payload: string }
+  | { type: 'add-item-favorite'; payload: NavItem }
+  | { type: 'remove-item-favorite'; payload: NavItem }
 
 export const initialState: NavigationState = {
   items: {
@@ -55,7 +54,6 @@ export const initialState: NavigationState = {
     isCollapsed: true,
     isForceCollapsed: true,
     isHidden: false,
-    searchValue: '',
   },
 }
 
@@ -64,6 +62,67 @@ export const navigationReducer = (
   action: NavigationAction,
 ) => {
   switch (action.type) {
+    case 'add-item-favorite': {
+      const mainDeepClone = cloneDeep(state.items.main) as ExpandableNavItem[]
+      mainDeepClone[0].items.push(action.payload)
+      mainDeepClone[0].items.sort((a, b) => a.label.localeCompare(b.label))
+
+      const main = mainDeepClone.map((item) => {
+        return {
+          ...item,
+          items: item.items.map((subItem) => {
+            if (subItem.label === action.payload.label) {
+              return {
+                ...subItem,
+                isFavorite: true,
+              }
+            }
+            return subItem
+          }),
+        }
+      })
+
+      main[0].isExpanded = true
+
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          main,
+        },
+      }
+    }
+
+    case 'remove-item-favorite': {
+      const mainDeepClone = cloneDeep(state.items.main) as ExpandableNavItem[]
+      mainDeepClone[0].items = mainDeepClone[0].items.filter(
+        (item) => item.label !== action.payload.label,
+      )
+
+      const main = mainDeepClone.map((item) => {
+        return {
+          ...item,
+          items: item.items.map((subItem) => {
+            if (subItem.label === action.payload.label) {
+              return {
+                ...subItem,
+                isFavorite: false,
+              }
+            }
+            return subItem
+          }),
+        }
+      })
+
+      return {
+        ...state,
+        items: {
+          ...state.items,
+          main,
+        },
+      }
+    }
+
     case 'expand-active-section': {
       const hasActiveChild = state.items.main.some((item) =>
         item.items.some((subItem) => subItem.label === action.payload),

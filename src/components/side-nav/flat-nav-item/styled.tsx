@@ -15,7 +15,7 @@ type NavItemProps = {
 export const FlatNavItem = styled.li<NavItemProps>`
   position: relative;
 
-  &[aria-current='page'] button {
+  &[aria-current='page'] button:first-of-type {
     background-color: var(--color-grey-50);
 
     &::before {
@@ -29,6 +29,11 @@ export const FlatNavItem = styled.li<NavItemProps>`
       background-color: ${({ isCollapsed }) =>
         isCollapsed ? 'transparent' : 'var(--color-yellow-400)'};
     }
+  }
+
+  &:hover [data-id='favorite'] {
+    opacity: 1;
+    scale: 1;
   }
 `
 
@@ -47,7 +52,6 @@ export const FlatNavItemButton = styled.button<NavItemProps>`
   color: var(--color-text);
   gap: var(--space-3);
   border-radius: var(--radius-base);
-
   line-height: 1;
   font-size: inherit;
   padding-left: ${({ isCollapsed, isSubNavItem }) => {
@@ -92,4 +96,44 @@ export const NavItemCategory = styled.span<NavItemProps>`
   font-weight: 600;
   padding: var(--space-4) var(--space-2) var(--space-2) var(--space-8);
   letter-spacing: 0.15em;
+`
+
+export const FlatNavItemFavorite = styled.button`
+  position: absolute;
+  display: flex;
+  padding: 0;
+  top: 8px;
+  right: var(--space-2);
+  background: none;
+  border: none;
+  opacity: 0;
+  scale: 0.5;
+  transition: all 0.2s ease-in-out;
+  min-width: var(--space-4);
+  min-height: var(--space-4);
+  width: var(--space-4);
+  height: var(--space-4);
+  color: var(--color-grey-200);
+
+  &:hover {
+    color: var(--color-yellow-300);
+  }
+
+  &:active {
+    color: var(--color-yellow-400);
+  }
+
+  &[data-favorite='true'] {
+    opacity: 1;
+    scale: 1;
+    color: var(--color-yellow-300);
+
+    &:hover {
+      color: var(--color-yellow-400);
+    }
+
+    &:active {
+      color: var(--color-yellow-500);
+    }
+  }
 `

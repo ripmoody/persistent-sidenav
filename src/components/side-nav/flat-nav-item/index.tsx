@@ -1,11 +1,20 @@
-import { AdUnit, Tooltip } from '@/components'
+import { AdUnit, StarFill, Tooltip } from '@/components'
 import { useWindowWidth } from '@/hooks'
 import { breakpoints, useNavigation } from '@/providers'
 import { useRouter } from 'next/router'
 import * as S from './styled'
 
 export const FlatNavItem = (props: NavItem) => {
-  const { path, label, icon: Icon, isSubNavItem, category, adUnit } = props
+  const {
+    path,
+    label,
+    icon: Icon,
+    isSubNavItem,
+    category,
+    adUnit,
+    isFavorite,
+    isDisabledFavorite,
+  } = props
   const router = useRouter()
   const width = useWindowWidth()
 
@@ -37,7 +46,25 @@ export const FlatNavItem = (props: NavItem) => {
     }
   }
 
-  const isAriaCurrent = router.asPath === path ? 'page' : undefined
+  const isAriaCurrent = () => {
+    return router.asPath === path ? 'page' : undefined
+  }
+
+  const handleFavoriteClick = (event: React.MouseEvent) => {
+    const dataFavorite = (event.currentTarget as HTMLElement).getAttribute(
+      'data-favorite',
+    )
+
+    switch (dataFavorite) {
+      case 'true':
+        dispatch({ type: 'remove-item-favorite', payload: props })
+        break
+
+      default:
+        dispatch({ type: 'add-item-favorite', payload: props })
+        break
+    }
+  }
 
   if (adUnit) {
     return <AdUnit />
@@ -51,8 +78,10 @@ export const FlatNavItem = (props: NavItem) => {
     )
   }
 
+  console.log(isFavorite)
+
   return (
-    <S.FlatNavItem aria-current={isAriaCurrent} isCollapsed={isCollapsed}>
+    <S.FlatNavItem aria-current={isAriaCurrent()} isCollapsed={isCollapsed}>
       <Tooltip label={label} isDisabled={!isCollapsed || isSubNavItem}>
         <S.FlatNavItemButton
           onClick={handleClick}
@@ -67,6 +96,15 @@ export const FlatNavItem = (props: NavItem) => {
           </S.FlatNavItemLabel>
         </S.FlatNavItemButton>
       </Tooltip>
+      {isSubNavItem && !isCollapsed && !isDisabledFavorite && (
+        <S.FlatNavItemFavorite
+          data-id="favorite"
+          data-favorite={isFavorite}
+          onClick={handleFavoriteClick}
+        >
+          <StarFill />
+        </S.FlatNavItemFavorite>
+      )}
     </S.FlatNavItem>
   )
 }

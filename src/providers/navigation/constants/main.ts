@@ -47,6 +47,7 @@ import {
   Security,
   Settings,
   SpendManagement,
+  Star,
   Tasks,
   TimeAttendance,
   TimeOff,
@@ -73,6 +74,12 @@ export type ExpandableNavItem = NavItem & {
 }
 
 export const mainNavItems: ExpandableNavItem[] = [
+  {
+    label: 'Favorites',
+    icon: Star,
+    items: [],
+    isExpanded: false,
+  },
   {
     label: 'Tools',
     icon: Briefcase,
@@ -168,6 +175,7 @@ export const mainNavItems: ExpandableNavItem[] = [
         label: 'Discover more HR apps',
         icon: AddApp,
         path: '/hr/discover-more-hr-apps',
+        isDisabledFavorite: true,
       },
     ],
     isExpanded: false,
@@ -206,6 +214,7 @@ export const mainNavItems: ExpandableNavItem[] = [
         label: 'Discover more Insurance apps',
         icon: AddApp,
         path: '/insurance/discover',
+        isDisabledFavorite: true,
       },
     ],
   },
@@ -228,10 +237,11 @@ export const mainNavItems: ExpandableNavItem[] = [
         label: 'Discover more Device apps',
         icon: AddApp,
         path: '/it/discover-more-device-apps',
+        isDisabledFavorite: true,
       },
       {
-        label: '', // ignored
-        icon: Tasks, // ignored
+        label: 'noop',
+        icon: Tasks,
         category: 'Identity management',
       },
       {
@@ -255,8 +265,8 @@ export const mainNavItems: ExpandableNavItem[] = [
         path: '/it/custom-app',
       },
       {
-        label: '', // ignored
-        icon: Tasks, // ignored
+        label: 'noop',
+        icon: Tasks,
         category: 'Automated Compliance',
       },
       {
@@ -305,9 +315,9 @@ export const mainNavItems: ExpandableNavItem[] = [
         path: '/apps/company-apps',
       },
       {
-        label: '',
+        label: 'noop',
         icon: AddApp,
-        path: '/foo',
+        path: 'noop',
         category: 'Most used',
       },
       {
@@ -351,9 +361,9 @@ export const mainNavItems: ExpandableNavItem[] = [
         path: '/apps/microsoft',
       },
       {
-        label: '',
+        label: 'noop',
         icon: AddApp,
-        path: '/apps/fooo',
+        path: 'noop',
         category: 'Installation in progress',
       },
       {
