@@ -78,8 +78,6 @@ export const FlatNavItem = (props: NavItem) => {
     )
   }
 
-  console.log(isFavorite)
-
   return (
     <S.FlatNavItem aria-current={isAriaCurrent()} isCollapsed={isCollapsed}>
       <Tooltip label={label} isDisabled={!isCollapsed || isSubNavItem}>
