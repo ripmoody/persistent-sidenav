@@ -1,8 +1,4 @@
 :root {
-  /* Semantic */
-  --top-nav-height: 3.4rem;
-  --color-text: var(--color-grey-900);
-
   /* Color */
   --color-grey-900: #1d1d1d;
   --color-grey-800: #2c2c2c;

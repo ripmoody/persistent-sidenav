@@ -108,12 +108,12 @@ export const ExpandCollapseButton = () => {
       return
     }
 
-    if (width < breakpoints.lg && isCollapsed) {
+    if (isCollapsed) {
       dispatch({ type: 'set-collapsed', payload: false })
       return
     }
 
-    if (width < breakpoints.lg && !isCollapsed) {
+    if (!isCollapsed) {
       dispatch({ type: 'set-collapsed', payload: true })
       return
     }

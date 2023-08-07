@@ -40,8 +40,8 @@ export const SideNav = styled.nav<SideNavProps>`
   flex-direction: column;
   height: 100%;
   width: 100%;
-  background-color: white;
-  border-right: solid 1px var(--color-grey-100);
+  background-color: var(--color-surface-container-lowest);
+  border-right: solid 1px var(--color-outline-variant);
   padding: var(--space-4) var(--space-3);
   box-shadow: none;
   transform: translateX(
@@ -64,7 +64,7 @@ export const SideNav = styled.nav<SideNavProps>`
  * The fixed header portion of the side nav. Contains off-board, hire, home
  */
 export const SideNavHeader = styled.div`
-  border-bottom: solid 1px var(--color-grey-100);
+  border-bottom: solid 1px var(--color-outline-variant);
   padding: 0 0 var(--space-4) 0;
   margin-bottom: var(--space-4);
 `
@@ -73,7 +73,7 @@ export const SideNavHeader = styled.div`
  * The footer portion of the side nav that stays fixed to the bottom.
  */
 export const SideNavFooter = styled.div`
-  border-top: solid 1px var(--color-grey-100);
+  border-top: solid 1px var(--color-outline-variant);
   padding: var(--space-4) 0 0 0;
   margin-top: var(--space-4);
   white-space: nowrap;

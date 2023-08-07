@@ -1,3 +1,4 @@
-@import "./fonts";
-@import "./globals";
-@import "./root";
+@import './alias';
+@import './fonts';
+@import './globals';
+@import './root';

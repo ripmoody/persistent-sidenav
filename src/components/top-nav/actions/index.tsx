@@ -1,13 +1,20 @@
-import { Accessibility, ChevronDown, Help } from '@/components'
+import { Accessibility, ChevronDown, Help, Tooltip } from '@/components'
 import * as S from './styled'
+import { ThemeButton } from './theme-btn'
 
 export const Actions = () => (
   <S.Actions>
+    <ThemeButton />
+    <S.VerticalRule />
     <S.NavActionsIconButton>
-      <Help />
+      <Tooltip label="Support" side="bottom">
+        <Help />
+      </Tooltip>
     </S.NavActionsIconButton>
     <S.NavActionsIconButton>
-      <Accessibility />
+      <Tooltip label="Accessibility" side="bottom">
+        <Accessibility />
+      </Tooltip>
     </S.NavActionsIconButton>
     <S.VerticalRule />
     <S.ProfileButton>

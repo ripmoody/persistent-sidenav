@@ -10,6 +10,10 @@ type Props = Children & {
    * Conditionally removes the tooltip entirely and only renders children in a fragment
    */
   isDisabled?: boolean
+  /**
+   * The side of the trigger the tooltip should appear on
+   */
+  side?: 'top' | 'right' | 'bottom' | 'left'
 }
 
 export const Tooltip = (props: Props) => {
@@ -22,7 +26,7 @@ export const Tooltip = (props: Props) => {
       <RTooltip.Root>
         <RTooltip.Trigger asChild>{props.children}</RTooltip.Trigger>
         <RTooltip.Portal>
-          <S.TooltipContent sideOffset={12} side="right">
+          <S.TooltipContent sideOffset={12} side={props.side ?? 'right'}>
             {props.label}
             <S.TooltipArrow />
           </S.TooltipContent>

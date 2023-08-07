@@ -25,7 +25,7 @@ export const ExpandableNavItem = styled.li<ExpandableNavItemProps>`
       bottom: 4px;
       border-radius: var(--radius-base);
       width: var(--space-1);
-      background-color: var(--color-yellow-400);
+      background-color: var(--color-secondary);
     }`}
 `
 
@@ -36,7 +36,7 @@ export const ExpandableNavItemButton = styled.button<ExpandableNavItemProps>`
   width: 100%;
   border: none;
   background: none;
-  color: var(--color-text);
+  color: var(--color-on-surface);
   gap: var(--space-3);
   font-size: inherit;
   border-radius: var(--radius-base);
@@ -45,20 +45,20 @@ export const ExpandableNavItemButton = styled.button<ExpandableNavItemProps>`
     isCollapsed ? 'var(--space-2)' : 'var(--space-5)'};
   background-color: ${({ hasActiveChild, isCollapsed, isNavItemExpanded }) => {
     if (hasActiveChild && !isCollapsed && isNavItemExpanded) {
-      return 'white'
+      return 'var(--color-surface-container-low)'
     }
 
     if (hasActiveChild && isCollapsed) {
-      return 'var(--color-grey-50)'
+      return 'var(--color-surface-container-low)'
     }
 
     if (hasActiveChild && !isCollapsed) {
-      return 'var(--color-grey-50)'
+      return 'var(--color-surface-container-low)'
     }
   }};
 
   &:hover {
-    background-color: var(--color-grey-50);
+    background-color: var(--color-surface-container-low);
   }
 
   &:focus-visible {
@@ -88,7 +88,7 @@ export const ExpandableNavItemChevron = styled(
   transition: transform 100ms ease-in-out;
   transform: ${({ isNavItemExpanded }) =>
     isNavItemExpanded ? 'rotate(90deg)' : 'rotate(0deg)'};
-  color: var(--color-grey-600);
+  color: var(--color-outline);
 `
 
 export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`

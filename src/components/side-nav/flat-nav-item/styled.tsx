@@ -16,7 +16,7 @@ export const FlatNavItem = styled.li<NavItemProps>`
   position: relative;
 
   &[aria-current='page'] button:first-of-type {
-    background-color: var(--color-grey-50);
+    background-color: var(--color-surface-container-lowest);
 
     &::before {
       content: '';
@@ -27,7 +27,7 @@ export const FlatNavItem = styled.li<NavItemProps>`
       border-radius: var(--radius-base);
       width: ${({ isCollapsed }) => (isCollapsed ? '0' : 'var(--space-1)')};
       background-color: ${({ isCollapsed }) =>
-        isCollapsed ? 'transparent' : 'var(--color-yellow-400)'};
+        isCollapsed ? 'transparent' : 'var(--color-secondary)'};
     }
   }
 
@@ -49,7 +49,7 @@ export const FlatNavItemButton = styled.button<NavItemProps>`
   width: 100%;
   border: none;
   background: none;
-  color: var(--color-text);
+  color: var(--color-on-surface);
   gap: var(--space-3);
   border-radius: var(--radius-base);
   line-height: 1;
@@ -65,7 +65,7 @@ export const FlatNavItemButton = styled.button<NavItemProps>`
   }};
 
   &:hover {
-    background-color: var(--color-grey-50);
+    background-color: var(--color-surface-container-low);
   }
 
   &:focus-visible {
@@ -92,7 +92,7 @@ export const NavItemCategory = styled.span<NavItemProps>`
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
   font-size: 0.7em;
   text-transform: uppercase;
-  color: var(--color-grey-500);
+  color: var(--color-on-surface-variant);
   font-weight: 600;
   padding: var(--space-4) var(--space-2) var(--space-2) var(--space-8);
   letter-spacing: 0.15em;

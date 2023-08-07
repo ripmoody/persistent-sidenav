@@ -5,15 +5,17 @@ export const Main = styled.main`
   display: flex;
   flex-direction: column;
   flex: 1;
+  background-color: var(--color-surface);
+  color: var(--color-on-surface);
 `
 
 export const MainHeader = styled.header`
   display: flex;
   align-items: center;
   padding: var(--space-4) var(--space-8);
-  background-color: white;
+  background-color: var(--color-surface-container-lowest);
   gap: var(--space-4);
-  border-bottom: 1px solid var(--color-grey-100);
+  border-bottom: 1px solid var(--color-outline-variant);
 `
 
 export const MainHeaderTitle = styled.h1`
@@ -26,7 +28,6 @@ export const MainLayout = styled.div`
   display: flex;
   flex: 1;
   padding: var(--space-6) var(--space-6);
-  background-color: var(--color-grey-100);
   transition: all 0.2s ease-in-out;
   overflow-y: auto;
 
@@ -64,7 +65,7 @@ export const MainContentRow = styled.div`
 export const MainContentWidget = styled.div`
   display: flex;
   height: var(--space-80);
-  background-color: white;
+  background-color: var(--color-surface-container-lowest);
   flex: 1;
   border-radius: var(--radius-base);
   min-width: var(--space-64);

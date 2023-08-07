@@ -18,15 +18,15 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
   top: 120px;
   right: 0;
   border: none;
-  background: white;
-  color: var(--color-text);
+  background: var(--color-surface-container-lowest);
+  color: var(--color-on-surface);
   box-shadow: var(--shadows-base);
   border-radius: var(--radius-full);
   transform: translateX(50%);
   opacity: 0;
   scale: 0.4;
   transition: all 200ms ease-in-out;
-  outline: 0.5px solid var(--color-grey-100);
+  outline: 0.5px solid var(--color-outline-variant);
 
   :hover {
     color: white;

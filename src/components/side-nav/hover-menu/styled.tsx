@@ -17,7 +17,7 @@ const slideRightAndFade = keyframes`
 export const HoverMenuContent = styled(HoverCard.Content)`
   display: flex;
   flex-direction: column;
-  background: white;
+  background: var(--color-surface-container-lowest);
   max-height: 500px;
   max-width: var(--space-96);
   padding: var(--space-1) 0;
@@ -27,7 +27,7 @@ export const HoverMenuContent = styled(HoverCard.Content)`
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
   overflow-y: auto;
-  color: var(--color-text);
+  color: var(--color-on-surface);
 
   &[data-side='right'] {
     animation-name: ${slideRightAndFade};
@@ -43,11 +43,11 @@ export const HoverMenuItem = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: var(--color-grey-50);
+    background: var(--color-surface-container-low);
   }
 
   &[aria-current='page'] {
-    background-color: var(--color-grey-50);
+    background-color: var(--color-surface-container-low);
 
     &::before {
       content: '';
@@ -57,7 +57,7 @@ export const HoverMenuItem = styled.div`
       bottom: 4px;
       border-radius: var(--radius-base);
       width: var(--space-1);
-      background-color: var(--color-yellow-400);
+      background-color: var(--color-secondary);
     }
   }
 `
@@ -66,7 +66,7 @@ export const HoverMenuCategory = styled.span`
   display: block;
   font-size: 11px;
   text-transform: uppercase;
-  color: var(--color-grey-400);
+  color: var(--color-on-surface-variant);
   font-weight: var(--type-weight-bold);
   padding: var(--space-4) var(--space-2) var(--space-2) var(--space-7);
   letter-spacing: 0.1rem;
@@ -77,9 +77,9 @@ export const HoverMenuTitle = styled.span`
   font-size: 13px;
   text-transform: uppercase;
   padding: var(--space-2) var(--space-4) var(--space-2);
-  border-bottom: 1px solid var(--color-grey-100);
+  border-bottom: 1px solid var(--color-outline-variant);
   font-weight: var(--type-weight-bold);
   letter-spacing: var(--type-space-wider);
-  color: var(--color-grey-800);
+  color: var(--color-on-surface);
   margin-bottom: var(--space-1);
 `

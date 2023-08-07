@@ -15,7 +15,7 @@ const slideRightAndFade = keyframes`
 `
 
 export const TooltipArrow = styled(Tooltip.Arrow)`
-  fill: white;
+  fill: var(--color-surface-bright);
 `
 
 export const TooltipContent = styled(Tooltip.Content)`
@@ -23,8 +23,8 @@ export const TooltipContent = styled(Tooltip.Content)`
   padding: var(--space-2) var(--space-3);
   font-size: var(--type-size-sm);
   line-height: 1;
-  color: var(--color-text);
-  background-color: white;
+  color: var(--color-on-surface);
+  background-color: var(--color-surface-bright);
   box-shadow: var(--shadows-lg);
   user-select: none;
   animation-duration: 400ms;
