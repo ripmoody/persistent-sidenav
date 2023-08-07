@@ -68,4 +68,5 @@ export const MainContentWidget = styled.div`
   flex: 1;
   border-radius: var(--radius-base);
   min-width: var(--space-64);
+  padding: var(--space-4) var(--space-6);
 `

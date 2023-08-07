@@ -25,7 +25,7 @@ export const Main = ({ children }: Children) => {
         <S.MainContent>
           <S.MainContentLayout>
             <S.MainContentRow>
-              <S.MainContentWidget />
+              <S.MainContentWidget>{children}</S.MainContentWidget>
               <S.MainContentWidget />
             </S.MainContentRow>
             <S.MainContentRow>
