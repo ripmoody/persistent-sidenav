@@ -4,6 +4,6 @@
  */
 export const breakpoints = {
   sm: 564, // 500 (current content container width) + 64 (side nav collapsed expanded inline)
-  md: 1480, // 1128 (current content container width) + 352 (side nav expanded inline)
+  md: 1565, // 1200 (current content container width) + 352 (side nav expanded inline)
   lg: 1920, // 1568 (current content container width) + 352 (side nav expanded inline)
 }
