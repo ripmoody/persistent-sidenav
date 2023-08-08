@@ -88,7 +88,7 @@ export const ExpandableNavItemChevron = styled(
   transition: transform 100ms ease-in-out;
   transform: ${({ isNavItemExpanded }) =>
     isNavItemExpanded ? 'rotate(90deg)' : 'rotate(0deg)'};
-  color: var(--color-outline);
+  color: var(--color-grey-400);
 `
 
 export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`

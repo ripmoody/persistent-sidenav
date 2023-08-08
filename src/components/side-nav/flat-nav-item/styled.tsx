@@ -16,7 +16,7 @@ export const FlatNavItem = styled.li<NavItemProps>`
   position: relative;
 
   &[aria-current='page'] button:first-of-type {
-    background-color: var(--color-surface-container-lowest);
+    background-color: var(--color-surface-container-low);
 
     &::before {
       content: '';
@@ -114,6 +114,10 @@ export const FlatNavItemFavorite = styled.button`
   width: var(--space-4);
   height: var(--space-4);
   color: var(--color-grey-200);
+
+  [data-theme='dark'] & {
+    color: var(--color-grey-500);
+  }
 
   &:hover {
     color: var(--color-yellow-300);

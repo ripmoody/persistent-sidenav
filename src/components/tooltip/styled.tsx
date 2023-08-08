@@ -15,7 +15,11 @@ const slideRightAndFade = keyframes`
 `
 
 export const TooltipArrow = styled(Tooltip.Arrow)`
-  fill: var(--color-surface-bright);
+  fill: #fff;
+
+  [data-theme='dark'] & {
+    fill: var(--color-grey-700);
+  }
 `
 
 export const TooltipContent = styled(Tooltip.Content)`
@@ -24,12 +28,16 @@ export const TooltipContent = styled(Tooltip.Content)`
   font-size: var(--type-size-sm);
   line-height: 1;
   color: var(--color-on-surface);
-  background-color: var(--color-surface-bright);
   box-shadow: var(--shadows-lg);
   user-select: none;
   animation-duration: 400ms;
   animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
+  background: #fff;
+
+  [data-theme='dark'] & {
+    background: var(--color-grey-700);
+  }
 
   &[data-state='delayed-open'][data-side='right'] {
     animation-name: ${slideRightAndFade};

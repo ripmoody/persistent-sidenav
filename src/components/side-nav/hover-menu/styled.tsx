@@ -17,7 +17,6 @@ const slideRightAndFade = keyframes`
 export const HoverMenuContent = styled(HoverCard.Content)`
   display: flex;
   flex-direction: column;
-  background: var(--color-surface-container-lowest);
   max-height: 500px;
   max-width: var(--space-96);
   padding: var(--space-1) 0;
@@ -28,6 +27,11 @@ export const HoverMenuContent = styled(HoverCard.Content)`
   will-change: transform, opacity;
   overflow-y: auto;
   color: var(--color-on-surface);
+  background: #fff;
+
+  [data-theme='dark'] & {
+    background: var(--color-grey-700);
+  }
 
   &[data-side='right'] {
     animation-name: ${slideRightAndFade};
@@ -43,11 +47,11 @@ export const HoverMenuItem = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: var(--color-surface-container-low);
+    background: var(--color-surface-container);
   }
 
   &[aria-current='page'] {
-    background-color: var(--color-surface-container-low);
+    background-color: var(--color-surface-container);
 
     &::before {
       content: '';
@@ -77,9 +81,14 @@ export const HoverMenuTitle = styled.span`
   font-size: 13px;
   text-transform: uppercase;
   padding: var(--space-2) var(--space-4) var(--space-2);
-  border-bottom: 1px solid var(--color-outline-variant);
+  border-bottom: 1px solid;
   font-weight: var(--type-weight-bold);
   letter-spacing: var(--type-space-wider);
   color: var(--color-on-surface);
   margin-bottom: var(--space-1);
+  border-bottom-color: var(--color-grey-200);
+
+  [data-theme='dark'] & {
+    border-bottom-color: var(--color-grey-600);
+  }
 `
