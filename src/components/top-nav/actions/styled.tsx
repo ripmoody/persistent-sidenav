@@ -87,7 +87,7 @@ export const VerticalRule = styled.div`
   flex-shrink: 0;
   margin: 0 var(--space-2);
 
-  @media (max-width: 600px) {
+  @media (max-width: ${breakpoints.md}px) {
     display: none;
   }
 `

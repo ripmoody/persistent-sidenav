@@ -45,7 +45,7 @@ export const ExpandableNavItemButton = styled.button<ExpandableNavItemProps>`
     isCollapsed ? 'var(--space-2)' : 'var(--space-5)'};
   background-color: ${({ hasActiveChild, isCollapsed, isNavItemExpanded }) => {
     if (hasActiveChild && !isCollapsed && isNavItemExpanded) {
-      return 'var(--color-surface-container-low)'
+      return 'var(--color-surface-container-lowest)'
     }
 
     if (hasActiveChild && isCollapsed) {

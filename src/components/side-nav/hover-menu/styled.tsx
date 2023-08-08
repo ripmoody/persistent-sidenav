@@ -47,11 +47,19 @@ export const HoverMenuItem = styled.div`
   cursor: pointer;
 
   &:hover {
-    background: var(--color-surface-container);
+    background: var(--color-grey-50);
+
+    [data-theme='dark'] & {
+      background: var(--color-grey-600);
+    }
   }
 
   &[aria-current='page'] {
-    background-color: var(--color-surface-container);
+    background-color: var(--color-grey-50);
+
+    [data-theme='dark'] & {
+      background: var(--color-grey-600);
+    }
 
     &::before {
       content: '';

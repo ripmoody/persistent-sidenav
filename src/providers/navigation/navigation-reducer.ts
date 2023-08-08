@@ -63,10 +63,14 @@ export const navigationReducer = (
 ) => {
   switch (action.type) {
     case 'add-item-favorite': {
+      const payload = cloneDeep(action.payload) as ExpandableNavItem
+      payload.path = payload.path + '?favorite=true'
+
       const mainDeepClone = cloneDeep(state.items.main) as ExpandableNavItem[]
-      mainDeepClone[0].items.push(action.payload)
+      mainDeepClone[0].items.push(payload)
       mainDeepClone[0].items.sort((a, b) => a.label.localeCompare(b.label))
 
+      // Mark the item as favorite
       const main = mainDeepClone.map((item) => {
         return {
           ...item,

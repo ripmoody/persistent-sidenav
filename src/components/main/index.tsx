@@ -9,7 +9,7 @@ export const Main = ({ children }: Children) => {
   const { asPath } = useRouter()
 
   const currentItem = items.find((item) => {
-    return item.path === asPath
+    return item.path === asPath.split('?')[0] // remove query params
   })
 
   const Icon = currentItem?.icon

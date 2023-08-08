@@ -58,6 +58,9 @@ export const FlatNavItem = (props: NavItem) => {
     switch (dataFavorite) {
       case 'true':
         dispatch({ type: 'remove-item-favorite', payload: props })
+
+        // Push the user to the page without the query param to reset active state
+        router.push(router.asPath.split('?')[0])
         break
 
       default:

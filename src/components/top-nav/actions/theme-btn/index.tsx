@@ -18,7 +18,7 @@ export const ThemeButton = () => {
 
   return (
     <S.NavActionsIconButton onClick={toggleTheme}>
-      <Tooltip label="Toggle theme" side="bottom">
+      <Tooltip label="Toggle color mode" side="bottom">
         <ThemeIcon />
       </Tooltip>
     </S.NavActionsIconButton>
