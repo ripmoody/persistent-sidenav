@@ -128,8 +128,6 @@ export const FlatNavItemFavorite = styled.button`
   }
 
   &[data-favorite='true'] {
-    opacity: 1;
-    scale: 1;
     color: var(--color-yellow-300);
 
     &:hover {

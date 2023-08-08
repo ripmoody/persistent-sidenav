@@ -19,6 +19,7 @@ export const HoverMenuContent = styled(HoverCard.Content)`
   flex-direction: column;
   max-height: 500px;
   max-width: var(--space-96);
+  min-width: var(--space-60);
   padding: var(--space-1) 0;
   border-radius: var(--radius-base);
   box-shadow: var(--shadows-lg);

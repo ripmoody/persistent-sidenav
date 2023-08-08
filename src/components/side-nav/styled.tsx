@@ -57,6 +57,10 @@ export const SideNav = styled.nav<SideNavProps>`
   &::-webkit-scrollbar-thumb {
     background: var(--color-grey-200);
     border-radius: 4px;
+
+    [data-theme='dark'] & {
+      background: var(--color-grey-700);
+    }
   }
 `
 
