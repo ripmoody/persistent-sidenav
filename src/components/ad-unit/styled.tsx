@@ -11,7 +11,7 @@ export const AdUnitInner = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-md);
-  border: solid 1px var(--color-grey-100);
+  border: solid 1px var(--color-outline);
   padding: var(--space-4) var(--space-3);
 `
 
@@ -34,7 +34,7 @@ export const AdUnitClose = styled.button`
   top: var(--space-1_5);
   right: var(--space-1_5);
   padding: var(--space-1);
-  color: var(--color-grey-500);
+  color: var(--color-on-surface-variant);
 
   &:hover {
     background-color: var(--color-grey-50);
@@ -58,7 +58,7 @@ export const AdUnitTitle = styled.h3`
 export const AdUnitDescription = styled.span`
   margin: 0;
   padding: 0;
-  color: var(--color-grey-600);
+  color: var(--color-on-surface-variant);
   font-size: var(--type-size-xs);
   line-height: 1.5;
 `
