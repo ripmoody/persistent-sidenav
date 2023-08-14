@@ -13,8 +13,8 @@ type SideNavProps = {
  */
 export const SideNavRelative = styled.div<SideNavProps>`
   position: relative;
-  transition: width 200ms ease-in-out;
   width: ${({ context }) => (context.isCollapsed ? '4rem' : '22rem')};
+  transition: all 250ms ease-in-out;
 
   :hover #expand-collapse {
     opacity: 1;
@@ -49,6 +49,10 @@ export const SideNav = styled.nav<SideNavProps>`
   );
   overflow-x: hidden; // Hides icons on collapse and expand. A little hacky cause transitions don't match up.
   overflow-y: auto;
+
+  &:hover {
+    cursor: pointer;
+  }
 
   &::-webkit-scrollbar {
     width: 6px;

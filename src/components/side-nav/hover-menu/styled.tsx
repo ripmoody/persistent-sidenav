@@ -5,12 +5,10 @@ import * as HoverCard from '@radix-ui/react-hover-card'
 const slideRightAndFade = keyframes`
   from {
     opacity: 0;
-    transform: translateX(-2px);
   }
 
   to {
     opacity: 1;
-    transform: translateX(0);
   }
 `
 

@@ -45,7 +45,13 @@ export const FlatNavItemLink = styled(Link)`
 export const FlatNavItemButton = styled.button<NavItemProps>`
   display: flex;
   align-items: center;
-  padding: var(--space-1_5);
+  padding: ${({ isCollapsed, isSubNavItem }) => {
+    if (!isCollapsed && isSubNavItem) {
+      return 'var(--space-1_5)'
+    }
+
+    return 'var(--space-2)'
+  }};
   width: 100%;
   border: none;
   background: none;
@@ -70,7 +76,7 @@ export const FlatNavItemButton = styled.button<NavItemProps>`
 
   &:focus-visible {
     outline: none;
-    box-shadow: 0 0 0 2px var(--color-plum-300);
+    box-shadow: inset 0 0 0 2px var(--color-plum-300);
   }
 `
 
@@ -105,22 +111,25 @@ export const FlatNavItemFavorite = styled.button`
   top: 0;
   bottom: 0;
   margin: auto 0;
-  padding: 4px;
+  padding: var(--space-1_5);
   right: var(--space-2);
   background: none;
   border: none;
   opacity: 0;
   scale: 0.5;
   transition: all 0.2s ease-in-out;
-  min-width: var(--space-6);
-  min-height: var(--space-6);
-  width: var(--space-6);
-  height: var(--space-6);
+  min-width: var(--space-7);
+  min-height: var(--space-7);
+  width: var(--space-7);
+  height: var(--space-7);
   color: var(--color-grey-200);
+  border-radius: var(--radius-base);
+  outline: none;
 
   &:focus-visible {
     opacity: 1;
     scale: 1;
+    box-shadow: inset 0 0 0 2px var(--color-plum-300);
   }
 
   [data-theme='dark'] & {
@@ -129,6 +138,7 @@ export const FlatNavItemFavorite = styled.button`
 
   &:hover {
     color: var(--color-yellow-300);
+    background-color: var(--color-surface-container-low);
   }
 
   &:active {

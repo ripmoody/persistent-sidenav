@@ -1,8 +1,7 @@
 import { breakpoints } from '@/providers'
 import styled from '@emotion/styled'
-import { Fragment } from 'react'
 
-export const Dashboard = Fragment
+export const Dashboard = styled.div``
 
 export const DashboardPage = styled.div`
   display: flex;

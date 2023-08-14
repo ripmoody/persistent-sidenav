@@ -52,7 +52,7 @@ export const HoverMenu = (props: HoverMenuProps) => {
   }
 
   return (
-    <HoverCard.Root openDelay={200}>
+    <HoverCard.Root openDelay={50} closeDelay={50}>
       <HoverCard.Trigger asChild>{props.children}</HoverCard.Trigger>
       <HoverCard.Portal>
         <S.HoverMenuContent side="right" sideOffset={20}>

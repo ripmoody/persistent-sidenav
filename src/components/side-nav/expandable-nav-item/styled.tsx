@@ -85,7 +85,7 @@ export const ExpandableNavItemChevron = styled(
 )<ExpandableNavItemProps>`
   margin-left: auto;
   display: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'block')};
-  transition: transform 100ms ease-in-out;
+  transition: all 100ms ease-in-out;
   transform: ${({ isNavItemExpanded }) =>
     isNavItemExpanded ? 'rotate(90deg)' : 'rotate(0deg)'};
   color: var(--color-grey-400);
@@ -96,7 +96,7 @@ export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
   flex-direction: column;
   overflow-y: hidden;
   list-style: none;
-  padding: 0 var(--space-0_5);
+  padding: 0;
   margin: 0;
   gap: var(--space-0_5);
   opacity: ${({ isNavItemExpanded }) => (isNavItemExpanded ? '1' : '0')};
@@ -107,10 +107,10 @@ export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
     }
     return '700px'
   }};
-  transition: max-height 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
   font-size: 0.95em;
 
   & > li:last-of-type {
-    margin-bottom: var(--space-4);
+    margin-bottom: var(--space-3);
   }
 `
