@@ -11,7 +11,7 @@ export const AdUnitInner = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: var(--radius-md);
-  border: solid 1px var(--color-outline);
+  border: solid 1px var(--color-outline-variant);
   padding: var(--space-4) var(--space-3);
 `
 

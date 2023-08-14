@@ -94,11 +94,11 @@ export const ExpandableNavItemChevron = styled(
 export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
   display: flex;
   flex-direction: column;
-  gap: var(--space-0_5);
   overflow-y: hidden;
   list-style: none;
   padding: 0 var(--space-0_5);
   margin: 0;
+  gap: var(--space-0_5);
   opacity: ${({ isNavItemExpanded }) => (isNavItemExpanded ? '1' : '0')};
   pointer-events: ${({ isCollapsed }) => (isCollapsed ? 'none' : 'auto')};
   max-height: ${({ isNavItemExpanded, isCollapsed }) => {

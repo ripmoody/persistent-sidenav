@@ -45,7 +45,7 @@ export const FlatNavItemLink = styled(Link)`
 export const FlatNavItemButton = styled.button<NavItemProps>`
   display: flex;
   align-items: center;
-  padding: var(--space-2);
+  padding: var(--space-1_5);
   width: 100%;
   border: none;
   background: none;
