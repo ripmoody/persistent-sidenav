@@ -101,19 +101,27 @@ export const NavItemCategory = styled.span<NavItemProps>`
 export const FlatNavItemFavorite = styled.button`
   position: absolute;
   display: flex;
-  padding: 0;
-  top: 8px;
+  align-items: center;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  padding: 4px;
   right: var(--space-2);
   background: none;
   border: none;
   opacity: 0;
   scale: 0.5;
   transition: all 0.2s ease-in-out;
-  min-width: var(--space-4);
-  min-height: var(--space-4);
-  width: var(--space-4);
-  height: var(--space-4);
+  min-width: var(--space-6);
+  min-height: var(--space-6);
+  width: var(--space-6);
+  height: var(--space-6);
   color: var(--color-grey-200);
+
+  &:focus-visible {
+    opacity: 1;
+    scale: 1;
+  }
 
   [data-theme='dark'] & {
     color: var(--color-grey-500);
