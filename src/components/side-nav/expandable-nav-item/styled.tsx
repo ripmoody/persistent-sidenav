@@ -107,7 +107,7 @@ export const ExpandableSubNavList = styled.ul<ExpandableNavItemProps>`
     }
     return '700px'
   }};
-  transition: all 300ms ease-in-out;
+  transition: all 250ms ease-in-out;
   font-size: 0.95em;
 
   & > li:last-of-type {

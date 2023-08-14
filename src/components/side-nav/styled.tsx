@@ -93,7 +93,7 @@ export const SideNavFooter = styled.div`
 export const SideNavMain = styled.div<SideNavProps>`
   position: relative;
   flex: 1;
-  padding: 0 0 var(--space-4) 0;
+  padding: 0 0 var(--space-2) 0;
   display: flex;
   flex-direction: column;
 `
