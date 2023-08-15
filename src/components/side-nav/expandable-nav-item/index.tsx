@@ -1,5 +1,6 @@
+import { useWindowWidth } from '@/hooks'
 import type { ExpandableNavItem as ExpandableNavItemType } from '@/providers'
-import { useNavigation } from '@/providers'
+import { breakpoints, useNavigation } from '@/providers'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { FlatNavItem } from '../flat-nav-item'
@@ -12,12 +13,16 @@ import * as S from './styled'
  */
 export const ExpandableNavItem = (props: ExpandableNavItemType) => {
   const { label, icon: Icon } = props
-
   const { state, dispatch } = useNavigation()
+  const width = useWindowWidth()
   const router = useRouter()
 
   const handleExpandCollapse = () => {
     if (state.context.isCollapsed) {
+      if (width > breakpoints.md) {
+        dispatch({ type: 'set-force-collapsed', payload: false })
+      }
+
       dispatch({ type: 'set-collapsed', payload: false })
       return dispatch({
         type: 'set-item-expanded',
