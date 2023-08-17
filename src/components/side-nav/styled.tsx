@@ -14,7 +14,7 @@ type SideNavProps = {
 export const SideNavRelative = styled.div<SideNavProps>`
   position: relative;
   width: ${({ context }) => (context.isCollapsed ? '4rem' : '22rem')};
-  transition: all 250ms ease-in-out;
+  transition: all 125ms ease-in-out;
 
   :hover #expand-collapse {
     opacity: 1;
@@ -35,7 +35,7 @@ export const SideNavRelative = styled.div<SideNavProps>`
  * The side nav component container
  */
 export const SideNav = styled.nav<SideNavProps>`
-  transition: all 75ms ease-in-out;
+  transition: all 200ms ease-in-out;
   display: flex;
   flex-direction: column;
   height: 100%;
