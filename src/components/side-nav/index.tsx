@@ -48,6 +48,7 @@ export const SideNav = () => {
 
   return (
     <S.SideNavRelative context={state.context}>
+      <ExpandCollapseButton />
       <S.SideNav
         context={state.context}
         id="side-nav"
@@ -77,7 +78,6 @@ export const SideNav = () => {
           </S.SideNavFooter>
         </S.SideNavMain>
       </S.SideNav>
-      <ExpandCollapseButton />
     </S.SideNavRelative>
   )
 }

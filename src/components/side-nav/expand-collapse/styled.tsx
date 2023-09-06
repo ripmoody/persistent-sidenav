@@ -15,7 +15,7 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
   justify-content: center;
   padding: var(--space-1);
   position: absolute;
-  top: 120px;
+  top: 130px;
   right: 0;
   border: none;
   background: var(--color-surface-container-lowest);
@@ -24,13 +24,21 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
   border-radius: var(--radius-full);
   transform: translateX(50%);
   opacity: 0;
-  scale: 0.4;
+  scale: 0.8;
   transition: all 200ms ease-in-out;
   outline: 0.5px solid var(--color-outline-variant);
+  z-index: 1;
 
-  :hover {
+  :hover,
+  :focus {
     color: white;
     background: var(--color-plum-400);
+    opacity: 1;
+    scale: 1;
+  }
+
+  :focus-visible {
+    box-shadow: 0 0 0 3px var(--color-plum-300);
   }
 
   :active {
