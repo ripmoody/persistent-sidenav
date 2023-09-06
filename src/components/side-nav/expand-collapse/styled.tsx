@@ -30,14 +30,11 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
   z-index: 1;
 
   :hover,
-  :focus {
+  :focus-visible {
     color: white;
     background: var(--color-plum-400);
     opacity: 1;
     scale: 1;
-  }
-
-  :focus-visible {
     box-shadow: 0 0 0 3px var(--color-plum-300);
   }
 
