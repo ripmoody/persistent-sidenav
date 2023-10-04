@@ -35,7 +35,6 @@ export const ExpandCollapseButton = styled.button<NavItemProps>`
     background: var(--color-plum-400);
     opacity: 1;
     scale: 1;
-    box-shadow: 0 0 0 3px var(--color-plum-300);
   }
 
   :active {
